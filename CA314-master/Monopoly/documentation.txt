@@ -1,0 +1,10 @@
+This implementation of monopoly is run in python3 in terminal. In order to play you must run the main.py file in terminal first. After this in another terminal window run the clientmain.py file to connect to the game. Once a second player is connected the host terminal can choose to start the game or not with the current ammount of players or wait for more players to connect. Once the host starts the game the appropriate amount of players will be placed on the board and the board will be loaded for each client that is connected with the correct number of players.
+
+Working:
+From this point forward the entire game will be played on the host's terminal. All input will go through the host and all game logic is run on the host's game. The clients are ignored from this point forward as the networking for the majority of the game logic is incomplete. The game will run appropriately locally and will update the host's board for all player movements when they occur.
+
+Not working:
+After the game has started there is no networking available for the game so clients wont be able to participate via their own terminal. Additionally the clients came board will remain un updated for the remainder of the game and the client connection doesn't seem to work from other machines. We could not get the network to work between machines, only between various terminal windows on the same machine.
+
+Changes:
+We pretty much scrapped the provisional implementation and started from scratch because none of the classes we created originally worked together. We also added pygame into our monopoly implementation so there was some semblance of a user interface and also added a small amount of networking capabilities to the game file so that multiple players could participate in some portion to the game being played.

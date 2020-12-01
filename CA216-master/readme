@@ -1,0 +1,340 @@
+
+Welcome to the help function of Shell 3.0.
+    written by Cormac Duggan
+    student number 17100348
+
+Inside you will find help for all shell commands.
+This also contains all invocation methods for each function.
+Any invocation displayed with [] means that anything in the []
+is optional for the invocation.
+
+Press Enter to continue to more content.
+Press q and Enter to exit the help funtion.
+
+-------------------------------------------------------------
+
+Starting the Shell
+
+There are two methods to start Shell 3.0. Open Terminal and type:
+    python3 myshell.py
+    or
+    python3 myshell.py batchfile
+
+In the first case the shell is opened and will expect the user
+to input commands as the prompt appears.
+
+In the second case batchfile would be any file containing a list
+of commands for the shell to interpret. The file must be inside
+the same directory as the myshell.py executable file is.
+
+-------------------------------------------------------------
+
+Concepts
+
+    The OS Environment (environ)
+        The OS environment is a dictionary of keys and values
+        that contain mappings of names to important OS locations,
+        paths, and variables. For example the HOME key will be
+        mapped to the users home driectory in the os.environ
+        dictionary. The PWD key will similarly be mapped to the 
+        personal working directory of the user and should change
+        as the user changes the directory they are currently working
+        in.
+
+    I/O Redirection (> or >>)
+        In the majority of functions the option for Output
+        redirection is available (symbolized by > or >>).
+        In these cases if a redirection and a output file is
+        provided the shell will write to the output file
+        instead of writing directly to the terminal. If a single
+        > is provided the output file will either be created
+        or truncated if it alread exists and replaced or filled
+        with the output that would normally result from the
+        function being called at the time. If a double >> is
+        used as a file redirection the output file will be appended
+        to rather than truncated if it exists and will be created
+        if it does not already exist.
+
+    Background Execution (&)
+        Most functions support the option for background
+        execution. This means that if an & is written at the end
+        of any command that supports it, a child process will be
+        created and run while returning the user back to the
+        shell prompt and allowing them to use other commands
+        as the originally invoked command, called with background
+        execution, runs at the simultaneously.
+
+-------------------------------------------------------------
+
+Help function
+
+Help has 3 methods of invocation.
+After opening shell or in a batch file type:
+    help
+    help > outputfile
+    help >> outputfile
+
+The first case will simply open the the help file in the shell
+for the user to read 20 lines at a time, hitting enter to advance
+the line or q and enter to exit the help function.
+
+The second case will write the entire help file to the given output
+file. If the output file already exists in the current directory
+the file will be wiped and replaced with the help file. If the
+output file does not already exist the file will be created
+and filled with the help text.
+
+The third case will do the same as the second but rather than
+overwriting a preexisting file it will add the help documentation
+to the output file.
+
+-------------------------------------------------------------
+
+Change Directory function
+
+Change Directory has 5 methods of invocation.
+After opening shell or in a batch file type:
+    cd
+    cd &
+    cd directory
+    cd > outputfile
+    cd >> outputfile
+
+The first case will simply print out the users current working
+directory.
+
+The second case will call the cd function as a subprocess of the
+current invocation of cd. It will return immediately to the
+shell prompt and await user input again while doing the same thing
+as the first case in the background.
+
+The third case will change the users current working directory
+to whatever directory was given in the directory part of the
+invocation assuming the directory actually exists and the user
+has access to it.
+
+The fourth case wil redirect the output from case one to outputfile.
+If outputfile exists it will be erased and replaced with the result
+of the call of cd. If the file does not exist it will be created with
+it's only contents being the result coming from the call of cd.
+
+The fifth case will do the same as the fourth case but instead of
+replacing the contents of a file that already exists it will simply
+add the result of a cd call to the end of the outputfile.
+
+-------------------------------------------------------------
+
+Clear function
+
+Clear has 4 methods of invocation.
+After opening shell or in a batch file type:
+    clr
+    clr &
+    clr > outputfile [&]
+    clr >> outputfile [&]
+
+The first case will clear the screen placing the prompt at the
+top of the terminal with everything else removed.
+
+The second case will make a subprocess of the clear call and
+return the user immediately to the prompt the run the subprocess
+clear. This will result in everything being removed from the
+terminal screen including the prompt and will then await the next
+user command input.
+
+The third case will simply delete all contents of a file. If
+an & is included this will be done in the background and will
+return the user immediately to the shell prompt.
+
+The fourth case will also delete all contents of a file. If
+an & is included this will be done in the background and will
+return the user immediately to the shell prompt.
+
+-------------------------------------------------------------
+
+Directory function
+
+Directory has 5 methods of invocation.
+After opening shell or in a batch file type:
+    dir
+    dir directory
+    dir [directory] &
+    dir [directory] > outputfile [&]
+    dir [directory] >> outputfile [&]
+
+The first case will print out the entire contents of the users
+current directory line by line.
+
+The second case will print out the entire contents of the given
+directory assuming that the directory exists and the user has
+access to the directory.
+
+The third case will do the same as the first case but in the
+background. It will return the user immediately to the shell
+prompt and then do the usual dir. If a directory is given it will
+do the same as case two but in the background.
+
+The fourth case it will do the same as any other case that contain
+the invocations contents but will this time write to a file. If
+the file already exists it will be erased and filled with the
+dir invocation results. If the file does not exist it will be
+created and filled with the dir results.
+
+The fifth case will do the same as the fourth case, but if the
+outputfile alread exists it will simply add the results to the
+end of the file.
+
+-------------------------------------------------------------
+
+Environment function
+
+The environ function returns variable that keep track of the
+location and mapping of certain items in the Operating System.
+
+Environment has methods of invocation.
+After opening shell or in a batch file type:
+    environ
+    environ &
+    environ > outputfile [&]
+    environ >> outputfile [&]
+
+The first case will print out all the keys and values of the
+strings representing the OS environment. For example: the
+HOME key will be mapped to the home directory path in the
+current environment.
+
+The second case will do the same as the first case in the 
+backgorund and will return the user directly to the shell
+prompt then procced to do the environ call.
+
+The third case will redirect the output of the environ call to
+the output file. If the file exists it will be cleared and replaced
+with the output from the environ call. If the file does not 
+already exist it will be created with only the result of the
+environ call. If an & is included the shell will return 
+immediately to the prompt and run the environ call with 
+output redirection in the background.
+
+The fourth case will do the same as the third except if the
+file already exists the results of the environ call will
+be added to the end of the file rather than replacing the
+contents of the file like what happens in the third case.
+
+-------------------------------------------------------------
+
+Echo function
+
+Echo has 4 methods of invocation.
+After opening shell or in a batch file type:
+    echo yournote
+    echo yournote &
+    echo yournote > outputfile [&]
+    echo yournote >> outputfile [&]
+
+The first case will simply print back whatever the user puts in
+place of yournote. Any extra spaces between contents of the note
+will be removed. For example: "hello    world" will become
+"hello world".
+
+The second case is the same as the previous but will execute in
+the background and return the user immediately to the shell prompt.
+This usage is almost entirely useless.
+
+The third case will redirect the return of yournote to the provided
+file. If the file already exists the contents will be deleted and
+the only contents in the file will now be whatever was written
+in place of yournote. If the file does not already exist the file
+will then be created and it's only contents will be whatever was
+contained in yournote. If the & is included the echo will execute
+first and then return the user to the shell prompt.
+
+The fourth case is the same as the third case with the exception
+that in this case if the file already exists the contents of
+your note will simply be added to the file rather than replacing
+the contents of the file.
+
+-------------------------------------------------------------
+
+Empty Line function
+
+Empty line has 1 method of invocation.
+After opening shell or in a batch file type:
+    Enter
+
+Hitting enter any time at the prompt will do nothing and bring
+up the prompt again one line down from the previous prompt.
+
+-------------------------------------------------------------
+
+Pause function
+
+Pause has 1 method of invocation.
+After opening shell or in a batch file type:
+    pause
+
+Typing pause will stop all execution in the shell and background
+programs. The pause will continue until the user presses the
+Enter key.
+
+-------------------------------------------------------------
+
+Quit function
+
+Quit has 1 method of invocation.
+After opening shell or in a batch file type:
+    quit [> or >>] [outputfile] [&]
+
+Using any of the options above will quit the shell. Any other
+invocation of quit will raise an error.
+
+-------------------------------------------------------------
+
+Other functions
+
+EOF has 1 method of invocation.
+After opening shell or in a batch file type:
+    EOF
+
+Typing EOF or a batch file coming to the end of the file
+will quit the shell similar to how quit works.
+
+-------------------------------------------------------------
+
+Any other function
+
+Any function that is not described in this help document, but
+is available in the users system can be invoked as usual with
+an output redirection and background processing if desired.
+To redirect output simply type > to create or truncate any
+existing contents of a file with the output of the program
+called or >> to append output from the program to the output
+file. For example:
+
+    python3 test.py > outputfile &
+This specific invocation will run python3 test.py and redirect
+the output to outputfile and will run test.py in the background
+and return the user to the shell prompt while the program runs
+in the background. If outputfile exists it will be cleared and
+test.py output will be written to the outputfile. If outputfile
+does not exist the file will be created and filled with the
+output of test.py.
+
+    python3 test.py >> outputfile &
+This case will do the same as the previous, however, if the file
+already exists the output from test.py will simply be added to
+it rather than replacing everything currently in the file.
+
+    python3 test.py > outputfile
+This will do the same as case 1 but will not return the user
+to the shell prompt until after test.py is completed.
+
+    python3 test.py
+This case will just run test.py as normal.
+
+For programs that open other shells or interpreters do not use
+background processing as the shell gets overloaded. For
+example DO NOT TYPE:
+    python3 &
+This will overload the shell and possibly crash it.
+
+-------------------------------------------------------------
