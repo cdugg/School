@@ -1,0 +1,3584 @@
+#CA269
+Disclaimer: I did not write these questions nor do I own the rights to them (Both of those can be attributed to Charlie Daly). The java files were, however, written by me to answer these questions in April 2019. 
+Note that the Java files are not named correctly. They are named to relate to the questions they answer and thus will not work without having their names changed apprpriately.
+Also Note that these questions were distributed over a  12 week period as lab questions. Full credit was awarded for any working solutions that passed website's test cases.
+Questions:
+
+Hello There:
+Write a program which prints the message "Hello There" to the screen.
+Example usage:
+$ java Hello
+Hello There
+
+'ello 'ello 'ello:
+Write a program which prints three lines where each line contains only "Hello". 
+Example usage:
+$ java Hello3
+Hello
+Hello
+Hello
+
+You can say that two times again:
+Write a program which reads in a integer, n, and prints out n * 2
+Example usage:
+$ java TwoTimes
+Enter a number: 4
+Times two is: 8
+Here is another example
+$ java TwoTimes
+Enter a number: 1
+Times two is: 2
+Your program should create an integer variable. You should create a Scanner class and use the nextInt() method of the Scanner class to get the number from the user. Then use the System.out.println() method to print the result.
+
+Square It:
+Write a program which reads in a integer, n, and prints out n squared. Note that n squared is n multiplied by itself.
+Example usage:
+$ java SquareIt
+Enter a number: 4
+4 squared is 16
+Here is another example
+$ java TwoTimes
+Enter a number: 2
+2 squared is 4
+This program is very similar to the last. However you also need to print the number that the user enters.
+
+Addition Java Style:
+Write a program which reads in two integers and prints out their sum
+Example usage:
+$ java SumIt
+Enter two numbers: 4 6
+4 and 6 is 10
+Here is another example
+$ java SumIt
+Enter two numbers: 2 0
+2 and 0 is 2
+
+Three is Better than Two:
+Write a program which reads in three integers and prints out their product. That is, if the three numbers are a, b and c, then the result will be a * b * c
+Example usage:
+$ java Thrice
+Enter three numbers: 2 3 4
+The product is 24
+Here is another example
+$ java Thrice
+Enter three numbers: 2 0 1
+The product is 0
+Note that anything times 0 is zero.
+
+Inches to Centimeters:
+Write a program which will convert inches to centimetres. The program should ask a user for an inch-eger and convert it to centimeters. You may assume that the user is very ancient and uses an outmoded unit of measurement.
+Note that 1 inch is 2.54 cm
+Example usage:
+$ java inch2cm
+Please enter a quantity in inches: 1
+1 inch is 2.54 cm
+or
+$ java inch2cm
+Please enter a quantity in inches: 2
+2 inch is 5.08 cm
+
+Centigrade to Fahrenheit:
+Your ancient friend is feeling very cold but he doesn't know how cold 'cos he can only see the temperature in degrees Centigrade. He asks you for help because you know all about those new fangled computers.
+Write a program which will convert temperature in degrees Centigrade to temperature in degrees Fahrenheit.
+The temperature T in degrees Fahrenheit (°F) is equal to the temperature T in degrees Celsius (°C) times 9/5 plus 32.
+You should read the centigrade value as a whole number but output the fahrenheit as a floating point number.
+
+Double Division:
+Write a program which will read in two floating point values, a and b, and print out the result of a divided by b.
+Example usage:
+$ java DoubleDivision
+Please enter two floating point numbers: 1.5 0.5
+1.5 / 0.5 is 3.0
+Remember that division by a half is the same as multiplication by two.
+
+Hello Son:
+Write a program which prompts a user to enter their name and then prints a personalised greeting.
+Example usage:
+$ java HelloSon
+Tell me your name: Jonathan
+Hello Jonathan
+
+NextYear:
+Write a program which prompts a user to enter their name their age (a whole number) and tells them how old they will be next year.
+Example usage:
+$ java NextYear
+What is your name: Jonathan
+What age are you: 16
+Hello Jonathan, next year you will be 17.
+
+Length of Name:
+Write a program which prompts a user to enter their name and tells them how many letters are in their name.
+Example usage:
+$ java LengthOfName
+Tell me your name: Jonathan
+Hello Jonathan, your name has 8 letters.
+You can use the length() method of string to discover its length (which will be the same as the number of letters in the name assuming that the name contains only letters).
+
+First Initial:
+Write a program which prompts a user to enter their name and gives them their first initial.
+Example usage:
+$ java Initial
+Tell me your name: Jonathan
+Jonathan starts with the letter J.
+You can use the substring() method of string to discover the first letter of the string. You need to think about the parameters you choose.
+
+First Three:
+Write a program which prompts a user to enter their name and and produces a nickname formed from the their first three letters of their name. You may assume that there are at least three letters in the name.
+Example usage:
+$ java FirstThree
+Tell me your name: Jonathan
+Your nickname is Jon.
+You can use the substring() method of string to get the nickname. You need to think about the parameters you choose.
+
+Last of the Name:
+Write a program which prompts a user to enter their name and and tells the user the last letter in their name.
+Example usage:
+$ java LastLetter
+What is your name: Jonathan
+The last letter in your name is n.
+This is a little tricky. You need to use the length() method along with the substring method. In addition, remember that the index of the last letter is one less than the length.
+
+InitialLess:
+Write a program which prompts a user to enter their name and and removes their initial and just prints the rest of their name
+Example usage:
+$ java initialLess
+Tell me your name: Jonathan
+Initialless, your name is onathan.
+
+Reduced String:
+Your program will read in a number, n, and a string, s, and print out the string with the character at position n removed.
+Example 
+java ReducedString
+Enter a string: 3 Goodie!
+Gooie!
+Note that counting starts at 0 and so the the character at position 3 is the 'd'. That character has been removed.
+Here is another example:
+java ReducedString
+Enter a string: 0 ABC
+BC
+Position 0 is the first character of the string, the "A" which is removed.
+Yet another example
+java ReducedString
+Enter a string: 1 ABC
+AC
+This time, the second letter (at position 1) is removed.
+Yet another example
+java ReducedString
+Enter a string: 2 ABC
+AB
+This time, the third letter (at position 2) is removed.
+Remember that with the string "ABC" the letter positions are as shown below:
+ABC
+012
+Hint: When you are testing your program, you could use the string "01234567" because then the numbers correspond to the position in the string.
+
+Absolutely Positive:
+We need a positive number and sometimes people enter negative numbers. Write a program which reads in a number and if the number is negative, it makes it positive.
+Example usage:
+$ java Absolute
+Enter a number: -5
+The absolute value is 5.
+or
+$ java Absolute
+Enter a number: 10
+The absolute value is 10.
+You will need an if statement to determine if the number is negative and should it be so, you unnegative it.
+
+Odd That:
+Read in a whole number and determine if it is odd or even. Note that the modulus operator gives us the remainder when we perform integer division, that is 15 % 4 will give us the remainder which is left after we divide 15 by 4 (which is 3).
+Now, use the if statement along with the modulus operator and determine a number is even or odd.
+Example usage:
+$ java EvenOdd
+Enter a number: 6
+6 is even.
+or
+$ java EvenOdd
+Enter a number: 9
+9 is odd.
+
+Bigger is Better:
+Write a program which reads in two numbers and prints out the largest. You may assume that the input will consist of two whole numbers which will not be equal.
+Example usage:
+$ java Bigger
+Enter two numbers: 6 10
+10 is the biggest.
+or
+$ java Bigger
+Enter two numbers: 9 3
+9 is the biggest.
+
+A Teenager:
+Write a program which determines whether an age belongs to a teenager. Write a program which determines whether an age is that of a teenager or not.
+Example usage:
+$ java IsTeenager
+Enter your age: 6
+you are not a teenager.
+or
+$ java IsTeenager
+Enter your age: 19
+you are a teenager.
+
+TwoTimes Method Version:
+Write a program which reads in a integer, n, and prints out n * 2. However, you should not multiply the numbers in your program. Instead, use a static method of the Helper class called twoTimes. This Helper class is shown below: 
+public class Helper
+{
+   public static int twoTimes(int num)
+   {
+      return num * 2;
+   }
+}
+To access this method, provide the name of the class, Helper followed by a dot and the name of the method. The information is passed as a parameter to the method and the result is returned. For example, if you wanted to get 2 times 16, you would call
+Helper.twoTimes(16)
+You could assign this to an integer variable called x with the following assignment statement:
+x = Helper.twoTimes(16);
+Obviously your program would be simpler if you just multiplied by 2, but this is an exercise in using methods. You will get zero marks unless you use the method.
+Example usage:
+$ java TwoTimes
+Enter a number: 4
+Times two is: 8
+Hint: This requires a minor change to the original TwoTimes solution. Find where you calculated twice the number and replace that expression with the method call as indicated above.
+If you spend longer than 5 minutes at this, you are doing it wrong.
+
+Square Method:
+Create a class called Number with one static method called square. This method should take an integer parameter and return the square of that parameter. Your method will be used by the following main method. (Note that you don't supply this main method, it will be supplied by the system.)
+import java.util.Scanner;
+public class SquareIt
+{
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);        
+        // Ask the user to enter a number
+        System.out.print("Enter a number: ");
+        // Read in the number 
+        int num = in.nextInt();
+        // call the square method of the Helper class to get num squared.
+        int result = Numbers.square(num);        
+        System.out.println(num + " squared is " + result);
+    }
+}
+Note that you don't create any main method. Just the square method which will be called by another method.
+If you get an error, it could be because
+1. You didn't create a Numbers class.
+2. It didn't have a square method.
+3. The square method wasn't public static.
+4. The square method didn't have an int parameter and didn't return an int variable.
+
+Multiple Methods:
+Create a class called Product with one static method called multiply. This method should take two integer parameters and return the product of those parameters. Your method could be used by the following main method. (Note that you don't supply this method, it will be supplied by the system.)
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);        
+        // Ask the user to enter a number
+        System.out.print("Enter two numbers: ");        
+        // Read in the number 
+        int a = in.nextInt();
+        int b = in.nextInt();        
+        // call the multiply method of the Product class.
+        int result = Product.multiply(a, b);        
+        System.out.println(a + " times " + b + " is " + result);
+    }
+}
+Note that you don't create any main method. Just the multiply method which will be called by another method.
+If you get an error, it could be because
+1. You didn't create a Product class.
+2. The Product class didn't have a multiply method.
+3. The multiply method wasn't public static.
+4. The multiply method didn't have two int parameters and didn't return an int variable.
+
+Inchy Methods:
+Create a class called Measure with one static method called inches2CMs. This method should take one floating parameter (a double) representing an inch value and return the equvalent number of centimetres. Your program could be called by the following main program.
+import java.util.Scanner;
+public class Inces2CMs
+{
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);        
+        // Ask the user to enter a number
+        System.out.print("Enter a number: ");        
+        // Read in the number 
+        double num = in.nextDouble();        
+        double result = Measure.inches2CMs(num);        
+        System.out.println(num + " inches is " + result + " CMs.");
+    }
+}
+
+Hot Methods:
+Write a program called Temp.java which reads in a temperature in Fahrenheit and converts it to Celsius. However, you should use a method of the Convert class called fahr2cels() which takes a double parameter and returns a double. Use the method as follows:
+Convert.fahr2cels(32)
+You could assign this to a variable called temp with the following assignment statement:
+temp = Convert.fahr2cels(32);
+Example usage:
+$ java Temp
+Give me a Fahrenheit temperature: 32.0
+In Celsius that would be: 0.0
+Note, this is very short and simple. You do not need to write the Convert class - that is supplied. You just have to use it. 
+
+MoreTeens:
+Create a class called Teen with one static method called isTeenager. This method should take one integer parameter representing an age and return a boolean value, true if the age is that of a teenager and false otherwise.
+Your code could be used as in the following statement:
+   System.out.println(Teen.isTeenager(12));
+   
+One to Ten:
+Write a program which will print out the numbers 1 to 10 inclusive using a while loop.
+Here is what the program would do when run.
+$ java OneToTen
+1 2 3 4 5 6 7 8 9 10
+Your program should follow the following template:
+public class OneToTen
+{
+    public static void main(String [] args)
+    {
+        // Use a loop to print out the numbers
+        // We will use i as the loop variable
+        int i = ???; // Starting value
+        while(???) // Keep looping as long as some condition is true
+        {
+            System.out.print(i + " ");
+            i++; // Modify i
+        }       
+        System.out.println(); // Finish with a new line.
+    }
+}
+
+Five to Twenty:
+Write a program which will print out the numbers 5 down to 20 inclusive. Use a while loop.
+Here is what the program would do when run.
+$ java FiveToTwenty
+5 6 7 8 9 11 12 13 14 15 16 17 18 19 20 
+$
+
+Ten to One:
+Write a program which will print out the numbers 10 down to 1 inclusive. Use a while loop appropriately.
+Here is what the program would do when run.
+$ java TenToOne
+10 9 8 7 6 5 4 3 2 1
+$ 
+
+One to Num:
+Write a program which will read in a positive integer, num, from the user and then print the numbers from 1 up to n. Use a while loop appropriately.
+Here is what the program would do when run.
+$ java OneToNum
+Enter a number: 7
+1 2 3 4 5 6 7 
+$ 
+
+Num to Twenty:
+Write a program which will read in a positive integer, num, and then, using a while loop, print the numbers from num up to twenty
+Here is what the program would do when run.
+$ java NumToTwenty
+Enter a number: 7
+7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+$
+
+For One to Ten:
+Write a program which will print out the numbers 1 to 10 inclusive using a for loop.
+Here is what the program would do when run.
+$ java OneToTen
+1 2 3 4 5 6 7 8 9 10
+
+For Five to Twenty:
+Write a program which will print out the numbers 5 down to 20 inclusive using a for loop.
+$ java FiveToTwenty
+5 6 7 8 9 11 12 13 14 15 16 17 18 19 20 
+$
+
+For Ten to One:
+Write a program which will print out the numbers 10 down to 1 inclusive using a for loop.
+Here is what the program would do when run.
+$ java TenToOne
+10 9 8 7 6 5 4 3 2 1
+$
+
+For One to Ten:
+Write a program which will read in a positive integer, num, from the user and then print the numbers from 1 up to n. Your program should use a for loop.
+Here is what the program would do when run.
+$ java OneToNum
+Enter a number: 7
+1 2 3 4 5 6 7 
+$ 
+
+For Num to Twenty:
+Write a program which will read in a positive integer, num, and then print the numbers from num up to twenty. Your program should use a for loop.
+Here is what the program would do when run.
+$ java NumToTwenty
+Enter a number: 7
+7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+$ 
+
+Penultimate Number:
+Write a program which will keep reading in numbers until it comes to a -1. Your program should then print the number which was just before the -1.
+Here is what the program would do when run.
+$ java NoMinusOne
+Enter numbers: 30 15 4 -6 9 -1
+The penultimate number was: 9
+$
+$ java NoMinusOne
+Enter numbers: 5 100 -1
+The penultimate number was: 100
+$
+
+How Many Numbers:
+Write a program which will keep reading in numbers until it comes to a -1. Your program should then print how many numbers were entered (don't include the -1).
+Here is what the program would do when run.
+$ java HowManyNumbers
+Enter numbers: 30 15 4 -6 9 -1
+5 numbers were entered.
+$
+$ java HowManyNumbers
+Enter numbers: 5 100 -1
+2 numbers were entered.
+$
+
+String Reproduction:
+Write a program which reads a positive integer, n, and a string s. Produce a new string which is n copies of s and print out this new string.
+Example
+java StringReproduction
+Enter a number and a string: 5 Hello
+HelloHelloHelloHelloHello
+The new string is five copies of "Hello".
+
+Split the String:
+Write a program which asks the user to enter a word and which prints out every consecutive pair of letters starting from the first. For example, the pairs of letters of the word "Hello" would be: He, el, ll, and lo.
+Example
+java SplitWord
+Enter a phrase: Hello
+He
+el
+ll
+lo
+Example eile
+java SplitWord
+Enter a phrase: hiwdiehidiehi
+hi
+iw
+wd
+di
+eh
+hi
+di
+ie
+eh
+hi
+
+I Only Want the Highs:
+Write a program which asks the user to enter a word and examines every pair of letters, but only prints them out if they are "hi". For example, if the word was shillyhilly, there would be two "hi"s and so two would get printed.
+Example
+java OnlyHigh
+Enter a word: shillyhilly
+hi
+hi
+Note that you may need to compare strings. If you want to see is a string x equal to a string y, then you cannot say:
+   if(x == y) // Doesn't work with strings
+Instead, you need
+   if(x.equals(y)) // The correct way
+or, if you prefer
+   if(y.equals(x)) // same difference
+   
+Hi Counter:
+Write a program which asks the user to enter a phrase and which counts the number of occurrences of the string "hi" within that word.
+Example
+java HiCounter
+Enter a phrase: howdiehidieho
+1
+Note that howdiehidieho contains a single "hi" in the middle, so only 1 "hi" was counted.
+Example eile
+java HiCounter
+Enter a phrase: hiwdiehidiehi
+3
+Hint: There are a few ways to do this. Imagine that you have to solve this problem yourself. Do it manually. Then try and find out how you do it. Note that you may need to compare strings. If you want to see is a string x equal to a string y, then you cannot say:
+   if(x == y) // Doesn't work with strings
+Instead, you need
+   if(x.equals(y)) // The correct way
+or, if you prefer
+   if(y.equals(x)) // same difference
+Think about it and it will all come together. You may need the substring method!
+
+First Middle Last:
+Write a program which reads in a word, and then prints the first letter of that word, then the middle letters of the word, and finally the last letter of the word.
+Example:
+jave FirstMiddleLast
+Enter a word: Hello
+H
+ell
+o
+The first letter of the word, H, is printed, then the middle letters and finally the last letter, the 'o'. The word will have at least two letters.
+
+First Shall Be Last:
+Write a static method for a Test class called firstShallBeLast which takes a string, swaps the first and last characters and returns this string.
+Your method will be called by another Java class as follows:
+public class main
+{
+   public static void main(String [] args)
+   {
+      String s = "abcdef";
+      String newString = Test.firstShallBeLast(s);
+      System.out.println("Test.firstShallBeLast(" + s + ") is " + newString);
+   }
+}
+This program would print:
+Test.firstShallBeLast(abcdef) is fbcdea
+Note that the first character, 'a', has been swapped with the last, 'f'.
+
+Largest Number:
+Write a static method for a Test class called largest which takes three integer parameters and returns the largest.
+Your method will be called by another Java class as follows:
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String [] args)
+    {
+        // Create a scanner object
+        Scanner in = new Scanner(System.in);        
+        // Read in the three numbers
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int c = in.nextInt();
+        System.out.println("Test.largest(" + a + ", " + b + ", " + c + ") is " + Test.largest(a, b, c));
+    }
+}
+
+Sum Numbers:
+Create a class called SumNumbers which will read in a number and print out the sum of all numbers up to that number. For example, if the input is 5, then the program should print out the sum of the numbers from 1 to 5, which is 1+2+3+4+5, or 15.
+Here is an example of the program running:
+java SumNumber
+Enter a number: 4
+The sum of the number from 1 to 4 is 10
+
+Find Matching Letters:
+Write a program which asks the user to enter two phrases, each on a separate line, and which counts the number of times a character from one phrase matches another. You may assume that the two phrases are the same length.
+Example
+java FindMatchingLetters
+Enter two lines:
+these
+those
+There are 4 corresponding characters.
+The corresponding characters are 't', 'h', 's and 'e'
+Note that there is no space after the colon on the first line.
+
+Only Average:
+Write a program which reads in a series of numbers and then prints out the average of the numbers
+Example usage:
+$ java OnlyAverage
+How many numbers: 4
+Enter 4 numbers: 10 20 25 5
+The average is 15.0
+Notes
+The numbers in bold are entered by the user of the program.
+You don't need an array to solve this problem.
+
+Above Average:
+Write a program which reads in a series of numbers and then prints only the numbers which are above average
+Example usage:
+$ java AboveAverage
+How many numbers: 4
+Enter 4 numbers: 10 20 25 5
+The above average numbers are: 20.0 25.0
+Note that you do need an array to solve this problem.
+
+Add Them All:
+Write a static method which takes as a parameter an integer array and which returns the sum of all the elements in the array. Put the method in a Test class
+Your method would be called as follows
+   int [] num = {2, 3, 5, 7, 11, 13, 17};
+   // Call the method to sum the array
+   Test.getSum(num);
+   
+How Many Fives:
+Write a static method which takes as a parameter an integer array and which returns the number of the elements in the array which are exactly 5. Put the method in a Test class
+Your method would be called as follows
+   int [] num = {2, 3, 5, 7, 11, 13, 17, 5, 0, -5, 5};
+   // Call the method to count the fives
+   int result = Test.countFives(num);
+   // There are three fives in this array, so result will have a value of 3. (If the countFives method works)
+   
+How Many Evens:
+Write a static method which takes as a parameter an integer array and which returns the number of the elements in the array which are even. Put the method in a Test class
+Your method would be called as follows
+   int [] num = {2, 3, 5, 4, 11, 13, 10, 5, 10, -5, 5};
+   // Call the method to count the even numbers
+   int result = Test.countEven(num);
+   // There are four even numbers in this array, so result will have a value of 4. (If the method works)
+   
+Reversed Numbers:
+Write a program which reads in a series of positive integers and then prints them out in reverse order
+Example usage:
+$ java Reverse
+How many numbers: 4
+Enter 4 numbers: 10 20 25 5
+The numbers reversed are: 5 25 20 10
+Note that you do need an array to solve this problem.
+
+Reverse Method:
+Write a static method which has an array parameter and which reverses an integer array. Put the method in a Test class
+Your method would be called as follows
+   int [] num = {2, 3, 5, 7, 11, 13, 17};
+   // Call the method to reverse the array
+   Test.reverse(num);
+Your method should not print anything. It will be called by the following program:
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String [] args)
+    {
+        // Create a scanner object
+        Scanner in = new Scanner(System.in);        
+        System.out.print("How many numbers: ");
+        int len = in.nextInt();        
+        int [] num = new int[len];
+        System.out.print("Enter " + len + " numbers: ");
+        for(int i = 0; i < num.length; i++)
+            num[i] = in.nextInt();            
+        Test.reverse(num);
+        System.out.print("The numbers reversed are:");
+        for(int i = 0; i < num.length; i++)
+            System.out.print(" " + num[i]);            
+        System.out.println();
+    }
+}
+This program will read in the array and use your method to reverse the array. Then it will print out the result.
+
+Are We the First:
+Write a method called isFirstLetter which takes as parameters a word and a letter and returns true if the word starts with the letter and false if it doesn't.
+The method should be a static method of a Word class and could be used as shown in the following program (see section in bold):
+import java.util.Scanner;
+public class TestFirstLetter
+{
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);        
+        // Ask the user for a word and a letter
+        System.out.print("Enter a word and a letter: ");
+        String word = in.next();
+        char letter = in.next().charAt(0);        
+        if(Word.isFirstLetter(word, letter))
+            System.out.println(letter + " is the first letter of " + word);
+        else
+            System.out.println(letter + " is not the first letter of " + word);
+    }
+}
+And the program would be executed as follows: 
+$ java TestFirstLetter
+Enter a word and a letter computer b
+b is not the first letter of the word computing.
+or
+$ java TestFirstLetter
+Enter a word and a letter dog d
+d is the first letter of the word dog.
+Note that your method will actually be tested using the program below:
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String []args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a word and a letter:");
+        String word = in.next();
+        String letters = in.next();        
+        char first = 0;
+        String notFirst = "";
+        for(int i = 0; i < letters.length(); i++)
+            if(Word.isFirstLetter(word, letters.charAt(i)))
+                first = letters.charAt(i);
+            else
+                notFirst += letters.charAt(i); // add to list of letters         
+        System.out.println(first + " is the first letter of " + word + ".");
+        System.out.println(notFirst + " are not the first letter of " + word + ".");
+    }
+}
+
+Is it a Letter:
+Write a method called containsLetter which takes as parameters a word and a letter and returns true if the word contains the letter and false if it doesn't.
+The method should be a static method of a Word class and could be used as shown in the following program (see section in bold):
+import java.util.Scanner;
+public class TestContainsLetter
+{
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);       
+        // Ask the user for a word and a letter
+        System.out.print("Enter a word and a letter: ");
+        String word = in.next();
+        char letter = in.next().charAt(0);        
+        if(Word.containsLetter(word, letter))
+            System.out.println(letter + " is in " + word);
+        else
+            System.out.println(letter + " is not in " + word);
+    }
+}
+And the program would be executed as follows: 
+$ java TestContainsLetter
+Enter a word and a letter computer b
+b is not in computing.
+or
+$ java TestContainsLetter
+Enter a word and a letter dog d
+d is in dog.
+Note that your method will actually be tested using the program below:
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String []args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a word and a letter:");
+        String word = input.next();
+        String letters = input.next();        
+        String in = "";
+        String notIn = "";
+        for(int i = 0; i < letters.length(); i++)
+            if(Word.containsLetter(word, letters.charAt(i)))
+                in += letters.charAt(i);
+            else
+                notIn += letters.charAt(i); // add to list of letters         
+        System.out.println(in + " are in " + word + ".");
+        System.out.println(notIn + " are not in " + word + ".");
+    }
+}
+
+All Done:
+Write a method called allDone which takes as parameters a word and a string representing a sequence of guesses and returns true if all the letters of the word have been guessed, that is are contained in the sequence of guesses. The method should return false if not all letters have been guessed. It is recommended that you make use of the containsLetter method from the previous question.
+The method should be a static method of a Word class and could be used as shown in the following program (see section in bold):
+import java.util.Scanner;
+public class TestAllDone
+{
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);        
+        // Ask the user for a word and a letter
+        System.out.print("Enter a word and a letter: ");
+        String word = in.next();
+        String guessed = in.next();        
+        if(Word.allDone(word, guessed))
+            System.out.println("You got all the letters!");
+        else
+            System.out.println("Keep guessing!");
+    }
+}
+And the program could be executed as follows: 
+$ java TestAllDone
+Enter a word and some guesses: computer putmocre
+You've got all the letters!
+or
+$ java TestAllDone
+Enter a word and some guesses: dog jkuo
+Keep guessing!
+Note that your method will actually be tested using the program below:
+// Program to test the allDone method.
+import java.util.Scanner;
+public class Main
+{
+    // generate the alphabet
+    static String getAlphabet()
+    {
+        String alphabet = "";
+        for(int i = 0; i < 26; i++)
+            alphabet += (char) ('a' + i);            
+        return alphabet;
+    }    
+    static void test(String word, String guesses)
+    {
+        System.out.println("allDone(\"" + word + "\", \"" + guesses + "\") is " + Word.allDone(word, guesses));
+    }    
+    public static void main(String []args)
+    {
+        Scanner input = new Scanner(System.in);
+        String alphabet = getAlphabet();
+        System.out.println("Enter a word:");
+        String word = input.next();        
+        // 1. Try the complete alphabet
+        test(word, alphabet);
+        // 2. Try an empty string
+        test(word, "");        
+        // 3. Try leaving out one letter each time (almost right)
+        for(int miss = 0; miss < word.length(); miss++)
+        {
+            String guesses = "";
+            for(int i = alphabet.length() - 1; i >= 0; i--)
+                if(alphabet.charAt(i) != word.charAt(miss))
+                    guesses += alphabet.charAt(i);                    
+            test(word, guesses);
+        }
+    }
+}
+
+Show Me the Letter:
+In a hangman game, when the player guesses a letter correctly, they are shown where the letter is in the word. For example, if the word is computer and the player guesses the letter 'm', then the player is shown: 
+__m_____
+with an underscore to represent letters that haven't been guessed yet. 
+Write a method called showLetter which takes as parameters a word and a guess and returns a string containing underscores representing every letter in word unless that letter is guess in which case it shows the guessed letter..
+The method should be a static method of a Word class and could be used as shown in the following program (see section in bold):
+import java.util.Scanner;
+public class TestFirstLetter
+{
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);        
+        // Ask the user for a word and a letter
+        System.out.print("Enter a word and a letter: ");
+        String word = in.next();
+        char guess = in.next().charAt(0);        
+        String show = Word.showLetter(word, guess);
+        System.out.println(show);
+    }
+}
+And the program would be executed as follows: 
+$ java TestShowLetter
+Enter a word and a letter computer m
+__m_____
+or
+$ java TestShowLetter
+Enter a word and a letter better e
+_e__e_
+Note that in the second example, two 'e's are shown as 'e' occurs twice in "better".
+Note 2: Your method will actually be tested with the program below:
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String []args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a word:");
+        String word = input.next();
+        for(int i = 0; i < word.length(); i++)
+            System.out.println(Word.showLetter(word, word.charAt(i)));
+    }
+}
+This code goes through every letter in word and uses that as the guessed letter. It then invokes your method and prints the result for testing.
+
+Show me the Letters:
+This time, you should write a showLetters method, which instead of taking one character, takes a string of characters representing a sequence of guesses and returns a new string with any guessed letters in their correct position and unguessed letters shown as underscores. 
+For example, the method call:
+Word.showLetters("computing", "gpo");
+would display
+_o_p____g
+That is, any letters guessed are shown in their correct location and an underscore represents letters that are not guessed. 
+So, write a method called showLetters which takes as parameters two strings, word and guesses and returns a new string containing underscores representing every letter in word unless that letter is in guesses.
+The method should be a static method of a Word class and could be used as shown in the following program (see section in bold):
+import java.util.Scanner;
+public class TestShowLetters
+{
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);        
+        // Ask the user for a word and some guesses
+        System.out.print("Enter a word and some guesses: ");
+        String word = in.next();
+        String guesses = in.next();        
+        String show = Word.showLetters(word, guesses);
+        System.out.println(show);
+    }
+}
+And the program would be executed as follows: 
+$ java TestShowLetters
+Enter a word and some guesses: computing gpo
+_o_p____g
+Note : Your method will actually be tested with the program below:
+import java.util.Scanner;
+public class Main
+{
+    // generate the alphabet
+    static String getAlphabet()
+    {
+        String alphabet = "";
+        for(int i = 0; i < 26; i++)
+            alphabet += (char) ('a' + i);
+            
+        return alphabet;
+    }    
+    static boolean contains(String word, char let)
+    {
+        for(int i = 0; i < word.length(); i++)
+            if(word.charAt(i) == let)
+                return true;
+        return false;
+    }    
+    public static void main(String []args)
+    {
+        Scanner input = new Scanner(System.in);
+        String alphabet = getAlphabet();
+        System.out.println("Enter a word:");
+        String word = input.next();
+        String guesses = "";    // Start with no guesses
+        // 1. try every second letter in the alphabet
+        for(int i = 0; i < alphabet.length(); i += 2)
+            if(contains(word, alphabet.charAt(i)))
+            {
+                guesses += alphabet.charAt(i); // Try this letter
+                System.out.println(Word.showLetters(word, guesses));
+            }            
+        // 2. Try the same thing backwards
+        guesses = ""; // reset guesses
+        for(int i = alphabet.length() - 1; i >= 0; i -= 2)
+            if(contains(word, alphabet.charAt(i)))
+            {
+                guesses += alphabet.charAt(i); // Try this letter
+                System.out.println(Word.showLetters(word, guesses));
+            }
+        // 3. try no guesses (i.e. empty string)
+        System.out.println(Word.showLetters(word, ""));
+        // 4. all letters 
+        for(int i = 0; i < alphabet.length(); i++)
+            if(contains(word, alphabet.charAt(i)))
+                guesses += alphabet.charAt(i); // Try this letter
+        System.out.println(Word.showLetters(word, guesses));
+    }
+}
+This code reads in a word and then tests your method in four different ways
+Every second letter in alphabetic order.
+Every second letter in reverse alphabetic order.
+No letters
+Every letter in the word, though in alphabetic order.
+
+Play it Again Sam:
+Write a rudimentary Hangman game. In this game, your program will present a word to the user who will guess a letter at a time. Your program will keep them informed of their progress by showing them which letters of the word are guessed.
+The game might go something like this, with the user's guesses shown in bold.
+$java Hangman
+The word is
+___
+Guess a letter:
+o
+_o_
+Guess a letter:
+g
+_og
+Guess a letter:
+e
+_og
+Guess a letter:
+d
+Well Done, the word was dog.
+Note that when the user entered 'e', which doesn't appear in the word, he was just asked to guess again.
+You should write your program in a Hangman class. You will be supplied with a Word class which contains the methods allDone() and showLetters() which are implementations of your earlier methods. There will also be a getWord() method which returns a word that the user is to guess. using the allDone() method and the showLetters() methods that you wrote earlier. In addition, you will be supplied with a getWord() method which will return the word to be guessed.
+Hints:
+You will read in a number and use that number to get the word to guess using code such as: 
+        int wordSeed = in.nextInt();
+        String word = Word.getWord(wordSeed);
+You can use 
+in.next().charAt(o)
+to read one character from the input (assuming that in is an instance of Scanner).
+You could keep all the user's guesses in a String. That would be enable you to use the allDone() and showLetters() methods effectively. You can easily append a character to a string using the "+" operator. E.g. if let is a char and sentence is a String then 
+sentence += let
+will append let to sentence.
+There should be no spaces at the end of any of your print statements.
+Think carefully about the structure of your program. Will it need a loop? If so, what kind of loop? What happens in the various parts of the loop (initialisation, body, increment)
+
+The Bank Account Class:
+Create a BankAccount class. You will need to create a file called BankAccount.java which contains your class. It should have one field called balance which will represent the current balance of the account. The balance should be represented by a double type. Your class need only contain this one field. It doesn't need any constructors or methods. Your class will be tested by the following program:
+public class TestBankAccount
+{
+   public static void main(String [] args)
+   {
+      BankAccount currentAccount = new BankAccount();
+      currentAccount.balance = 60.05;
+      System.out.println("The balance is " + currentAccount.balance);
+      currentAccount.balance = currentAccount.balance + 10;
+      System.out.println("The balance is " + currentAccount.balance);
+   }
+}
+The program will be compiled using javac TestBankAccount.java and run using java TestBankAccount The output should be:
+$ java TestBankAccount 
+The balance is 60.05
+The balance is 70.05
+Hints:
+You will be asked to provide a file name. Choose BankAccount.java
+This problem is quite easy. If you get something wrong it will likely cause a compile error as the TestBankAccount program will assume that it is correctly written. It would be a good idea to use the TestBankAccount.java file above in conjunction with your BankAccount.java file and compile it locally.
+
+The Constructor of Bank Account Class:
+Add a constructor to the BankAccount class. It should take a single parameter of type double which will be used to initialise the balance of the account. The BankAccount class will be tested by the following program:
+public class TestBankAccount
+{
+   public static void main(String [] args)
+   {
+      BankAccount currentAccount = new BankAccount(10000.00);
+      System.out.println("The balance is " + currentAccount.balance);
+   }
+}
+The program will be compiled using javac TestBankAccount.java and run using java TestBankAccount The output should be:
+$ java TestBankAccount 
+The balance is 10000.0
+Hints:
+Probably the best hint is to check the notes on constructors.
+
+Withdrawl Symptoms:
+Add a withdraw method to your BankAccount class. It will represent a withdrawal from your account and so the balance should be reduced appropriately. The method will return nothing and so should have a return type of void.
+Your BankAccount class will be tested by the following program:
+public class TestBankAccount
+{
+   public static void main(String [] args)
+   {
+      BankAccount currentAccount = new BankAccount(10000.00);
+      System.out.println("The balance is " + currentAccount.balance);
+      currentAccount.withdraw(100.00);
+      System.out.println("The balance is " + currentAccount.balance);
+   }
+}
+The program will be compiled using javac TestBankAccount.java and run using java TestBankAccount The output should be:
+$ java TestBankAccount 
+The balance is 10000.0
+The balance is 9900.0
+Hints:
+Probably the best hint is to check the notes on methods.
+
+Deposits:
+Add a deposit method to your BankAccount class. It will represent a deposit to your account and so the balance should be increased appropriately. The method will return nothing and so should have a return type of void.
+Your BankAccount class will be tested by the following program:
+public class TestBankAccount
+{
+   public static void main(String [] args)
+   {
+      BankAccount currentAccount = new BankAccount(10000.00);
+      System.out.println("The balance is " + currentAccount.balance);
+      currentAccount.deposit(100.00);
+      System.out.println("The balance is " + currentAccount.balance);
+   }
+}
+The program will be compiled using javac TestBankAccount.java and run using java TestBankAccount The output should be:
+$ java TestBankAccount 
+The balance is 10000.0
+The balance is 10100.0
+Hints:
+Probably the best hint is to check the notes on methods.
+
+MIA Bank:
+The MIA Bank has a special offer for all new accounts. It sets the initial balance to 100.00. Add a default (no args) constructor for the MIA bank which initialises the balance to 100.00. You should leave the existing constructor in place. Your class should have two constructors.
+Your BankAccount class will be tested by the following program:
+public class TestBankAccount
+{
+   public static void main(String [] args)
+   {
+      BankAccount account1 = new BankAccount(); // This uses the default constructor.
+      BankAccount account2 = new BankAccount(900); // This uses one argument constructor.
+      System.out.println("Account 1 has " + account1.balance);
+      System.out.println("Account 2 has " + account2.balance);
+   }
+}
+The program will be compiled using javac TestBankAccount.java and run using java TestBankAccount The output should be:
+$ java TestBankAccount 
+Account 1 has 100.0
+Account 2 has 900.0
+Hints:
+Probably the best hint is to check the notes on default constructors.
+
+toString or not toString:
+Add a toString method to your BankAccount class. It should return a string representing the account. The string should be exactly
+The balance is 
+followed by the balance.
+Your BankAccount class will be tested by the following program:
+public class TestBankAccount
+{
+   public static void main(String [] args)
+   {
+      BankAccount account = new BankAccount(); // This uses the default constructor.
+      System.out.println(account);
+      account.withdraw(25);
+      System.out.println(account);
+   }
+}
+The program will be compiled using javac TestBankAccount.java and run using java TestBankAccount The output should be:
+$java TestBankAccount 
+The balance is 100.0
+The balance is 75.0
+Hints:
+Probably the best hint is to check the notes on the toString method. Also, this method needs to be public.
+
+Setters and Getters:
+Add a setter and a getter to your BankAccount class. These methods should set and retrive the balance value appropriately.
+Your BankAccount class will be tested by the following program:
+public class TestBankAccount
+{
+   public static void main(String [] args)
+   {
+      BankAccount account = new BankAccount(); // This uses the default constructor.
+      account.setBalance(650.00);
+      System.out.println(account.getBalance());
+      account.withdraw(25);
+      System.out.println(account.getBalance());
+   }
+}
+The program will be compiled using javac TestBankAccount.java and run using java TestBankAccount The output should be:
+$java TestBankAccount 
+650.0
+625.0
+Hints:
+Probably the best hint is to check the notes on the toString method. Also, this method needs to be public.
+
+An Array of Students 1:
+The following code creates an array of students:
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group = {
+               new Student("John", 50),
+               new Student("Abby", 40),
+               new Student("Dylan", 20),
+               new Student("Carl", 70),
+               new Student("Maeve", 70),
+               new Student("Chris", 44),
+               new Student("James", 55),
+               new Student("Anne", 63),
+            };
+      Test.print(group);
+   }
+}
+A Student is defined as:
+public class Student
+{
+   String name;
+   int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+}
+You should create the method print in the Test class which will print out the names of all the students. The code is mostly given below:
+public class Test
+{
+   public static void print(Student [] student)
+   {
+      for(int i = 0; i < student.length; i++)
+         System.out.println(/* Insert your code here */);
+   }
+}
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents 
+John
+Abby
+Dylan
+Carl
+Maeve
+Chris
+James
+Anne
+Hints:
+You are given most of the code for this exercise, so it should be quite easy. However, make sure that you understand how the three classes work together.
+
+An Array of Students 2:
+This exercise is a slight modification on the previous exercise. This time, you need to print out the student marks instead of the names.
+As before, the following code creates an array of students:
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group = {
+               new Student("John", 50),
+               new Student("Abby", 40),
+               new Student("Dylan", 20),
+               new Student("Carl", 70),
+               new Student("Maeve", 70),
+               new Student("Chris", 46),
+               new Student("James", 55),
+               new Student("Anne", 63),
+            };
+      Test.print(group);
+   }
+}
+A Student is defined as:
+public class Student
+{
+   String name;
+   int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+}
+You should create the method print in the Test class which will print out the marks of all the students. 
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents 
+50
+40
+20
+70
+70
+46
+55
+63
+Hints:
+This is a straightforward modification of the previous exercise.
+
+An Array of Students 3:
+Again, this exercise is a slight modification on the previous exercise. This time, you need to print out the student marks followed by the name in brackets.
+As before, the following code creates an array of students:
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group = {
+               new Student("John", 50),
+               new Student("Abby", 40),
+               new Student("Dylan", 20),
+               new Student("Carl", 70),
+               new Student("Maeve", 70),
+               new Student("Chris", 46),
+               new Student("James", 55),
+               new Student("Anne", 63),
+            };
+      Test.print(group);
+   }
+}
+A Student is defined as:
+public class Student
+{
+   String name;
+   int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+}
+You should create the method print in the Test class which will print out the marks of all the students. 
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents 
+50 (John)
+40 (Abby)
+20 (Dylan)
+70 (Carl)
+70 (Maeve)
+46 (Chris)
+55 (James)
+63 (Anne)
+
+An Array of Shy Students:
+This time the Student class is defined differently. The mark and name fields are private so that you can't access them directly. Now, you must use the getName() amd getMark() accessor (AKA getter) methods. Modify your print method so that it uses the accessor methods.
+A Student is defined as:
+public class Student
+{
+   private String name;
+   private int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+   public String getName()
+   {
+      return name;
+   }
+   public int getMark()
+   {
+      return mark;
+   }
+}
+As before, the class that creates the array is similar to
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group = {
+               new Student("John", 50),
+               new Student("Abby", 40),
+               new Student("Dylan", 20),
+               new Student("Carl", 70),
+               new Student("Maeve", 70),
+               new Student("Chris", 46),
+               new Student("James", 55),
+               new Student("Anne", 63),
+            };
+      Test.print(group);
+   }
+}
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents 
+50 (John)
+40 (Abby)
+20 (Dylan)
+70 (Carl)
+70 (Maeve)
+46 (Chris)
+55 (James)
+63 (Anne)
+Hint: if you get an error about private access:
+error: name has private access in Student
+it is because you are trying to access the mark or name directly. You need to use the assessor methods.
+
+Honors Students:
+This time, you should print only the students who have a mark of 55 or more.
+Your program will be tested with code similar to the following:
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group = {
+               new Student("John", 50),
+               new Student("Abby", 40),
+               new Student("Dylan", 20),
+               new Student("Carl", 70),
+               new Student("Maeve", 70),
+               new Student("Chris", 46),
+               new Student("James", 55),
+               new Student("Anne", 63),
+            };
+      Test.printHonours(group);
+   }
+}
+A Student is defined as:
+public class Student
+{
+   private String name;
+   private int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+   public String getName()
+   {
+      return name;
+   }
+   public int getMark()
+   {
+      return mark;
+   }
+}
+You should create the method print in the Test class which will print out the marks of all the students. 
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents 
+70 (Carl)
+70 (Maeve)
+55 (James)
+63 (Anne)
+
+Fourty Somethings:
+Print only the students whose mark is forty something, i.e. a mark between 40 and 49 inclusive. Your method should be called printForties.
+Your program will be tested with code similar to the following:
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group = {
+               new Student("John", 50),
+               new Student("Abby", 40),
+               new Student("Dylan", 20),
+               new Student("Carl", 70),
+               new Student("Maeve", 70),
+               new Student("Chris", 46),
+               new Student("James", 55),
+               new Student("Anne", 63),
+            };
+      Test.printForties(group);
+   }
+}
+A Student is defined as:
+public class Student
+{
+   private String name;
+   private int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+   public String getName()
+   {
+      return name;
+   }
+   public int getMark()
+   {
+      return mark;
+   }
+}
+You should create the method print in the Test class which will print out the marks of all the students. 
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents 
+70 (Carl)
+70 (Maeve)
+55 (James)
+63 (Anne)
+
+So How Many Passed:
+Write a method which counts how many students received a passing mark.
+Your program will be tested with code similar to the following:
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group = {
+               new Student("John", 50),
+               new Student("Abby", 40),
+               new Student("Dylan", 20),
+               new Student("Carl", 70),
+               new Student("Maeve", 70),
+               new Student("Chris", 46),
+               new Student("James", 55),
+               new Student("Anne", 63),
+            };
+      int numPassed = Test.numberPasses(group);
+      System.out.println(numPassed + " students passed out of " + group.length);
+      System.out.println("That is an " + 100.0 * numPassed / group.length + "% pass rate.");
+   }
+}
+A Student is defined as:
+public class Student
+{
+   private String name;
+   private int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+   public String getName()
+   {
+      return name;
+   }
+   public int getMark()
+   {
+      return mark;
+   }
+}
+Provide a method to the Test class called numberPasses(). It will have one parameter, an array of Students. It will return the number of students who have received a mark of 40 or higher.
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents
+7 students passed out of 8
+That is an 87.5% pass rate.
+
+Best Student:
+Write a method which finds the best student from an array of students.
+Your program will be tested with code similar to the following:
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group = {
+               new Student("John", 50),
+               new Student("Abby", 40),
+               new Student("Dylan", 20),
+               new Student("Carl", 70),
+               new Student("Maeve", 70),
+               new Student("Chris", 46),
+               new Student("James", 55),
+               new Student("Anne", 63),
+            };
+      Student best = Test.getBestStudent(group);
+      System.out.println("The best student was " + best.getName() + " with a mark of " + best.getMark());
+   }
+}
+A Student is defined as:
+public class Student
+{
+   private String name;
+   private int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+   public String getName()
+   {
+      return name;
+   }
+   public int getMark()
+   {
+      return mark;
+   }
+}
+Add a method to the Test class called getBestStudent(). It will have one parameter, an array of Students. It will return the student with the highest mark. If more than one student has that mark, then it will return the first student in the array with that mark.
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents
+The best student was Carl with a mark of 70
+Note that although two students have a mark of 70, only the first is selected.
+
+Average Mark of Passing Students:
+Write a method which finds the average mark of all students who have passed. Your should not consider the marks of any student who has failed.
+Your program will be tested with code similar to the following:
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group = {
+               new Student("John", 50),
+               new Student("Abby", 40),
+               new Student("Dylan", 20),
+            };
+      double passingAverage = Test.getPassingAverage(group);
+      System.out.println("The average mark of all students who passed is " + passingAverage);
+   }
+}
+A Student is defined as:
+public class Student
+{
+   private String name;
+   private int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+   public String getName()
+   {
+      return name;
+   }
+   public int getMark()
+   {
+      return mark;
+   }
+}
+Create a Test class with one static method which takes an array of students and returns the average mark of all students who have passed.
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents
+The average mark of all students who passed is 45.0
+Here, only two students have passed with marks of 50 and 40. The average of those two marks is 45.
+
+Print Out All Command Line Arguments:
+Write a program which prints out its command line arguments, one argument per line.
+A sample run would be:
+$ java Args Hello 5 58-78-rs
+args[0] = Hello
+args[1] = 5
+args[2] = 58-78-rs
+In this case, there are three arguments: "Hello", "5" and "58-78-rs". Your program should print each argument as shown above. You should create a class called Args in a file called Args.java
+
+Reverse the Command Line Arguments:
+Write a program which prints out its command line arguments in reverse order.
+A sample run would be:
+$ java ReverseArgs Hello 5 58-78-rs
+args[2] = 58-78-rs
+args[1] = 5
+args[0] = Hello
+Note that the arguments are printed in reverse order.
+
+Sum the Command Line Arguments:
+Write a program which will take a set of command line parameters representing integers, total them all up and return the sum of all the integers
+A sample run would be:
+$ java TotslArgs 5 1 10
+The sum of all the args is 16.
+This is tricky, because the arguments start as Strings and you have to convert them to integers if you want to do arithmetic with them. There are a few ways to convert Strings to ints, but the simplest is probably the parseInt method of the Integer class. This can be used as follows:
+   String s = "25";
+   int num = Integer.parseInt(s);  // This will take the String, s, which is "25" and convert it to the integer 25.
+   
+Generating Exceptions:
+Create a program which generates an ArrayIndexOutOfBoundsException.
+A sample run of your program would look like:
+$ java ExceptionMaker
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
+	at ExceptionMaker.main(ExceptionMaker.java:5)
+Your message doesn't have to be the same, you just have to generate an exception.
+
+Catch the Exception:
+Examine the following class:
+public class Broken
+{
+   // method generates an exception
+   public void cracked()
+   {
+      int [] zap = new int[10];
+      System.out.println("Excepting!");
+      System.out.println(zap[10]);
+   }
+}
+This code will generate an Exception as can be seen when the following main method creates an instance of the Broken class and calls the cracked method.
+public class Catch
+{
+   public static void main(String [] args)
+   {
+      Broken broke = new Broken();
+      System.out.println("Testing");
+      broke.cracked();
+   }
+}
+When the program is run, the following is printed. Note where the exception occurs.
+$ java Catch 
+Testing
+Excepting!
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 10
+	at Broken.cracked(Broken.java:8)
+	at Catch.main(Catch.java:8)
+You are to modify the main method so that it catches the exception. When the exception is caught, just print: "Caught the exception."
+Sample run:
+$ java Catch
+Testing
+Excepting!
+Caught the exception.
+$
+Note that the cracked() method printed the Excepting! line.
+
+All the Exceptions:
+This time the cracked method may throw a variety of Runtime Exceptions: ArrayIndexOutOfBoundsException, NullPointerException and ArithmeticException
+public class Broken
+{
+   // method generates an exception
+   public void cracked()
+   {
+      // This code generates one of three Runtime Errors. Your code should catch them.
+      // Invisible code
+   }
+}
+Your program must catch all three Exceptions and print out the corresponding Exception name. Also, you should have a finally clause and print "Finally!" when you reach the finally clause.
+public class Catch
+{
+   public static void main(String [] args)
+   {
+      Broken broke = new Broken();
+      System.out.println("Testing");
+      // Modify the code to catch the exceptions generated by Broken.cracked().
+      broke.cracked();
+   }
+}
+Hint: You could just run the unmodified Catch program and see what it prints and what it should print, and then fix it accordingly. Note also that the cracked method prints out one line which starts with Excepting, so don't panic if you see that there.
+
+Creation:
+A class Date has the following definition:
+public class Date
+{
+   private int day;
+   private int month;
+   private int year;
+   public toString()
+   {
+      return day + "/" + month + "/" + year;
+   }
+}
+This class obviously needs a constructor. Create a constructor which takes three integer values and initialises the date appropriately. Once you have written the constructor, the following code should work:
+Date bigBomb = new Date(6, 8, 1945);
+System.out.println(bigBomb);
+
+Default Constructor:
+Add a default constructor which initialises the date to beginning of this millenium. The following code should work.
+Date beginning = new Date();
+System.out.println(beginning);
+This code should print
+1/1/2000
+
+String Constructor:
+Create a constructor which reads in a string containing three integers and initialises the Date appropriately.
+String input = "21 9 2015";
+System.out.println(new Date(input));
+This code should print
+21/9/2015
+Note that you will need to split the string in substrings. You can do this a few ways, but the simplest is to use the split method which returns an array of the strings.
+
+Before or After:
+Write a boolean method, called isOnOrAfter, which takes a date parameter and returns true if the date is on or after the parameter, and false if it is not. Note that you will also need the String constructor from the previous exercise.
+Date day1 = new Date("27 7 2006")
+Date day2 = new Date("27 7 2007")
+System.out.println(day1.isOnOrAfter(day2)); // prints false. day1 is not after day2
+System.out.println(day2.isOnOrAfter(day1)); // prints true. day2 is after day1
+
+Latest Date:
+Add a main method to your Date class which reads a sequence of dates and displays the oldest date. For example, if the following dates were read from the input:
+   1  1 1890
+   1  1 2000
+   2  1 2000
+   30 12 1999
+Then the latest date is 2/1/2000 and so your program should print:
+2/1/2000
+Be careful with your main method filters out empty strings.
+
+Middle:
+Given the Point class below:
+public class Point
+{
+   private double x;
+   private double y;
+   public Point(double newX, double newY)
+   {
+      x = newX;
+      y = newY;
+   }
+   public String toString()
+   {
+      return "(" + x + ", " + y + ")";
+   }
+}
+Write a midPoint method of the point class which calculates the mid point between the point and another point which is passed as a parameter. The method should return a new Point representing the mid point. The will be called by the following testing class method:
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String [] args)
+   {
+      Scanner in = new Scanner(System.in);
+      // Declare and read in two sets of coordinates
+      double x1 = in.nextDouble(), y1 = in.nextDouble();
+      double x2 = in.nextDouble(), y2 = in.nextDouble();
+      // Now create two points from these coordinates
+      Point p1 = new Point(x1, y1);
+      Point p2 = new Point(x2, y2);
+      Point middle = p1.midPoint(p2);
+      System.out.println("The midpoint of " + p1 + " and " + p2 + " is " + middle);
+   }
+}
+
+24 Hours:
+Create a class to represent a 24 hour time. This will be represented by a 4 digit string, where the first pair of digits represents the hour (0 to 23) and the second pair represents the number of minutes (0-59). For example the time "2359" is a minute before midnight.
+Your class should have a: 
+constructor which initialises the time from a 4 digit String.
+boolean method called isLater which returns true if passed a later time object and false otherwise.
+a toString method which returns a String representation of the time. This should be in the format hh:mm with two digits for the time and two digits for the minutes.
+public class Time
+{
+   // Private variables
+   // Constructor (with a String parameter)
+   // isLater(Time otherTime) // boolean method to compare two times
+   // String toString() // return a String representation of the time (hh:mm)
+}
+Your class will be tested in a method similar to the following
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String [] args)
+   {
+      Scanner in = new Scanner(System.in);
+      String line1 = in.nextLine();
+      String line2 = in.nextLine();
+      Time time1 = new Time(line);
+      Time time2 = new Time(line);
+      if(time1.isLater(time2))
+         System.out.println(time1 + " is later than " + time2);
+      else
+         System.out.println(time1 + " is not later than " + time2);
+   }
+}
+
+Period:
+You are now to create a Period class which represents a period of time. It has a start time and an end time (both in 24 hour format) and where the start time is not later than the end time. You may assume that the Time class exists and is functioning correctly.
+Your class should have: 
+a constructor which initialises the Period from two times
+a boolean method called overlaps which determines whether two periods overlap. The method returns true if there is an overlap and false otherwise.
+a toString method which returns a String representation of the Period. This should be in the format start -> end. For example, if the start time was 10:00 and the end time was 12:00, then the period would look like 
+10:00 -> 12:00
+(Remember that the time class will look after printing the time.)
+Your class will look like the following
+public class Period
+{
+   // Private variables
+   // Constructor (with two Time parameters)
+   // overlaps(Period otherPeriod) // boolean method to check if two periods overlap
+   // Think carefully about the overlap condition. Use the isLater method of time.
+   // It might help if you draw diagrams
+   // String toString() // return a String representation of the Period
+}
+Your class will be tested in a method similar to the following
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String [] args)
+   {
+      Scanner in = new Scanner(System.in);
+      String line1 = in.nextLine();
+      String line2 = in.nextLine();
+      Time time1 = new Time(line1);
+      Time time2 = new Time(line2);
+      Period p1 = new Period(time1, time2);
+      System.out.println("Period 1 is " + p1);
+      // Read a new set of times
+      line1 = in.nextLine();
+      line2 = in.nextLine();
+      time1 = new Time(line1);
+      time2 = new Time(line2);
+      Period p2 = new Period(time1, time2);
+      System.out.println("Period 2 is " + p2);
+      if(p1.overlaps(p2))
+         System.out.println("They overlap");
+      else
+         System.out.println("They do not overlap");
+   }
+}
+
+Greetings:
+Here is a Cat class:
+public class Cat
+{
+    private String name;    
+    public Cat(String n)
+    {
+        name = n;
+    }    
+    public String toString()
+    {
+        return "cat: " + name;
+    }
+}
+and here is an interface:
+public interface Polite
+{
+    // The hello method prints something.
+    public void hello();
+}
+Modify the Cat class so that it implements the polite interface. Your class will be used in the following program:
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Polite cat = new Cat("Charlie");        
+        System.out.println("1 " + cat);        
+        cat.hello();
+    }
+}
+
+Type Errors:
+Given the same Cat class, Polite interface and main method from the previous exercise, remove the implements statement from the Cat class to generate an error as follows:
+Main.java:5: error: incompatible types
+Note that this is a trivially easy exercise. If you take longer than 2 minutes at it, then you haven't read the description properly.
+
+Greetings 2:
+Here is a Cat class:
+public class Cat implements Strange
+{
+    private String name;    
+    public Cat(String n)
+    {
+        name = n;
+    }    
+    public String toString()
+    {
+        return "cat: " + name;
+    }
+}
+And here is a calling program. 
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Strange cat = new Cat("Charlie");        
+        System.out.println("1 " + cat);
+    }
+}
+Implement the Strange interface such that the code will compile and run. The interface doesn't have to do anything.
+The Main.java and Cat.java files are supplied.
+Your program will be compiled using the following command:
+javac Main.java
+and run using
+java Main
+
+Ordering Items:
+For many algorithms you need to be able to compare things. For example, if you want to sort a list of items, you need to have some way of telling whether one item is smaller than another. You can write a method to compare two items and you need your sorting algorithm to be able to know that such a method exists. This is where interfaces are most useful.
+Here is the Point class
+public class Point
+{
+    private double x, y;    
+    public Point(double newX, double newY)
+    {
+        x = newX;
+        y = newY;
+    }
+    
+    public String toString()
+    {
+        return "(" + x + ", " + y + ")";
+    }
+}
+Here is an Order interface
+public interface Order
+{
+    public boolean lessThan(Order other);
+}
+Modify the Point class so that it properly implements the Order interface. Two Points will be compared by first checking the x coordinate. Whichever Point has the smaller x coordinate, then that Point will be regarded as being smaller. If the two x coordinates are the same, then use the y coordinate as a decider.
+The Main.java and Order.java files are supplied.
+Your program will be compiled using the following command:
+javac Main.java
+and run using
+java Main
+and here is the Main.java file:
+import java.util.Scanner;
+public class Main
+{
+    public static Point getPoint(Scanner in)
+    {
+        double x = in.nextDouble(), y = in.nextDouble();
+        return new Point(x, y);
+    }
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);
+        Point p1 = getPoint(in);
+        Point p2 = getPoint(in);        
+        System.out.println("p1 = " + p1);
+        System.out.println("p2 = " + p2);
+        System.out.println("p1.lessThan(p2) = " + p1.lessThan(p2));
+    }
+}
+Hints
+Your Point class will need to implement the Order Interface which means that you will have to provide a lessThan method. The less than method will have to compare the current point with another (called other). You need to cast this to a Point so that you can extract the x and y values and compare them so that you can say whether it is less than or not.
+
+Ordering Items 2:
+Modify the code from your solution to the previous problem so that it now compares two points using the distance from the origin. That is, a point that is nearer to the origin will be regarded as being lessThan a point which is further. You can measure the distance from the origin using the square root of x squared + y squared.
+(in order to do the comparison, you don't need to get the square root of a number, but if you want to, then do a web search!)
+
+Sorting Points:
+The following Main class uses a standard selection sort algorithm to sort an array of Order items. The main method reads in an array of Point objects and, assuming that it correctly implements the Order interface, it will sort these items.
+You are to submit an appropriate Point class (it should be the same as for the previous exercise) which will cause the sort method to properly sort the points. Points should be compared based on their distance from the origin.
+import java.util.Scanner;
+public class Main
+{
+    public static Point getPoint(Scanner in)
+    {
+        double x = in.nextDouble(), y = in.nextDouble();
+        return new Point(x, y);
+    }
+    private static void swap(Order [] items, int a, int b)
+    {
+        Order tmp;
+        tmp = items[a];
+        items[a] = items[b];
+        items[b] = tmp;
+    }    
+    // This method is going to sort a list of items. The only thing it knows about these items is that
+    // they implement the Order interface and therefore they have a lessThan method.
+    public static void sort(Order [] items)
+    {
+        // Use selection sort.
+        for(int i = 0; i < items.length - 1; i++)
+        {
+            // Find the smallest and put it in the current position
+            int min = i; // Assume it's the first
+            for(int j = i + 1; j < items.length; j++)
+                if(items[j].lessThan(items[min]))
+                    min = j; // something is lessThan our current min ... so update min                    
+            swap(items, i, min); // Put the smallest in the correct location
+        }
+    }    
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        Point [] points = new Point[n];
+        for(int i = 0; i < n; i++)
+            points[i] = getPoint(in);            
+        sort((Order []) points);        
+        // Print out the sorted points
+        System.out.println("The sorted points:");
+        for(int i = 0; i < n; i++)
+            System.out.println(points[i]);
+    }
+}
+
+Herding Cats:
+This time, we are going to order an array of cats using exactly the same sort method. The cats will have to implement the Order interface and they should compare based on the length of their names. That's all you have to do, modify the Cat class so that it implements the Order interface and add the lessThan method that compares based on name length. Remember that the lessThan method compares with another Order item. The first thing you will have to do is cast that to a Cat. The Main.java program is almost the same. It has to be modified to create and read in an array of cats.
+import java.util.Scanner;
+public class Main
+{
+    public static Cat getCat(Scanner in)
+    {
+        String name = in.nextLine();
+        return new Cat(name);
+    }    
+    private static void swap(Order [] items, int a, int b)
+    {
+        Order tmp;
+        tmp = items[a];
+        items[a] = items[b];
+        items[b] = tmp;
+    }    
+    // This method is going to sort a list of items. The only thing it knows about these items is that
+    // they implement the Order interface and therefore they have a lessThan method.
+    public static void sort(Order [] items)
+    {
+        // Use selection sort.
+        for(int i = 0; i < items.length - 1; i++)
+        {
+            // Find the smallest and put it in the current position
+            int min = i; // Assume it's the first
+            for(int j = i + 1; j < items.length; j++)
+                if(items[j].lessThan(items[min]))
+                    min = j; // something is lessThan our current min ... update                    
+            swap(items, i, min); // Put the smallest in the correct location
+        }
+    }    
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        in.nextLine(); // Dump the newline
+        Cat [] cats = new Cat[n];
+        for(int i = 0; i < n; i++)
+            cats[i] = getCat(in);            
+        sort((Order []) cats);        
+        // Print out the sorted points
+        System.out.println("The sorted cats:");
+        for(int i = 0; i < n; i++)
+            System.out.println(cats[i]);
+    }
+}
+The Order interface is shown below:
+public interface Order
+{
+    public boolean lessThan(Order p);
+}
+
+Reading from a File:
+Write a program which reads in a file name, then it opens the file and reads in a series of names into a String array. The program then prints all the names in reverse order.
+For example, if the file is called "names.txt" and contains the following names (the first line contains the number of names):
+6
+Abby
+Dylan
+Karl
+Chris
+Maeve
+Faye
+Then the program should run as follows:
+$ java ReadNames
+Enter the filename: names.txt
+The names in reverse order are:
+Faye Maeve Chris Karl Dylan Abby
+Hint:
+Your program should get a filename from the user. This file will contain a list of names. Create an array of strings to hold each name. When you have read in all the names from the file into the array, then you can print them out in reverse.
+
+Reading from a File and Command Line Arguments:
+Write a program which reads names from a file and prints them out in reverse order. Your program should get the filename to read from the command line.
+For example, if the file is called "names.txt" and contains the following names (the first line contains the number of names):
+6
+Abby
+Dylan
+Karl
+Chris
+Maeve
+Faye
+Then the program should run as follows:
+$ java ReadNames names.txt
+The names in reverse order are:
+Faye Maeve Chris Karl Dylan Abby
+If there are no command line arguments, the program should print a usage message as indicated below:
+$ java ReadNames
+Usage: java ReadNames <filename>
+   
+Filing Students:
+Previously you wrote a program which processed a group of students that were initialised in an array (see An Array of Students (1)). In this program, you should create the students from a file. The file will look like the following:
+8
+John 50
+Abby 40
+Dylan 20
+Carl 70
+Maeve 70
+Chris 44
+James 55
+Anne 63
+Your program should read in the number of students (first line), create the array of students, then for each line, read in the name and mark, and then create the student using the constructor and add it to the array. You should then call the static method Student.print() with the array that you have created.
+See the above mentioned exercise for reference.
+This will be your program outline:
+public class GroupStudents
+{
+   public static void main(String [] args)
+   {
+      Student [] group; // Your program should fill in this array from a file. The filename will be on the command line.
+      Strudent.print(group);
+   }
+}
+A Student is defined as:
+public class Student
+{
+   String name;
+   int mark;
+   public Student(String n, int m)
+   {
+      name = n;
+      mark = m;
+   }
+   public String toString()
+   {
+      return name + " " + mark;
+   }
+   public static void print(Student [] group)
+   {
+       for(int i = 0; i < group.length; i++)
+           System.out.println(group[i]);
+   }
+}
+The program will be compiled using javac GroupStudents.java and run using java GroupStudents The output should be:
+$ java GroupStudents studentsfile.txt
+John
+Abby
+Dylan
+Carl
+Maeve
+Chris
+James
+Anne
+Note that you should not print the array, you should call the Student.print method to print the array!
+
+Writing Students:
+In this exercise, you read in a set of students from a file. Then you increase each student's mark by 1 and write out the results out to another file. The format of the file will be the same as in the previous exercise. The name of the input file will be the first argument and the name of the output file will be the second argument.
+For example, if the input file was:
+2
+John 50
+Abby 40
+Your program will create the following file:
+2
+John 51
+Abby 41
+Note that the marks have been increased by 1
+The program will be compiled using javac WriteStudents.java and run using java WriteStudents The output should be:
+$ java GroupStudents students.in students.out
+The program doesn't produce any output to the screen. Instead it creates an output file. In this case, the output file is called students.out (note the second parameter on the command line).
+
+Sentiment Analysis 1: (For all Sentiment Analysis Questions see Movies.txt)
+Write a program which takes a word and a file name as the command line parameters and then finds out how many times the word appears in the file.
+Then the program should run as follows:
+$ java Senti1 happy reviews.txt
+The word "happy" occurs 24 times.
+In other words, your program will read the reviews file and print out how many reviews contain the word.
+Hint: The following code can be used to read lines of the reviews.txt file:
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+public class Movies
+{
+    public static void main(String [] a) throws FileNotFoundException
+    {
+        File movieReviewFile = new File("reviews.txt");
+        Scanner moveReviewScanner = new Scanner(movieReviewFile);
+        while(moveReviewScanner.hasNext())
+        {
+            // Now you can read in a line with Scanner's nextLine() method and you can
+            // read in an int with the nextInt() method.
+        }
+        
+Word Score Class:
+Create a class called WordScore. The class should have two attributes, a string called word and an integer called score. There should be a constructor which takes one String parameter which initialises the word.
+There should be one method called score() which takes string and returns an int. The string represents the review and is in the form of a score followed by a space and a sentence. The function should return the score if the word is contained in the sentence and should return -1 otherwise.
+Your class will be checked with the following code:
+import java.util.Scanner;
+public class TestWordScore
+{
+    public static void main(String [] args) throws FileNotException
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a word and a review.");        
+        String word = in.next();
+        String review = in.nextLine();        
+        WordScore wordScore = new WordScore(word);        
+        if(wordScore.score(review) == -1)
+            System.out.println(word + " does not appear in this review.");
+        else
+            System.out.println(word + " gets a score of " + wordScore.score(review) + ".");
+    }
+}
+
+Sentiment Analysis 2:
+This time, for each review, read the score of the review and then apply that score to the word. Then you will be able to score each word. The score of a word will be the average score of all the reviews that the word appears in. For example, if the word is horrible and appears in two reviews, one with a score of 0 and the other with a score of 1, then "horrible" gets a score of 0.5
+Your program should run as follows:
+$ java Senti2 fabulous reviews.txt
+The word "fabulous" occurs 10 times.
+The average score of the reviews containing fabulous is 2.85
+Use your favourite search engine to find out how to print to two decimal places in Java.
+Further Explanation
+Your job is to get the score for a particular word. So, say the word is "horrible". You could guess that a review that contains the word "horrible" might not get a high score. But, you want to check it. So, find all the reviews that contain the word "horrible". There might be three reviews. Let's say that those reviews have scores of 1, 1 and 2 respectively, then the average score would be 1.33. That is, The average score for all reviews containing the word horrible would be 1.33. That score would be assigned to "horrible".
+In this way, a computer program can work out that certain words would be quite negative and other words would be quite positive. Such a computer program could then read a review and provide an estimate of what score would go with the review.
+
+Sentiment Analysis 3:
+Your program will read the names of two files from the command line. The first will be a series of words separated by spaces and the second will be a set of reviews, one on each line. Your program should calculate the score for each of the words in the first file.
+Your program should work as follows:
+$ java Senti3 words.txt reviews.txt
+The score of latest is 2.5.
+The score of face is 3.00.
+Assuming that the words file is:
+latest face
+and the reviews file is: 
+2 This cool film is the latest stuff .
+3 His face is the latest in technology.
+
+Sentiment Analysis Review a Rating:
+Your program is now ready to read a movie review and make an educated guess as to its score. So, that is your task. Write a method called sentiment which takes as parameters an unrated review and the name of a file of movie reviews and return the rating of the review. You should make the method a static method of a class called Sentiment. Your method should return a double value which will be the rating of the review based on the file of reviews which your method will be given.
+Work out the score of each word in the unrated review and get the average of all the words in the review. If a word has no score (because it hasn't appeared in any of the existing reviews), then it shouldn't be counted.
+A simple way to test this is to create a file called reviews.txt which only contains one review, e.g.
+3 This movie was super good.
+Then call your function with the same review. It should get the same score.
+System.out.println(Sentiment.sentiment("This movie was super good.", "reviews.txt"));
+and so this code should print 3.0. Of course, your program should work for a file with an arbitrary number of lines.
+Notes:
+If none of the words in the review appear in the file "reviews.txt" then you cannot provide a score. In this case, return -1
+In these tests, the review words were checked with matching case, so "The" is considered to be different to "the". In other words, don't try and fix case in your solution.
+
+Sentiment Analysis Removing an Average:
+The last exercise probably didn't do as well as you might have expected. One problem is that there are a lot of neutral words such as "the", "a", "of", "at", "he", etc. which appear in all sorts of reviews and therefore will have an average score. This will bring down the overall average score of the review. So, if you ignore these average words then you should get scores that are more meaningful.
+This exercise is the same as the last one except that you should ignore all words whose score is in the range 1.8 to 2.2.
+That is create a sentiment method of the sentiment class which scores a review using a file of existing reviews.
+
+Another Interface:
+Create an interface called Order which has one method called greater than. Your Interface will be defined in a file called Order.java and will be used by the following Thing class.
+Note that this is a fairly trivial exercise and should not require more than a few minutes work.
+public class Thing implements Order
+{
+   int value;
+   public Thing(int a)
+   {
+      value = a;
+   }
+   public boolean greaterThan(Order other)
+   {
+      // Convert the other to a thing so I can compare values
+      return value > ((Thing) other).value;
+   }
+   public String toString()
+   {
+      return "" + value;
+   }
+}
+The program will be tested by another class which compares two Orders (which will actually be Things) but the program will fail to compile if Order doesn't define the interface properly. That class is Main.java:
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Order a = new Thing(9);
+        Order b = new Thing(10);
+        Order c = new Thing(10);        
+        System.out.println(a + " greaterThan(" + b + ") is " + a.greaterThan(b));
+        System.out.println(b + " greaterThan(" + a + ") is " + b.greaterThan(a));
+        System.out.println(b + " greaterThan(" + c + ") is " + b.greaterThan(c));
+        System.out.println(c + " greaterThan(" + b + ") is " + c.greaterThan(b));
+    }
+}
+
+Generic Max:
+Using generics appropriately, write a static method which will be return the largest of two items. 
+Both items should be objects that implement the Order interface.
+Your program will tested using the following Main method:
+   public static void main(String [] args)
+   {
+      Thing n1 = new Thing(1);
+      Thing n2 = new Thing(2);
+      Thing n3 = new Thing(3);
+      System.out.println("Max of " + n1 + " and " + n2 + " is " + max(n1, n2));
+      System.out.println("Max of " + n2 + " and " + n1 + " is " + max(n2, n1));
+      System.out.println("Max of " + n3 + " and " + n1 + " is " + max(n3, n1));
+      System.out.println("Max of " + n1 + " and " + n3 + " is " + max(n1, n3));
+      System.out.println("Max of " + n3 + " and " + n2 + " is " + max(n3, n2));
+      System.out.println("Max of " + n2 + " and " + n3 + " is " + max(n2, n3));
+      System.out.println("Max of " + n1 + " and " + n2 + " is " + max(n1, n1));
+   }
+}
+The Thing class is defined as follows:
+public class Thing implements Order
+{
+   int value;
+   public Thing(int a)
+   {
+      value = a;
+   }
+   public boolean greaterThan(Order other)
+   {
+      // Convert the other to a thing so I can compare values
+      return value > ((Thing) other).value;
+   }
+   public String toString()
+   {
+      return "" + value;
+   }
+}
+The Order interface is defined as follows:
+public interface Order
+{
+	public boolean greaterThan(Order other);
+}
+Note that if your method is passed an object which does not implement the Order interface, then it should not compile (which it won't if you have used generics properly).
+Note 2: You will probably need to read the notes on Generics for Python Programmers to understand how to solve this.
+
+Generic Swap:
+Using generics appropriately, write a static method which will swap two elements of an array. Your method will be used in the following main class
+public class Main
+{
+   // Generic method to reverse an array.
+   public static <T>void reverse(T [] a)
+   {
+      for(int i = 0; i < a.length / 2; i++)
+         Swap.swap(a, i, a.length - 1 - i);
+   }
+   // Check that an array is the reverse of another
+   public static <T> boolean check(T [] a1, T [] a2)
+   {
+      if(a1.length != a2.length)
+         return false;
+      for(int i = 0; i < a1.length; i++)
+         if(a1[i] != a2[a1.length - 1 - i])
+            return false;
+      return true;
+   }
+   public static void main(String []args)
+   {
+//      int [] test = {1, 3, 4, 5, 6,}; // doesn't work for primitive types
+      String [] names = {"abe", "babe", "strobe"};
+      Integer [] intObjs = {1, 2, 3, 4, 5, 6, 7, 8}; // Autoboxing.
+      // Check the swap method via the reverse method.
+      String [] rNames = names.clone(); // first copy the array
+      reverse(rNames); // reverse the copy
+      System.out.println(check(names, rNames)); // check that it's properly reversed
+      System.out.println(check(rNames, names)); // check the other way cos we're paranoid.
+       // Check with an array of Integers
+      Integer [] rIntObjs = intObjs.clone();
+      reverse(rIntObjs);
+      System.out.println(check(rIntObjs, intObjs));
+      System.out.println(check(intObjs, rIntObjs));
+   }
+}
+If your method correctly swaps the two elements of an array, then the above program will be able to reverse an array and the tests will pass.
+         
+Generic Pairs:
+Create a Pair class which will hold a pair of objects specified generically in such a way that the following main method will work
+public class TestPair
+{
+   public static void main(String[] args)
+   {		
+       Pair<String,Integer> phoneNumber = new Pair<>("Bill's number", 1324);	
+       System.out.println(phoneNumber);
+       Pair<Double,Double> point = new Pair<>(3.14, 2.32);
+       System.out.println(point);
+   }
+}
+The Pair class will have a constructor and a toString method. The toString method should call the toString methods of the objects comprising the pair with a space between them.
+Once the Pair class has been correctly written, the code above will produce the output below:
+Bill's number 1324
+3.14 2.32
+
+Bag Removal:
+The Bag class below is used to hold a number of items of type T. Your task is to add a remove method to the Bag class.
+// The following suppress warnings annotation is necessary to allow toodle to compile your program.
+@SuppressWarnings("unchecked")
+public class Bag<T>
+{
+   // Create an array of type T of 100 items (This is quite clumsy in Java)
+   private T[] bag = (T[])(new Object[100]);
+   private int numElements = 0;
+   
+   public void add(T x)
+   { // put x in bag
+      bag[numElements] = x;
+      numElements++;
+   }   
+   public int count(T x)
+   {
+      int count = 0;
+      for (int i = 0; i < numElements; i++)
+         if (bag[i].equals(x)) // .equals because T a class 
+            count++;
+      return count;
+   }
+   public int length()
+   {
+      return numElements;
+   }
+}
+Your new improved Bag class will be tested with the following main program:
+public class TestBag
+{
+   public static void main(String[] args)
+   {      
+      Bag bag = new Bag<String>();
+      bag.add("cat");
+      bag.add("dog");
+      bag.add("cat"); 
+      bag.remove("pig");
+      System.out.print("Lose the pig, ");
+      // Should have no effect 'cos this bag is pigless
+      System.out.println("L=" + bag.length() + ", C=" + bag.count("cat") + ", D=" + bag.count("dog"));
+      bag.remove("cat");
+      System.out.print("Lose the cat, ");
+      System.out.println("L=" + bag.length() + ", C=" + bag.count("cat") + ", D=" + bag.count("dog"));
+      bag.remove("cat");
+      System.out.print("Lose the cat, ");
+      System.out.println("L=" + bag.length() + ", C=" + bag.count("cat") + ", D=" + bag.count("dog"));
+      bag.remove("dog");
+      System.out.print("Lose the dog, ");
+      System.out.println("L=" + bag.length() + ", C=" + bag.count("cat") + ", D=" + bag.count("dog"));
+      bag.remove("dog");
+      System.out.print("Lose the dog, ");
+      System.out.println("L=" + bag.length() + ", C=" + bag.count("cat") + ", D=" + bag.count("dog"));
+   }
+}
+   
+Incomparable Dates:
+Look up the Comparable interface in Java and then enhance the following Date class so that it implements the Comparable interface.
+public class Date implements Comparable<Date>
+{
+   private int day, month, year;
+   public Date(int day, int month, int year)
+   {
+      this.day = day;
+      this.month = month;
+      this.year = year;
+   }
+   public String toString()
+   {
+      return day + "/" + month + "/" + year;
+   }
+}
+To do this correctly, your class should implement Comparable<Date> and then should have a public int compareTo(Date other) method. Your code will be tested by the following main program:
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+      Date [] dates = {
+         new Date(1, 1, 3),
+         new Date(1, 1, 2),
+         new Date(3, 2, 1),
+         new Date(29, 9, 1),
+         new Date(30, 12, 1),
+         new Date(1, 1, 10),
+         new Date(1, 10, 1),
+         new Date(10, 1, 1),
+         new Date(2, 1, 10),
+         new Date(29, 9, 1),
+         new Date(30, 9, 1),
+         new Date(1, 2, 10),
+         new Date(1, 1, 1),
+         };
+      Arrays.sort(dates);
+      System.out.println(Arrays.toString(dates));
+   }
+}
+Note that to compare two dates, one technique is to first compare the years. If the Date's year is less than the other's year, then return -1, if greater, return +1, otherwise you need to check the months and so on.
+Note also, without generics, you would have to cast the parameter back to a date, but generics allow you to keep it as a Date which is supercool. At least, it's supercool if you are a nerd.
+   
+Generic Sort:
+The following method sorts an array of strings.
+public class Sort
+{
+   private static void swap(String []s, int i, int j)
+   {
+      String tmp = s[i];
+      s[i] = s[j];
+      s[j] = tmp;
+   }
+   public static void sort(String [] items)
+   {
+      // Use selection sort
+      for(int i = 0; i < items.length - 1; i++)
+      {
+         int minIndex = i;
+         for(int j = i + 1; j < items.length; j++)
+            if(items[j].compareTo(items[minIndex]) < 0) // items[j] < items[minIndex] ... so update minIndex
+               minIndex = j;
+         swap(items, i, minIndex);
+      }
+   }
+}
+Modify this code so that it is generic. Note that you are only allowed to change three lines, namely lines 3, 5 and 10. Modify those lines so that the sort method will be able to sort any array that implements the Comparable interface. You only need to modify both method headers and a variable declaration. Otherwise the Sort class above should not be modified.
+Below is a main method that calls the above method. It should also work when you have modified the code (since String also implements Comparable).
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+      String [] names = {"James", "Paul", "Kevin", "Martin", "Zed", "Joe", "Jane", "Mary", "Abbie"};
+      Sort.sort(names);
+      System.out.println(Arrays.toString(names));
+   }
+}
+Note: the following error occurs if you don't implement the Type variable properly:
+Note: ./Sort.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+The type should extend Comparable, but is that enough? Have a look at the previous Date exercise for a clue
+
+Even Odder:
+Write a program using lists, i.e. the List API from the Java Collections class, which will keep on reading in numbers until a -1 is encountered and then print out all the odd numbers in the order that they occurred and then print out all the even numbers in the order that they occurred.
+E.g.
+java EvenOdd
+Enter numbers: 45 8 20 7 16 -1
+Odd:45 7
+Even: 8 20 16
+
+Sorting a List:
+Write a program using lists which will keep on reading in numbers until a -1 is encountered and then sort the numbers and print out the numbers in sorted order. Use the List's sort method.
+E.g.
+java ListSort
+Enter numbers: 45 8 20 7 16 -1
+Sorted: 7 8 16 20 45
+
+Have We Seen this Before:
+Write a program which reads numbers until a -1 is encountered and only print out numbers which have previously occurred in the input. You should use a Set to aid you in solving this problem.
+E.g.
+java HasPrevious
+Enter some numbers (-1 to end)
+45 8 20 7 16 45 0 22 20 6 20 9 -1
+Previous:
+45
+20
+20
+Note that the 45 occurs twice and the 20 occurs three times and the numbers are only printed of they haven't occurred previously. 
+
+Suspicious yes Indeedy:
+A headmaster of a school is contacted by the police and provided with a file of names of juvenile delinquents. He has another file containing the name of his students and wants a program to check if any of the names are the same. Each line of each file contains one name only. Write a program to detect if any name appears on both files. (Example files are shown below) The filenames will be passed to your program on the command line.
+Here is what such a program execution might look like
+java Suspicious students.txt delinquents.txt
+1. Boney Vox
+2. Bob Dylan
+3. Shakira
+Your program may assume that the files exist.
+Here is the students.txt file for this example:
+Johnny be good
+Boney Vox
+The Edge
+John Lennon
+Shakira
+Bob Dylan
+James Brown
+and here is the delinquents.txt file:
+Baddie ThreeShoes
+Attila the Hun
+Boney Vox
+Agolf Hitler
+Bob Dylan
+Shakira
+The order of the output should be the same as the order that they appear in the delinquents.txt file. 
+
+Phone Numbers:
+Write a program to manage phone numbers. A user enters commands a line at a time. There are three commands:
+1. !! (two exclamation points) exits the program
+2. name number associates a number to a name. Note that the name cannot have spaces and if a second number is added to a name, it overwrites the first.
+3. name ? gives the number for that name
+A program run might look like (note that lines in bold are commands that have been entered by the user):
+java PhoneNumbers
+Enter a name and number, or a name and ? to query (!! to exit)
+James 1234
+John 5678
+John ?
+John has number 5678
+Bobby ?
+Sorry, there is no Bobby
+!!
+Bye
+
+Student Marks:
+Create a class called MakeMap with a single method called makeMap(). The method should take as a parameter a Scanner of System.in (so that it can read input using next() and nextInt().
+The method should create a map which maps Strings to Integers based on the Scanner input and then returns that map. Your method would be called by the following program:
+import java.util.Scanner;
+import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+public class Main
+{
+   public static void main(String [] args)
+   {
+      Map<String, Integer> students = MakeMap.makeMap(new Scanner(System.in));
+      List<String> names = new ArrayList<String>(students.keySet());
+      Collections.sort(names);
+      for(String name : names)
+         System.out.println(name + " has mark " + students.get(name));
+   }
+}
+To summarize, you write the MakeMap class with a static method makeMap(). You need to read the input using the Scanner object which you receive as a parameter. You need to create and return the map which maps student names to marks.
+Hint: when reading the input, the following while loop works:
+      while(in.hasNext())
+      {
+         // Read the input and add it to the map.
+      }
+Note that your program is passed the Scanner on the command line. You do not need to create a Scanner.
+There are a few ways to print out the results. One is to firstly get the set of map's keys and convert them to a list. Sort the list and print them out. Another way is to use the map's size and keep going, checking for null return values until you reach the size of the map. 
+   
+Word Lengths:
+Write a program which will read in a series of words and then then print out the number of times a word of each length occurs. For example, if the program was run as follows:
+java WordLength
+this sent ence cont ains only four lett errr words
+4: 9
+5: 1
+In this case, the "sentence" contained 9 four letter "words" and one five letter word (namely words). Use a map to map each word length onto a number. Note that in practice, you could use an ArrayList for this because the keys are relatively small numbers, but we are doing maps, so use a map.
+Here is another more cultured example
+java WordLength
+If music be the food of love, play on
+Give me excess of it; that surfeiting
+The appetite may sicken, and so die
+2: 7
+3: 6
+4: 4
+5: 2
+6: 1
+7: 1
+8: 1
+10: 1
+Note that the input had seven words of length 2.
+
+Inheritance Basics:
+The following program consists of three Java source files and does nothing. It doesn't even compile. The files are Main.java, Parent.java and Child.java
+Here is Main.java
+public class Main
+{
+	public static void main(String []args)
+	{
+		Parent x = new Child();
+	}
+}
+Here is Parent.java (an empty class - not useful except for this exercise)
+public class Parent
+{
+}
+Here is Child.java (an empty class - not useful except for this exercise)
+public class Child
+{
+}
+Modify only the Child class so that the program compiles. Obviously, you have to make the  type of Child compatible with the type of Parent. You should do this using inheritance.
+
+Inheritance Method Overriding:
+Using the three classes from the previous exercise, we add a method to the Parent class. However, we want the Child class to modify the behaviour of the Parent class. You should adapt the Child class so that it overrides the Parent's method appropriately. (See below.)
+Here is Main.java
+public class Main
+{
+	public static void main(String []args)
+	{
+		Parent parent = new Child();
+		System.out.println("parent.makeATwo() is " + parent.makeATwo());
+	}
+}
+Here is Parent.java (with one not very useful method)
+public class Parent
+{
+    public int makeATwo()
+    {
+        return 2;
+    }
+}
+Here is Child.java (a shell ... to be completed)
+public class Child
+{
+}
+Change only the Child class so that the program overrides the Parent's makeATwo method. Instead of returning 2, it should return a 3.
+This exercise is designed to show method overriding.
+
+Classes that Can't be Created Abstract:
+Create an abstract class Animal which has one abstract method, greeting(), which takes no parameters and returns a String.
+When your program is being tested, it will be monitored by another program and the output may be confusing. It is better not to focus on the output, but on the specification above. You should create a very short simple Animal class that follows the above rules and you will get full marks.
+Your class could be used as the base class for the following class:
+class Pig extends Animal
+{
+    // since Animal has an abstract method greeting(), Pig needs to implement greeting.
+    public String greeting()
+    {
+        return "Oink";
+    }
+}
+
+Animal Greetings:
+Create an Animal class with a constructor that initialises a name and that returns a greeting which is 
+Hello, my name is name
+where name will be the animal's name.
+Your class will be called by the following Main class
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);
+        
+        String name = in.nextLine();
+        
+        Animal ani = new Animal(name);
+        System.out.println(ani.greeting());
+    }
+}
+
+Cats and Dogs (2 answer files Cats.java and Dogs.java):
+Create a Dog and a Cat class, each of which inherit from Animal. Each class should have a constructor which initialses their name and a hello method.
+The cat's hello method should return the string "Meow" and the dog's hello method should return the string  "Woof".
+The Animal class is
+public abstract class Animal
+{
+    public Animal(String n)
+    {
+        name = n;
+    }
+    abstract String hello();    
+    public String greeting()
+    {
+        return hello() + ", I am " + name;
+    }
+    // private
+    private String name;
+}
+Your classes will be used in the following Main class.
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Animal cat = new Cat("Angel");
+        Animal dog = new Dog("Fido");
+        System.out.println(cat.greeting());
+        System.out.println(dog.greeting());
+    }
+}
+Note that your Cat and Dog classes must not supply a greeting method. They should use the greeting method from the Animal class.
+
+New Greeting:
+This time we want the Animal greeting method to be modified so that it will be:
+Hello, my name is name
+Where Hello is species specific, that is a dog would say "woof" and a cat would say "Meow". Name has the usual meaning. You will only have to change the Animal class. Otherwise, the code will be the same as for the previous exercise.
+Your code will be checked by the following program:
+import java.util.Scanner;
+public class Main
+{
+    public static Animal [] makeSomeNoise()
+    {
+        Animal [] animals = {new Cat("Angel"), new Cat("Cheesire"), new Dog("Buster"), new Dog("Fido"), new Cat("Lassie")};
+        return animals;
+    }
+    public static void main(String [] args)
+    {
+        Animal [] animals = makeSomeNoise();
+        for(Animal animal : animals)
+            System.out.println(animal.greeting());
+    }
+}
+which, when run, should print:
+Meow, my name is Angel
+Meow, my name is Cheesire
+Woof, my name is Buster
+Woof, my name is Fido
+Meow, my name is Lassie
+
+Noisy Animals:
+This is an easy exercise which will hopefully reinforce the idea of polymorphism. Typically, polymorphism is used where there is an array of some super class (in this case Animal) whose elements are populated by child classes (in this case Cat and Dog).
+Then the methods of the super class are called, but the child class versions are implement to give you child specific behaviour.
+The main method is
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Animal [] animals = Noisy.makeSomeNoise();
+        for(Animal animal : animals)
+            System.out.println(animal.greeting());
+    }
+}
+The Noisy class is
+public class Noisy
+{
+    public static Animal [] makeSomeNoise()
+    {
+        Animal [] animals = {new Cat("Angel"), new Cat("Cheesire"), new Dog("Buster"), new Dog("Fido"), new Cat("Lassie")};
+        return animals;
+    }
+}
+The other classes are as before. Run the code and see what it does.
+Now, modify the code so that when run, there is an extra line at the beginning:
+Woof, I am Devil
+
+Dont Forget the Pigs:
+Add a pig class whose sound is Oink. The class will be used by a Main program as follows:
+public class Main
+{
+    public static Animal [] makeSomeNoise()
+    {
+        Animal [] animals = {new Cat("Angel"), new Pig("Babe"), new Dog("Buster"), new Pig("Sty"), new Dog("Fido"), new Cat("Lassie")};
+        return animals;
+    }
+    public static void main(String [] args)
+    {
+        Animal [] animals = makeSomeNoise();
+        for(Animal animal : animals)
+            System.out.println(animal.greeting());
+    }
+}
+The program's output should be:
+Meow, je m'appelle Angel
+Oink, je m'appelle Babe
+Woof, je m'appelle Buster
+Oink, je m'appelle Sty
+Woof, je m'appelle Fido
+Meow, je m'appelle Lassie
+Note that the Animal's greeting method has been modified by a pseudo intellectual who thinks French is a cool.
+
+Abstract Circle:
+Create a Circle class which extends Shape. The Shape method is defined below:
+public abstract class Shape
+{
+   private String name; // will occur in all extensions
+   public Shape(String name)
+   {
+      this.name = name;
+   }
+   abstract double area(); // no body, note abstract
+   public String toString()
+   {
+      return name + " with area " + area();
+   }
+}
+Your Circle class will extend a Shape and calculate the area. It will then be used in conjunction with a Rectangle and Triangle class by the following main method
+public class Main
+{
+   public static Shape largest(Shape [] shapes)
+   {
+      if(shape,length == 0)
+         return null;
+      Shape largest = shapes[0]; // Assume it's the first
+      for(Shape shape : shapes)
+         if(shape.area() > largest.area()) // This one is larger ...
+            largest = shape;        // ... update the variable
+      return largest;
+   }
+   public static void main(String [] args)
+   {
+      Rectangle[] rectangles = {
+                        new Rectangle("Rectangle",2.0,3.0),
+                        new Rectangle("Square",4.0,4.0),
+                        };
+      Rectangle big = (Rectangle)largest(rectangles);
+      System.out.println(big); 
+      Shape[] shapes = {
+                           new Rectangle("Rectangle 1",2.0,3.0),
+                           new Rectangle("Rectangle 2",16.0,1.0),
+                           new Rectangle("Rectangle 3",7.0,2.0),
+                           new Rectangle("Rectangle 4",17.0,1.0),
+                           new Circle("Circle 1",1.0),
+                           new Circle("Circle 2",2.0),
+                           new Circle("Circle 3",3.0),
+                           new Circle("Circle 4",4.0),
+                           new Rectangle("Rectangle 5",5.0,3.0),
+                           new Triangle("Triangle 1",5.0,12.0,13.0), 
+                           new Rectangle("Square 1",4.0,4.0),
+                        };
+      System.out.println("The largest shape is: " + largest(shapes)); 
+   }
+}
+For your viewing pleasure, the Rectangle and Triangle classes are defined below:
+public class Rectangle extends Shape
+{
+   private double width, height; // name inherited
+   public Rectangle(String s, double w, double h)
+   {
+      super(s); // use Shape constructor; effect is name=s;
+      width = w;
+      height = h;
+   }
+   double area()
+   {
+      return width * height;
+   }
+}
+and
+public class Triangle extends Shape
+{
+   private double a, b, c; // lengths of sides
+   public Triangle(String s, double x, double y, double z)
+   {
+      super(s);
+      a = x; b = y; c = z;
+   }
+   double area()
+   {
+      double s = (a+b+c)/2.0;
+      return Math.sqrt(s*(s-a)*(s-b)*(s-c));
+   }
+}
+
+Abstract Shapes:
+Write a method which will take an array of Shape Objects and return the average area of the shapes. Your method should be a static method of the Average class and it should be called averageArea. It will have one parameter, an array of Shapes and it will return a double, the average area.
+The Shape class is shown below/
+public abstract class Shape
+{
+   private String name;
+   public Shape(String name)
+   {
+      this.name = name;
+   }
+   abstract double area();
+   public String toString()
+   {
+      return name + " with area " + area();
+   }
+}
+Your method will be called by a supplied main method.
+
+The Movie Class:
+This is a trivial exercise to get you started. Create the Java Movie class from page 14 of the book. You can copy and paste or just type it in and then submit it.
+Your class will be tested by the following program.
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("Mickey Mouse", Movie.CHILDRENS), new Movie("The Pointer Sisters", Movie.REGULAR)};       
+       int count = 0;       
+       for(Movie movie : movies)
+       {
+          System.out.println("Movie " + ++count);
+          System.out.println("    " + movie.getTitle());
+          System.out.println("    " + movie.getPriceCode());
+          movie.setPriceCode(Movie.NEW_RELEASE);
+          System.out.println("    " + movie.getPriceCode());
+       }
+   }
+}
+
+The Rental Class A:
+Implement the Rental class from page 14 of the book. You can copy and paste or just type it in. You should also add a toString method which will be used when testing your class.
+Your class will be tested by the following program.
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("Mickey Mouse", Movie.CHILDRENS), new Movie("The Pointer Sisters", Movie.REGULAR)};
+       Rental [] rentals = { new Rental(movies[0], 1), new Rental(movies[1], 10)};       
+       int count = 0;       
+       for(Rental rental : rentals)
+       {
+          System.out.println("Rental " + ++count);
+          System.out.println("    " + rental.getMovie());
+          System.out.println("    " + rental.getDaysRented());
+          System.out.println("    " + rental); // test the toString() method
+       }
+   }
+}
+
+The Customer Class A:
+Implement the Customer class from page 15 of the book. Actually, you will need to change the class to get it to work for the program below. In particular, the Vector will have to become a List or Rentals. Have a look at the code below and use the hints provided.
+In addition, read any compiler error messages and make sure that you understand them. Once you understand what the error messages are saying, you should be able modify the code so that everything works.
+Your class should have a constructor, a getName() method, a getRentals() method and a toString() method. The getRentals() method should return a List of Rental objects. You may need to look up generics.
+Your class will be tested by the following program.
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("Mickey Mouse", Movie.CHILDRENS), new Movie("The Pointer Sisters", Movie.REGULAR)};
+       Rental [] rentalsArray = { new Rental(movies[0], 1), new Rental(movies[1], 10)};       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       Customer donald = new Customer("Donald", rentals);       
+       System.out.println(donald.getName());
+       System.out.println(donald.getRentals());
+       System.out.println(donald); // test the toString() method.
+   }
+}
+   
+The Statement Method A:
+Add a the statement method to the Customer class. It should produce the same output as the method in the book (page 15 and 16). 
+However, you should not use the code that is in the book. That code was written in prehistoric times and, now, no one would use a Vector or an Enumeration. In fact, you should pretend that you don't even know what those classes are. Instead, use a List class and use the foreach method to go through each Rental. Also, be sure to use generics to create a List of type Rental.
+Note also that tabs cannot be properly marked, so replace all tabs with two spaces. And your String should be terminated by a newline.
+Your class will be tested by the following program.
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE), new Movie("Mickey Mouse", Movie.CHILDRENS), new Movie("The Pointer Sisters", Movie.REGULAR)};
+       Rental [] rentalsArray = { new Rental(movies[0], 1), new Rental(movies[1], 10), new Rental(movies[2], 2)};       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       Customer donald = new Customer("Donald", rentals);       
+       System.out.println(donald.getName());
+       System.out.println(donald.getRentals());
+       System.out.println(donald); // test the toString() method.       
+       System.out.println("\nYour statement:");
+       System.out.print(donald.statement());
+   }
+}
+   
+The Statement Method getTotal:
+Modify the statement() of the Customer class by creating a getTotal() method. In the book, this is a private method, but you should make it public so that it can be tested.
+Your class will be tested by the following program. Note also that in the book the method is called amountFor().
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE), new Movie("Mickey Mouse", Movie.CHILDRENS), new Movie("The Pointer Sisters", Movie.REGULAR)};
+       Rental [] rentalsArray = { new Rental(movies[0], 1), new Rental(movies[1], 10), new Rental(movies[2], 2)};       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       Customer donald = new Customer("Donald", rentals);       
+       System.out.println(donald.getName());
+       System.out.println(donald.getRentals());
+       System.out.println(donald); // test the toString() method.       
+       System.out.println("\nYour statement:");
+       System.out.print(donald.statement());  // NB "\n" in the statement() function so not in println!       
+       DummyTester bernie = new DummyTester("Bernie", rentals);       
+       System.out.println("\nBernie's statement:");
+       System.out.print(bernie.statement());  // NB "\n" in the statement() function so not in println!
+   }
+}
+// A class just to test that the statement method uses the getTotal() method.
+class DummyTester extends Customer
+{
+    public DummyTester(String name, List<Rental> rentals)
+    {
+        super(name, rentals);
+    }    
+    // Note that we can only do this if getTotal exists in the parent class (Customer)
+    public double getTotal(Rental rental)
+    {
+        return super.getTotal(rental) * 2;  // Just double the charge!
+    }
+}
+   
+The Rental Class getCharge:
+Add a getCharge method to the Rental class. This method is basically the same as the getTotal method from the Customer class moved closer to its proper home. 
+Your class will be tested by the following program.
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE), new Movie("Mickey Mouse", Movie.CHILDRENS), new Movie("The Pointer Sisters", Movie.REGULAR)};
+       Rental [] rentalsArray = { new Rental(movies[0], 1), new Rental(movies[1], 10), new Rental(movies[2], 2)};       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       int count = 0;       
+       for(Rental rental : rentals)
+       {
+          System.out.println("Rental " + ++count);
+          System.out.println("    " + rental.getMovie());
+          System.out.println("    " + rental.getDaysRented());
+          System.out.println("    The charge is " + rental.getCharge());
+       }
+   }
+}
+   
+Using the Rental Class's getCharge Method:
+Modify the getTotal() method of the Customer class so that it uses the Rental class's getCharge() method. This will be a very short modification. You may assume that the Rental class has an appropriate getCharge() method.
+Your class will be tested by the following program.
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE), new Movie("Mickey Mouse", Movie.CHILDRENS), new Movie("The Pointer Sisters", Movie.REGULAR)};
+       Rental [] rentalsArray = { new Rental(movies[0], 1), new Rental(movies[1], 10), new Rental(movies[2], 2)};       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       Customer donald = new Customer("Donald", rentals);       
+       System.out.println(donald.getName());
+       System.out.println(donald.getRentals());
+       System.out.println(donald); // test the toString() method.       
+       System.out.println("\nYour statement:");
+       System.out.print(donald.statement());  // NB "\n" in the statement() function so not in println!       
+       DummyTester bernie = new DummyTester("Bernie", rentals);       
+       System.out.println("\nBernie's statement:");
+       System.out.print(bernie.statement());  // NB "\n" in the statement() function so not in println!
+   }
+}
+// A class just to test that the statement method uses the getTotal() method.
+class DummyTester extends Customer
+{
+    public DummyTester(String name, List<Rental> rentals)
+    {
+        super(name, rentals);
+    }    
+    // Note that we can only do this if getTotal exists in the parent class (Customer)
+    public double getTotal(Rental rental)
+    {
+        return super.getTotal(rental) * 2;  // Just double the charge!
+    }
+}
+   
+Add getFrequentRenter Method to Customer Class:
+Add a getFrequentRenterPoints() method to the Customer class.
+Your class will be tested by the following program.
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE),
+                         new Movie("Mickey Mouse", Movie.CHILDRENS),
+                         new Movie("The Pointer Sisters", Movie.REGULAR),
+                         new Movie("The Dointer Sisters", Movie.NEW_RELEASE),
+                };
+       Rental [] rentalsArray = { new Rental(movies[0], 3),
+                                    new Rental(movies[1], 10),
+                                    new Rental(movies[2], 2),
+                                    new Rental(movies[3], 1),
+                };       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       Customer donald = new Customer("Donald", rentals);       
+       System.out.println(donald.getName());
+       System.out.println(donald.getRentals());
+       System.out.println(donald); // test the toString() method.       
+       System.out.println("\nYour statement:");
+       System.out.print(donald.statement());  // NB "\n" in the statement() function so not in println!       
+       DummyTester bernie = new DummyTester("Bernie", rentals);       
+       System.out.println("\nBernie's statement:");
+       System.out.print(bernie.statement());  // NB "\n" in the statement() function so not in println!
+   }
+}
+// A class just to test that the statement method uses the getTotal() method.
+class DummyTester extends Customer
+{
+    public DummyTester(String name, List rentals)
+    {
+        super(name, rentals);
+    }    
+    // Note that we can only do this if getTotal exists in the parent class (Customer)
+    public int getFrequentRenterPoints(Rental rental)
+    {
+        return super.getFrequentRenterPoints(rental) * 2;  // Just double the rental points!
+    }
+}
+   
+The Renter Class getFrequentRenterPoints:
+Add a getFrequentRenterPoints() method to the Rental class.
+Your class will be tested by code similar to the following:
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE),
+                         new Movie("Mickey Mouse", Movie.CHILDRENS),
+                         new Movie("The Pointer Sisters", Movie.REGULAR),
+                         new Movie("The Dointer Sisters", Movie.NEW_RELEASE),
+                };
+       Rental [] rentalsArray = { new Rental(movies[0], 1),
+                                    new Rental(movies[1], 10),
+                                    new Rental(movies[2], 2),
+                                    new Rental(movies[3], 2),
+                };       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       int count = 0;       
+       for(Rental rental : rentals)
+       {
+          System.out.println("Rental " + ++count);
+          System.out.println("    " + rental.getMovie());
+          System.out.println("    " + rental.getDaysRented());
+          System.out.println("    The frequent renter points are " + rental.getFrequentRenterPoints());
+       }
+   }
+}
+   
+New Improved Statement Method:
+Now the statement() method is starting to take shape. It should look something like:
+    public String statement()
+    {
+        String output = "Statement for " + getName()  + "\n";
+        double total = 0;
+        int frequentRenterPoints = 0;
+        for(Rental rental : getRentals())
+        {
+            output += "  " + rental.getMovie().getTitle() + "  " + ??? + "\n";            
+            total += ???;
+            frequentRenterPoints += ???;
+        }
+        output += "Amount owed is " + total + "\n";
+        output += "You earned " + frequentRenterPoints + " frequent renter points\n";
+        return output;
+    }
+Modify your statement method so that it looks exactly like this, except that the "???" should be replaced by the appropriate call to a method in the Rental class.
+Your class will be tested by the following program.
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE),
+                         new Movie("Mickey Mouse", Movie.CHILDRENS),
+                         new Movie("The Pointer Sisters", Movie.REGULAR),
+                         new Movie("The Dointer Sisters", Movie.NEW_RELEASE),
+                };
+       Rental [] rentalsArray = { new Rental(movies[0], 3),
+                                    new Rental(movies[1], 10),
+                                    new Rental(movies[2], 2),
+                                    new Rental(movies[3], 1),
+                };       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       Customer donald = new Customer("Donald", rentals);       
+       System.out.println(donald.getName());
+       System.out.println(donald.getRentals());
+       System.out.println(donald); // test the toString() method.       
+       System.out.println("\nYour statement:");
+       System.out.print(donald.statement());  // NB "\n" in the statement() function so not in println!
+   }
+}
+   
+Two More Customer Methods:
+Two more methods can further improve the Customer class, namely getTotalCharge() and getFrequentRenterPoints(). Add these methods. The first returns the charge for all the rentals and the second returns the frequent renter points for all the rentals. Your methods should use the appropriate methods from the Rental class.
+Your class will be tested by the following program.
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE),
+                         new Movie("Mickey Mouse", Movie.CHILDRENS),
+                         new Movie("The Pointer Sisters", Movie.REGULAR),
+                         new Movie("The Dointer Sisters", Movie.NEW_RELEASE),
+                };
+       Rental [] rentalsArray = { new Rental(movies[0], 3),
+                                    new Rental(movies[1], 10),
+                                    new Rental(movies[2], 2),
+                                    new Rental(movies[3], 1),
+                };       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       Customer donald = new Customer("Donald", rentals);       
+       System.out.println(donald.getName());
+       System.out.println(donald.getRentals());       
+       System.out.println(donald.getTotalCharge());
+       System.out.println(donald.getTotalFrequentRenterPoints());       
+       DummyTester bernie = new DummyTester("Bernie", rentals);
+       System.out.println(bernie.getTotalCharge());
+       System.out.println(bernie.getTotalFrequentRenterPoints());
+   }
+}
+class DummyTester extends Customer
+{
+    public DummyTester(String name, List<Rental> rentals)
+    {
+        super(name, rentals);
+    }    
+    // Note that we can only do this if getTotalCharge exists in the parent class (Customer)
+    public double getTotalCharge()
+    {
+        return super.getTotalCharge(rental) * 2;  // Just double the charge!
+    }
+    public int getTotalFrequentRenterPoints()
+    {
+        return super.getTotalFrequentRenterPoints() * 2;  // Just double the points!
+    }
+}
+   
+Even Better Statement Method:
+So, the statement method should now look like:
+    public String statement()
+    {
+        String output = "Statement for " + getName() + "\n";
+        for(Rental rental : getRentals())
+            output += "  " + rental.getMovie().getTitle() + "  " + rental.getCharge() + "\n";
+        output += "Amount owed is " + ??? + "\n";
+        output += "You earned " + ???  + " frequent renter points\n";
+        return output;
+    }
+Modify your statement method so that it looks exactly like this, except that the "???" should be replaced by a call to an appropriate method..
+Your class will be tested by the following program.
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE),
+                         new Movie("Mickey Mouse", Movie.CHILDRENS),
+                         new Movie("The Pointer Sisters", Movie.REGULAR),
+                         new Movie("The Dointer Sisters", Movie.NEW_RELEASE),
+                };
+       Rental [] rentalsArray = { new Rental(movies[0], 3),
+                                    new Rental(movies[1], 10),
+                                    new Rental(movies[2], 2),
+                                    new Rental(movies[3], 1),
+                };       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       Customer donald = new Customer("Donald", rentals);       
+       System.out.println(donald.getName());
+       System.out.println(donald.getRentals());
+       System.out.println(donald); // test the toString() method.       
+       System.out.println("\nYour statement:");
+       System.out.print(donald.statement());  // NB "\n" in the statement() function so not in println!
+   }
+}
+   
+html Statement:
+Now that the statement method has been properly refactored, we can get down to adding new functionality. Let's now create a html statement. This method should be called htmlStatement()
+Create a htmlStatement() that corresponds to the refactored statement() method from the Customer class. :
+Your class will be tested by the following program. It should produce the output shown below.
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main
+{
+   public static void main(String [] args)
+   {
+       Movie [] movies = { new Movie("James Bond does Java", Movie.NEW_RELEASE),
+                         new Movie("Mickey Mouse", Movie.CHILDRENS),
+                         new Movie("The Pointer Sisters", Movie.REGULAR),
+                         new Movie("The Dointer Sisters", Movie.NEW_RELEASE),
+                };
+       Rental [] rentalsArray = { new Rental(movies[0], 3),
+                                    new Rental(movies[1], 10),
+                                    new Rental(movies[2], 2),
+                                    new Rental(movies[3], 1),
+                };       
+       List<Rental> rentals = new ArrayList<Rental>(Arrays.asList(rentalsArray));       
+       Customer donald = new Customer("Donald", rentals);       
+       System.out.println(donald.getName());
+       System.out.println(donald.getRentals());
+       System.out.println(donald); // test the toString() method.       
+       System.out.println("\nYour statement:");
+       System.out.print(donald.statement());  // NB "\n" in the statement() function so not in println!
+   }
+}
+and it should produce the following html:
+<h1>Statement for Donald</h1>
+<ol>
+  <li>James Bond does Java  18.0</li>
+  <li>Mickey Mouse  24.0</li>
+  <li>The Pointer Sisters  4.0</li>
+  <li>The Dointer Sisters  6.0</li>
+</ol>
+<p>Amount owed is 52.0</p>
+<p>You earned 5 frequent renter points.</p>
+   
+Calculating Total in Movie Class:
+Read the book, pages 35 and 36 - the section called "Replacing the Conditional Logic on Price Code with Polymorphism". Move the getCharge method to the Movie class. The getCharge() method will need a parameter which is the number of days. Update the Movie class so that it has a getCharge() function which calculates the total amount due for renting that movie for a particular number of days. Your class will be tested using the following program: 
+import java.util.Scanner;
+public class Main
+{
+    public static Movie readMovie(Scanner in)
+    {
+        String name = in.nextLine();
+        int code = in.nextInt();        
+        return new Movie(name, code);
+    }    
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);
+        Movie movie = readMovie(in);        
+        int numDays = in.nextInt();        
+        System.out.println(movie.getCharge(numDays));
+    }
+}
+
+Calculating Frequent Renter Points in Movie Class:
+Now move the getFrequentRenterPoints() method to the Movie class. This method needs one integer parameter, the number of days. Update the Movie class so that it has a getFrequentRenterPoints() method which calculates the number of frequent renter points for a movie for a particular number of days.
+Your class will be tested using the following program:
+import java.util.Scanner;
+public class Main
+{
+    public static Movie readMovie(Scanner in)
+    {
+        String name = in.nextLine();
+        int code = in.nextInt();        
+        return new Movie(name, code);
+    }    
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);
+        Movie movie = readMovie(in);        
+        int numDays = in.nextInt();        
+        System.out.println(movie.getFrequentRenterPoints(numDays));
+    }
+}
+
+Fix the Rental Methods:
+Now fix the Rental class so that it calls the Movie getCharge() and getFrequentRenterPoints() methods appropriately. The Rental methods should be very short as they merely call the equivalent Movie methods.
+Your class should work with the following program:
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Movie movie = new Movie("Charlie and the chocolate Refactory", Movie.CHILDRENS);        
+        int numDays = 1;
+        Rental rental = new Rental(movie, numDays);
+        double charge = rental.getCharge();
+        int frp = rental.getFrequentRenterPoints();        
+        if(charge != movie.getCharge(numDays) || frp != movie.getFRP(numDays))
+        {
+            System.out.println("Your program needs to call the Movie methods.");
+        }
+        else
+        {
+            System.out.println(charge);
+            System.out.println(frp);
+        }
+    }
+}
+
+Price Polymorphism (4 filed Price.java, ChildrensPrice.java, NewReleasePrice.java, RegularPrice.java):
+Create the abstract class, Price and the three subclasses, ChildrensPrice, NewReleasePrice and RegularPrice defined in four files. These should work in the same way as the classes in the book specified on page 39.
+Your class should work with the following program
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Price cp = new ChildrensPrice();
+        Price nrp = new NewReleasePrice();
+        Price reg = new RegularPrice();        
+        boolean ok = true;        
+        if(cp.getPriceCode() != Price.CHILDRENS)
+        {
+            System.out.println("Children's price does not have the correct price code.");
+            ok = false;
+        }
+        if(nrp.getPriceCode() != Price.NEW_RELEASE)
+        {
+            System.out.println("New Release price does not have the correct price code.");
+            ok = false;
+        }
+        if(reg.getPriceCode() != Price.REGULAR)
+        {
+            System.out.println("The regular price does not have the correct price code.");
+            ok = false;
+        }
+        if(ok)
+            System.out.println("All good.");
+    }
+}
+
+Adding the Price to the Movie Class:
+Next add the Price class to the Movie class. The constructor should initialise the price. You should also have a setPriceCode() method which creates the correct price. In fact, the constructor should make use of the setPriceCode() method. You should have no price code field, just a Price object.
+In order to test your program, make the Price object accessible (i.e. not private) and call it price.
+Your class should work with the following program
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Movie [] movies = { new Movie("James Bond does Java", Price.NEW_RELEASE), new Movie("Mickey Mouse", Price.CHILDRENS), new Movie("The Pointer Sisters", Price.REGULAR)};        
+        boolean ok = true;        
+        int next = 0;
+        Movie m;
+        m = movies[next++];
+        if(m.price.getPriceCode() != Price.NEW_RELEASE)
+        {
+            System.out.println("1. Price code is not correct");
+            ok = false;
+        }
+        m = movies[next++];
+        if(m.price.getPriceCode() != Price.CHILDRENS)
+        {
+            System.out.println("2. Price code is not correct");
+            ok = false;
+        }
+        m = movies[next++];
+        if(m.price.getPriceCode() != Price.REGULAR)
+        {
+            System.out.println("3. Price code is not correct");
+            ok = false;
+        }
+        // Now, see if the setPriceCode works
+        m.setPriceCode(Price.CHILDRENS);
+        if(m.price.getPriceCode() != Price.CHILDRENS)
+        {
+            System.out.println("4. Price code is not correct");
+            ok = false;
+        }
+        m.setPriceCode(Price.NEW_RELEASE);
+        if(m.price.getPriceCode() != Price.NEW_RELEASE)
+        {
+            System.out.println("5. Price code is not correct");
+            ok = false;
+        }
+        m.setPriceCode(Price.REGULAR);
+        if(m.price.getPriceCode() != Price.REGULAR)
+        {
+            System.out.println("6. Price code is not correct");
+            ok = false;
+        }
+        if(ok)
+            System.out.println("All Korrect.");
+    }
+}
+
+Add the getCharge Method to Price Polymorphically (4 filed Price2.java, ChildrensPrice2.java, NewReleasePrice2.java, RegularPrice2.java):
+Create an abstract getCharge() method for the Price class and also add appropriate getCharge() methods to each of its subclasses. Remember that the getCharge() method will need to know the number of days.
+Your class should work with the following program
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Price cp = new ChildrensPrice();
+        Price nrp = new NewReleasePrice();
+        Price reg = new RegularPrice();        
+        boolean ok = true;        
+        for(int i = 1; i < 10; i++)
+            System.out.print(cp.getCharge(i) + " ");
+        System.out.println();
+        for(int i = 1; i < 10; i++)
+            System.out.print(nrp.getCharge(i) + " ");
+        System.out.println();
+        for(int i = 1; i < 10; i++)
+            System.out.print(reg.getCharge(i) + " ");
+        System.out.println();
+    }
+}
+
+Now Polymorph getFrequentRenterPoints Method (4 filed Price3.java, ChildrensPrice3.java, NewReleasePrice3.java, RegularPrice3.java):
+Create a getFrequentRenterPoints() method for the Price class and add getFrequentRenterPoints() methods to any subclasses which require it. Remember that the getFrequentRenterPoints() method will need to know the number of days.
+Your class should work with the following program
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Price cp = new ChildrensPrice();
+        Price nrp = new NewReleasePrice();
+        Price reg = new RegularPrice();        
+        boolean ok = true;        
+        for(int i = 1; i < 10; i++)
+            System.out.print(cp.getFrequentRenterPoints(i) + " ");
+        System.out.println();
+        for(int i = 1; i < 10; i++)
+            System.out.print(nrp.getFrequentRenterPoints(i) + " ");
+        System.out.println();
+        for(int i = 1; i < 10; i++)
+            System.out.print(reg.getFrequentRenterPoints(i) + " ");
+        System.out.println();
+    }
+}
+
+Fix the Movie Methods:
+The getCharge and getFrequentRenterPoints of the Movie class should call the methods of the Price class.
+Your class should work wit the following program:
+import java.util.Scanner;
+public class Main
+{
+    public static Movie readMovie(Scanner in)
+    {
+        String name = in.nextLine();
+        int code = in.nextInt();        
+        return new Movie(name, code);
+    }    
+    public static void main(String [] args)
+    {
+        Scanner in = new Scanner(System.in);
+        Movie movie = readMovie(in);        
+        int numDays = in.nextInt();        
+        System.out.println(movie.getCharge(numDays));
+        System.out.println(movie.getFrequentRenterPoints(numDays));
+    }
+}
+
+Refactoring Done Let's Make a Change:
+Up til now, we have been modifying the code even though the new code behaved exactly as the old code did. Once we have refactored properly, we should be able to make changes to the code quite easily.
+In this case, you are asked to double the price of the Regular Movies. You will have to modify one file, RegularPrice.java. Modify the code appropriately. The change will be very simple.
+Your class will be tested with the following programs:
+public class Main
+{
+    public static void main(String [] args)
+    {
+        Movie [] movies = { new Movie("James Bond does Java", Price.NEW_RELEASE), new Movie("Mickey Mouse", Price.CHILDRENS), new Movie("The Pointer Sisters", Price.REGULAR)};        
+        boolean ok = true;        
+        int next = 0;
+        Movie m;
+        m = movies[next++];
+        if(m.price.getPriceCode() != Price.NEW_RELEASE)
+        {
+            System.out.println("1. Price code is not correct");
+            ok = false;
+        }
+        m = movies[next++];
+        if(m.price.getPriceCode() != Price.CHILDRENS)
+        {
+            System.out.println("2. Price code is not correct");
+            ok = false;
+        }
+        m = movies[next++];
+        if(m.price.getPriceCode() != Price.REGULAR)
+        {
+            System.out.println("3. Price code is not correct");
+            ok = false;
+        }
+        // Now, see if the setPriceCode works
+        m.setPriceCode(Price.CHILDRENS);
+        if(m.price.getPriceCode() != Price.CHILDRENS)
+        {
+            System.out.println("4. Price code is not correct");
+            ok = false;
+        }
+        m.setPriceCode(Price.NEW_RELEASE);
+        if(m.price.getPriceCode() != Price.NEW_RELEASE)
+        {
+            System.out.println("5. Price code is not correct");
+            ok = false;
+        }
+        m.setPriceCode(Price.REGULAR);
+        if(m.price.getPriceCode() != Price.REGULAR)
+        {
+            System.out.println("6. Price code is not correct");
+            ok = false;
+        }
+        if(ok)
+            System.out.println("All Korrect.");
+    }
+}

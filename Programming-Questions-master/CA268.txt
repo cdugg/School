@@ -1,0 +1,2684 @@
+# CA268
+Disclaimer: I did not write these questions nor do I own the rights to them (Both of those can be attributed to Charlie Daly). The python files were, however, written by me to answer these questions in 2018.
+Note that these questions were distributed over a  12 week period as lab questions. Full credit was awarded for any working solutions that passed website's test cases.
+Questions:
+
+Sorted Sum of Two Elements
+you are to write a function which takes a sorted list and an integer k and return True if any pair of numbers add up to k and False otherwise. However, your solution should be O(n).
+Note that the previous solution required time proportional to the input size squared, that is, it was O(n2) also known as quadratic. You need a solution which requires time proportional to the input. That is, O(n), also known as linear time.
+A linear solution can only pass through the input once. It cannot consider each pair of elements in the list.
+
+The Odd Numbers File
+Write a function called get_odd_list which returns a list of odd numbers. The function should read numbers from standard input until one of the numbers is -1. The function should only add odd numbers to the list. Put your function in a file called numbers.py.
+Your program will be tested by the following:
+from numbers import get_odd_list
+def main():
+    # call the get_odd_list function and print the result
+    odds = get_odd_list()
+    print(odds)
+if __name__ == "__main__":
+    main()
+    
+The All Numbers File
+Write a function which will read the input until terminated by -1 and create two lists, one to hold the odd numbers and one to hold the even numbers. The function should return both these lists as a tuple, the odd list followed by the even list.
+Put your function in a file called numbers.py.
+Your program will be tested by the following:
+from numbers import get_evenodd_list
+def main():
+    # call the get_odd_list function and print the result
+    odds, evens = get_evenodd_list()
+    print(odds)
+    print(evens)
+if __name__ == "__main__":
+    main()
+    
+Slicing Lists
+Write a function called get_sliced_lists which will take a list parameter and return the following lists which should be created using slices:
+A list including all but the last element
+A list including all but the first and last elements
+A reversed list (created using slicing)
+Your function should put the three lists into their own list and return that. Put your function in a file called numbers.py.
+Your program will be tested by the following:
+from numbers import get_sliced_lists
+def main():
+    # read the list from stdin
+    nums = []
+    num = int(input())
+    while num != -1:
+        nums.append(num)
+        num = int(input())
+    # call the student's function with the list of numbers and ...
+    lists = get_sliced_lists(nums)
+    # ... print the result
+    for lst in lists:
+        print(lst)
+if __name__ == "__main__":
+    main()
+    
+Using Indicies
+Write a function called get_counts which will take as a parameter a list of words and return a list of integers which will be a count of the lengths of those words. No word will have more than 9 letters.
+For example, if the list of words was ["cat", "dog", "pig", "ability", "babysit", "pat", "bun"] you can see that 5 of the words have 3 letters and 2 of the words have 7 letters, so counts should contain 10 entries with all entries zero except entry 3 which will have a value of 5 and entry 7 which will have a value of 2.
+The counts list will be [0, 0, 0, 5, 0, 0, 0, 2, 0, 0].
+On the other hand, if the list of words is ["dog", "pest", "horse", "donkey", "a", "dolphin", "elephant", "fisherman"], then counts would be [0, 1, 0, 1, 1, 1, 1, 1, 1, 1] as, In this case, there is a single word of every length except 0 and 2.
+Place your function in a file called numbers.py. Your function will be tested by the following program:
+import sys
+from numbers import get_counts
+def main():
+    # read the list of words from stdin
+    line = sys.stdin.readline()
+    line = line.strip()
+    words = line.split()
+    # call the student's function and ...
+    counts = get_counts(words)
+    # ... print the result
+    for length in range(10):
+        print(str(length) + ": " + str(counts[length]))
+if __name__ == "__main__":
+    main()
+Remember that the length's list will always have 10 elements regardless of how many words are in the list.
+
+Intersections
+Write a function called set_intersection which takes two sets as parameters and returns the intersection of the two sets.
+You may use the standard python set intersection functions/operators. This function should be very short.
+Your function will be in a file called sets.py
+Your function will be tested by the following program:
+import sys
+from sets import set_intersection
+# Function to make a set from a string of tokens
+def make_set(line):
+    line = line.strip()
+    tokens = line.split()
+    return set(tokens)
+def main():
+    # Read each set
+    line1 = sys.stdin.readline()
+    set1 = make_set(line1)
+    line2 = sys.stdin.readline()
+    set2 = make_set(line2)
+    # call the student's function ...
+    intersection = set_intersection(set1, set2)
+    # ... and print the result
+    # First convert to a list and sort to be sure that the order will always be the same
+    list_intersection = list(intersection)
+    list_intersection.sort()
+    print(list_intersection);
+if __name__ == "__main__":
+    main()
+    
+Unions, Subsets
+Write a function called set_stuff which takes two sets, a and b as parameters and returns a tuple with the following elements:
+The union of the two sets a and b.
+A boolean value, True or False, depending on whether a is a subset of b.
+A boolean value, True or False, depending on whether a is a superset of b.
+You may use the standard python set functions/operators. This function should be very short.
+Your function will be in a file called sets.py
+Your function will be tested by the following program: 
+import sys
+from sets import set_stuff
+# Function to make a set from a string of tokens
+def make_set(line):
+    line = line.strip()
+    tokens = line.split()
+    return set(tokens)
+def make_sorted_list(s):
+    lst = list(s)
+    lst.sort()
+    return lst
+def main():
+    # Read each set
+    line1 = sys.stdin.readline()
+    a = make_set(line1)
+    line2 = sys.stdin.readline()
+    b = make_set(line2)
+    # call the student's function ...
+    union, sub, super = set_stuff(a, b)
+    # ... and print the result
+    # First convert to a list and sort to be sure that the order will always be the same
+    print(make_sorted_list(union))
+    print(sub)
+    print(super)
+if __name__ == "__main__":
+    main()
+    
+Unique Elements of a List
+Write a function called unique_list which take one parameter, a list, and which returns a new list containing only the unique elements of the list. The order of the elements don't matter.
+You should use sets in your answer. Your function could be very short.
+Your function will be in a file called sets.py
+Your function will be tested by the following program:
+import sys
+from sets import unique_list
+def main():
+    # Read in a list of strings
+    lst = sys.stdin.readline().strip().split()
+    # call the student's function ...
+    answer = unique_list(lst)
+    print(type(answer)) # should be a list
+    answer.sort()
+    print(answer)
+if __name__ == "__main__":
+    main()
+    
+Previous Numbers
+Write a program which reads numbers until a -1 is encountered and only print out numbers which have previously occurred in the input. 
+Your program will work as follows:
+python3 has_previous.py
+Enter some numbers (-1 to end): 45 8 20 7 16 45 0 22 20 6 20 9 -1
+Previous: 45 20 20
+Note1 that only 45 and 20 (two previous occurances) have occurred before in the input.
+Note2 that the numbers in bold are the numbers that the user entered - your program does not print these.
+Hints:
+use the following to print the initial prompt: 
+print("Enter numbers (-1 to end): ", end="")
+Read an integer from the input using 
+num = int(input())
+use the following to print a number followed by a space 
+print(str(num) + " ", end="")
+You should always end your input with a newline, so after you print the numbers, have a single print() statement. 
+print()
+Still got output problems ... the previous hints should fix it. However, the output format should match if you have the following code:
+    # Do your stuff here
+    print("Enter numbers (-1 to end): ", end="")
+    # Do your stuff here
+    for num in solution:   # assuming solution is a list with the correct results
+        print(str(num) + " ", end="")
+    print()  # a final print statement to ensure that your output has a newline.
+    
+Suspicious
+A headmaster of a school is contacted by the police and provided with a file of names of juvenile delinquents. He has another file containing the name of his students and wants a program to check if any of the names are the same. Each line of each file contains one name only. Write a program to detect if any name appears on both files. (Example files are shown below) The filenames will be passed to your program on the command line.
+Here is what such a program might look like
+python3 suspicious.py students.txt delinquents.txt
+1. Bob Dylan
+2. Boney Vox
+3. Shakira
+Note that the output is sorted alphabetically. Your program may assume that the files exist.
+Here is the students.txt file for this example:
+Johnny be good
+Boney Vox
+The Edge
+John Lennon
+Shakira
+Bob Dylan
+James Brown
+and here is the delinquents.txt file for that example:
+Baddie ThreeShoes
+Attila the Hun
+Boney Vox
+Agolf Hitler
+Bob Dylan
+Shakira
+
+Phone Numbers
+Write a program to manage phone numbers. A user enters commands a line at a time. There are three commands:
+1. !! (two exclamation marks) exits the program
+2. name number associates a number to a name. Note that the name cannot have spaces and if a second number is added to a name, it overwrites the first.
+3. name ? gives the number for that name
+A program run might look like (note that lines in bold are commands that have been entered by the user):
+$ python3 phone_numbers.py
+Enter a name and number, or a name and ? to query (!! to exit)
+James 1234
+John 5678
+John ?
+John has number 5678
+Bobby ?
+Sorry, there is no Bobby
+!!
+Bye
+
+Student Marks
+Write a function called make_map() which reads data from the input and creates and returns a map. The program should read student details from standard input, one line per student. Each line contains a student name followed by a mark.
+Your method would be called by the following program:
+# import the student function
+from student_marks import make_map
+from sys import argv  # Even though we don't need argv in this exercise
+def main(argv):
+    student = make_map() # Call the student function
+    print(type(student)) # check the type ... should be a map (or in python, dict)
+    names = student.keys()   # get all names
+    for name in sorted(names): # sort the names
+        print(name + " has mark " + student[name]) # print the names and marks
+if __name__ == "__main__":
+    main(sys.argv[1:])
+here is a sample run:
+$ python3 Main.py
+James 90
+John 80
+Bobby 40
+<class 'dict'>
+Bobby has mark 40
+James has mark 90
+John has mark 80
+The user's input is shown in bold. Note that the main program prints the type of the return value to ensure that you did return a dictionary and that is why the <class 'dict'> appears.
+
+Word Lengths
+Write a function called get_counts_dict() which will takes a list of words as a parameter and returns a map of a count of each word.
+Your function will be tested by the following program:
+import sys
+from word_length import get_counts_dict
+def main():
+    # read the list of words from stdin
+    line = sys.stdin.readline()
+    line = line.strip()
+    words = line.split()
+    # call the student's function
+    counts = get_counts_dict(words)
+    print(type(counts))
+    lengths = counts.keys()
+    for length in sorted(lengths):
+        print(str(length) + ": " + str(counts[length]))
+
+if __name__ == "__main__":
+    main()
+Here is an example run of the program:
+$ python3 Main.py
+this sent ence cont ains only four lett errr words
+<class 'dict'>
+4: 9
+5: 1
+In this case, the "sentence" contained 9 four letter "words" and one five letter word (namely words). Use a map to map each word length onto a count.
+This is similar to a previous exercise, except that you return a map instead of a list.
+
+Reversing the Input
+Create a python function which will read the input a line at a time and print out the lines in reverse order. Your function will receive a stack as a parameter. Use this stack appropriately to reverse the input.
+Here is the Stack class:
+class Stack:
+#
+#  Stack ADT has three methods: is_empty, push and pop.
+#
+   def __init__(self):
+      self.stack = []
+      self.top = 0
+   def is_empty(self):
+      return self.top == 0
+   def push(self, item):
+      if self.top < len(self.stack):
+         self.stack[self.top] = item
+      else:
+         self.stack.append(item)
+      self.top += 1
+   def pop(self):
+      if self.is_empty():
+         return None
+      else:
+         self.top -= 1
+         return self.stack[self.top]
+Your function will be tested using the following program:
+from Stack import Stack
+from reverse_input import reverse_input
+stack = Stack()
+reverse_input(stack)
+
+Matching Brackets
+A common application of stacks is to check for matching brackets. Write a function which takes a string parameter and returns a boolean value which indicates whether the brackets in the string match. Your function should be called check_brackets(). The following function calls should produce the values shown:
+check_brackets("()") is true
+check_brackets(")(") is false
+check_brackets("hello(goo(d)bye)") is true
+check_brackets("hello(goo(d)bye))") is true
+Here are some more checks:
+check_brackets("d(h((e(l))))o)d") is true
+check_brackets("(d(h((e(l)l))o)d") is false
+Hint: Design this algorithm before you write any code. Note that characters other than brackets do not affect the outcome. Remember to distinguish between opening and closing brackets. How should they match? How can you use the stack effectively?
+
+Print Queue
+Write a function which will take some queue parameters and return a list of the elements of the queue. Your function will be called print_queue and will be in a file called print_queue.py. It will take three parameters, a list representing the circular buffer and two integers, representing the front and back of the queue.
+Your function will be tested using the following program which reads a set of queue commands from its input and executes them on the queue and then passes the queue parameters to your method. You should be then work out what the queue contains and return the contents as a list.
+from Queue import Queue
+from print_queue import print_queue
+def main():
+   size = int(input())
+   q = Queue(size)
+   command = input()
+   while len(command) > 0:
+      if command[0] == 'a': # add
+         item = command.split()[1]
+         q.enqueue(int(item));
+      elif command[0] == 'r': # remove
+         q.dequeue();
+      else:
+         print("Unknown command!")
+      command = input()
+   print_queue(q.data, q.front, q.back)
+if __name__ == "__main__":
+   main()
+Hint: look at the diagram of the circular buffer in the notes. You should be able to work out how to print out the elements of the queue.
+The queue class that Main.py uses is the following:
+class Queue:
+    def __init__(self, capacity = 4):
+        self.data = [0] * capacity
+        self.front = 0
+        self.back = 0
+    def count(self):
+        if self.back >= self.front:
+            return self.back - self.front
+        else:
+            return self.back - self.front + len(self.data)
+    def isempty(self):
+        return self.front == self.back
+    def enqueue(self, item):
+        if self.count() < len(self.data) - 1:
+            self.data[self.back] = item
+            self.back = (self.back + 1) % len(self.data)
+        else:
+            print("Queue Full")
+    def dequeue(self):
+        if self.count() > 0:
+           item = self.data[self.front]
+           self.front = (self.front + 1) % len(self.data)
+           return item
+        else:
+            return None
+            
+The Two Stack Queue
+Create a Queue ADT with three methods: isempty(), enqueue() and dequeue(). The ADT should use two stacks and no other data type. The Stack class will be provided with the three methods, push(), pop() and isempty()
+Your queue will be tested by the following program
+from Queue import Queue
+#
+#  Test a queue
+#
+def main():
+   q = Queue()
+   command = input()
+   while len(command) > 0:
+      print(command + ":", end="")
+      if command[0] == 'a': # add
+         item = command.split()[1]
+         q.enqueue(int(item));
+      elif command[0] == 'r': # remove
+         print(q.dequeue(), end="");
+      else:
+         print("Unknown command!")
+      print(" _" if q.isempty() else " *")
+      command = input()
+   print()
+if __name__ == "__main__":
+   main()
+The Stack implementation which you are provided with is shown below.
+class Node:
+    def __init__(self):
+        self.item = None
+        self.next = None
+class Stack:
+    def __init__(self):
+        self.top = None
+    def isempty(self):
+        return self.top == None
+    def push(self, item):
+        oldtop = self.top
+        self.top = Node()
+        self.top.item = item
+        self.top.next = oldtop
+    def pop(self):
+        item = self.top.item
+        self.top = self.top.next
+        return item
+        
+How Many Times
+Add a count method to the LinkedList class which returns the number of elements in the list. It should leave the list unchanged.The LinkedList class is shown below:
+#
+#  Just a class to store the item and the next pointer
+#
+class Node:
+    def __init__(self, item, next):
+        self.item = item
+        self.next = next
+# Note, these functions are called methods "A method is a function that is stored as a class attribute"
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    def add(self, item):
+        self.head = Node(item, self.head)
+    def remove(self):
+        if self.is_empty():
+            return None
+        else:
+            item = self.head.item
+            self.head = self.head.next    # remove the item by moving the head pointer
+            return item
+    def is_empty(self):
+        return self.head == None
+Your function will be tested by the following program: 
+import sys
+from LinkedList import LinkedList
+def main():
+    # Read each set
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    ll = LinkedList()
+    # call the students function
+    print(ll.count())   # Empty list, count should return 0    
+    for item in items:
+        ll.add(item)    
+    # call the students function
+    print(ll.count())    
+    # check that the first item removed from the list is the same as the last one added
+    same = ll.remove() == items.pop()    
+    # call the students function again ... should be one shorter.
+    print(ll.count())    
+    while not ll.is_empty() and len(items) > 0:
+        same = same and ll.remove() == items.pop()        
+    if not same or not ll.is_empty() or len(items) != 0:
+        print("the list has been modified!");
+if __name__ == "__main__":
+    main()
+    
+Is There or Not
+Add a contains method to the LinkedList class which returns true if its argument is contained in the list. It should leave the list unchanged.The LinkedList class is as in the previous question:
+Your method will be tested by the following program: 
+import sys
+from LinkedList import LinkedList
+def main():
+    # Read each line
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    ll = LinkedList()
+    problem = False
+    if ll.contains(items[0]):
+        print("An empty list should not match anything")
+        problem = True    
+    else:
+        for item in items:
+            if ll.contains(item):
+                print(item + " detected before being added.")
+                problem = True
+            ll.add(item)            
+        # Now every item in the items should be in the list.
+        for item in items:
+            if not ll.contains(item): # item should not be contained
+                print(item + " not found in list.")
+                problem = True
+    if not problem:
+        # check that the list still contains all the items
+        while not ll.is_empty() and len(items) > 0:
+            if ll.remove() != items.pop():
+                print("List has been modified")
+                problem = true
+                break        
+        if not problem:
+            if (not ll.is_empty()) or len(items) != 0:
+                print("the list size is wrong");
+                problem = True                
+    if problem:
+        print("More work needed!")
+    else:
+        print("all ok!")
+if __name__ == "__main__":
+    main()
+    
+Who's Behind
+Add an after() method to the LinkedList class which takes as parameter an item and returns the item that occurs after it in the linked list. If no such item exists, then return None.
+Your method will be tested by the following program:
+import sys
+from LinkedList import LinkedList
+def main():
+    # Read each set
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    tests = [] # list of the results of the tests    
+    ll = LinkedList()
+    # Check that it works for an empty list    
+    tests.append(ll.after("") == None)  # Each test should be True
+    # Check that the item doesn't exist before it is added    
+    for item in items:
+        tests.append(ll.after(item) == None)
+        ll.add(item)    
+    items.reverse()
+    for i in range(len(items) - 1):
+        # print(ll.after(items[i]), items[i+1])
+        tests.append(ll.after(items[i]) == items[i+1])        
+    print("All Good" if all(tests) else str(tests))
+if __name__ == "__main__":
+    main()
+    
+Who's Before
+Add a before() method to the LinkedList class which takes as parameter an item and returns the item that occurs before it in the linked list. If no such item exists, then return None.
+Your method will be tested by the following program:
+import sys
+from LinkedList import LinkedList
+def main():
+    # Read each set
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    # A list to store the results of the tests
+    tests = []    
+    ll = LinkedList()
+    # Check that it works for an empty list    
+    tests.append(ll.before("") == None)  # Each test should be True
+    # Check that the item doesn't exist before it is added    
+    for item in items:
+        tests.append(ll.before(item) == None)
+        ll.add(item)    
+    items.reverse()
+    for i in range(len(items) - 1):
+        # print(ll.before(items[i + 1]), items[i])
+        tests.append(ll.before(items[i + 1]) == items[i])        
+    print("All Good" if all(tests) else str(tests))
+if __name__ == "__main__":
+    main()
+    
+Evil Count List
+Write an even_count function which takes a linked list of integers as an argument and counts the number of even elements in the list
+Note that this exercise does not require you to add a method to a linked list. Instead, write a function that takes a linked list as a parameter. You only need to supply the even_count method.
+Your method will be tested by the following program:
+import sys
+from LinkedList import LinkedList
+from even_count_list import even_count
+def main():
+    # Read each set
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]    
+    ll = LinkedList()    
+    for num in nums:
+        ll.add(num)    
+    print(even_count(ll))
+if __name__ == "__main__":
+    main()
+    
+Tag on to the End
+Add an append() method to the LinkedList class which has one parameter which gets added to the end of the list.
+Your method should be added to the LinkedList class and should be the last method in the class. The rest of the code should be unchanged.
+Your method will be tested by the following program:
+import sys
+from LinkedList import LinkedList
+def main():
+    # Read data from input
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    ll = LinkedList()
+    ll.append("o")
+    if str(ll) != "o ":
+        print("Doesn't work for one element")
+    ll = LinkedList()
+    for item in items:
+        ll.add(item)        
+    print(str(ll))
+    ll.append("xxx")
+    print(str(ll))
+    ll = LinkedList()
+    # create the list using append 
+    for item in items:
+        ll.append(item)
+    print(str(ll))    
+if __name__ == "__main__":
+    main()
+Note that the code is tested by printing the LinkedList using the str() method. This returns the items in the reverse order. Be sure to note this or you will be very confused.
+
+Twirling Lists
+Add a rotate() method to the LinkedList class which rotates the list so that the first element of the list becomes the last and all the other elements move one place up.
+Your method should be added to the LinkedList class and should be the last method in the class. The rest of the code should be unchanged.
+Your method will be tested by the following program:
+import sys
+from LinkedList import LinkedList
+def main():
+    # Read data from input
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    # Create the linked list
+    ll = LinkedList()
+    # add the items to the linked list
+    for item in items:
+        ll.add(item)
+    # print the linked list
+    print(str(ll))
+    ll.rotate() # rotate it
+    print(str(ll)) # print it again
+    # create the list using append 
+    for i in range(len(items)-1):
+        ll.rotate() # Rotate enough times should get back to the original
+    print(str(ll))
+if __name__ == "__main__":
+    main()
+Note that the test output could be confusing because the str method will show the items on the string in the reverse order to the way they were placed on the linked list.
+
+Evil Loopy Lists
+If the end of the list pointed to the head of the list, then you would have a bit of a problem. Printing this list would take forever and wear out a poor computer.
+Write a function called detect_loop() which has a LinkedList parameter and which returns True or False depending on whether any of the next pointers point to the head. Your function should be placed in a file called evil_loop_lists.py.
+Your function will be tested by the following program:
+import sys
+from LinkedList import LinkedList
+from evil_loopy_lists import detect_loop
+def make_ll(line):
+    items = line.strip().split()
+    ll = LinkedList()    
+    for item in items:
+        ll.add(item)
+    return ll    
+def make_long_list():
+    lst = [x for x in range(1, 3000, 10)]
+    ll = LinkedList()
+    for item in lst:
+        ll.add(item)        
+    return ll
+def add_head_loop(lst):
+    # Add a loop to this list. Normally a bad thing ... here it is just to test the student program
+    if lst.head != None: # Need at least one item for a loop
+        if lst.head.next == None:
+            lst.head.next = lst.head
+        else:
+            ptr = lst.head
+            while ptr.next != None:
+                ptr = ptr.next                
+            ptr.next = lst.head        
+def main():    
+    lists = []
+    for line in sys.stdin:
+        # Create two versions of this LinkedList
+        no_loop = make_ll(line) # one normal list
+        loop = make_ll(line)    # one with a loop
+        add_head_loop(loop)     # ... need to add the loop        
+        # Add these two lists
+        lists.append(no_loop)
+        lists.append(loop)        
+    # Add a couple of long lists to the tests
+    ll = make_long_list()
+    lists.append(ll)    
+    ll = make_long_list()
+    add_head_loop(ll)
+    lists.append(ll)    
+    # add an empty list to the mix
+    lists.append(LinkedList())
+    # Test the students function against all these lists
+    for lst in lists:
+        print("Loop" if detect_loop(lst) else "Noop", lst)
+if __name__ == "__main__":
+    main()
+    
+A LinkedList or Stack
+You might have noticed that the LinkedList behaves in a similar way to a Stack. Create a Stack class using a LinkedList. Your class will look something like the following:
+from LinkedList import LinkedList
+class Stack:
+    def __init__(self):
+        self.ll = LinkedList()
+    def push(self):
+        # Your code here
+    def pop(self):
+        # Your code here
+    def is_empty(self):
+        # Your code here
+You need to fill out the three methods, namely, push(), pop() and is_empty()
+Your function will be tested by the following program:
+from LinkedList import LinkedList
+from LinkedStack import LinkedStack
+def main():
+    stack = LinkedStack()    
+    tests = []    
+    tests.append(stack.is_empty())  # check the stack is empty first.
+    tests.append(stack.pop() == None)    
+    val = 9
+    stack.push(val)
+    tests.append(not stack.is_empty())
+    tests.append(stack.pop() == val)
+    vowels = "aeiou"
+    for c in vowels:
+        stack.push(c)
+    contents = ""
+    while not stack.is_empty():
+        contents += stack.pop()        
+    tests.append(vowels == contents[::-1])    
+    if all(tests):
+        print("OK")
+    else:
+        print("Failed tests: ", end = "")
+        for i in range(len(tests)):
+            if not tests[i]:
+                print(i, end = " " )
+        print()
+if __name__ == "__main__":
+    main()
+    
+Recursive Count
+Write a recursive method which counts the number of elements in a list. It should leave the list unchanged.The LinkedList class is shown below:
+class Node:
+    def __init__(self, item, next):
+        self.item = item
+        self.next = next
+class LinkedLList:
+    def __init__(self):
+        self.head = None
+    def add(self, item):
+        self.head = Node(item, self.head)
+    def remove(self):
+        if self.is_empty():
+            return None
+        else:
+            item = self.head.item
+            self.head = self.head.next    # remove the item by moving the head pointer
+            return item
+    def is_empty(self):
+        return self.head == None
+Your function will be tested by the following program: 
+import sys
+from LinkedList import LinkedList
+def main():
+    # Read each set
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    ll = LinkedList()
+    # call the students function
+    print(ll.count())   # Empty list, count should return 0    
+    for item in items:
+        ll.add(item)    
+    # call the students function
+    print(ll.count())    
+    # check that the first item removed from the list is the same as the last one added
+    same = ll.remove() == items.pop()    
+    # call the students function again ... should be one shorter.
+    print(ll.count())
+    while not ll.is_empty() and len(items) > 0:
+        same = same and ll.remove() == items.pop()
+        
+    if not same or not ll.is_empty() or len(items) != 0:
+        print("the list has been modified!");
+if __name__ == "__main__":
+    main()
+    
+Even More Recursive
+Write a recursive method which counts the number of even elements in a list. It should leave the list unchanged. Your method should be called count_even and should be added to the end of the LinkedList class.
+Although, this problem does not provide a main method to show how your program will be tested, you can use the same testing program from last week's exercise, evil count list. 
+In future, however, you will have to start writing your own testing code for these problems. Writing the testing code can also help you understand the problem better. In fact, most professional programmers write the testing code before they start working on the problem.
+
+Recursive Presence
+Write a recursive method called is_present() which returns true if its argument is in a linked list. Add the method to the LinkedList class from the previous question:
+Your function will be tested by the following program: 
+import sys
+from LinkedList import LinkedList
+def main():
+    # Read each set
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    ll = LinkedList()
+    problem = False
+    if ll.is_present(item)(items[0]):
+        print("An empty list should not match anything")
+        problem = True    
+    else:
+        for item in items:
+            if ll.is_present(item)(item):
+                print(item + " detected before being added.")
+                problem = True
+            ll.add(item)            
+        # Now every item in the items should be in the list.
+        for item in items:
+            if not ll.is_present(item): # item should not be contained
+                print(item + " not found in list.")
+                problem = True
+    if not problem:
+        # check that the list still contains all the items
+        while not ll.is_empty() and len(items) > 0:
+            if ll.remove() != items.pop():
+                print("List has been modified")
+                problem = true
+                break        
+        if not problem:
+            if (not ll.is_empty()) or len(items) != 0:
+                print("the list size is wrong");
+                problem = True               
+    if problem:
+        print("More work nned!")
+    else:
+        print("all ok!")
+if __name__ == "__main__":
+    main()
+    
+Recursive Max
+Write a recursive method which finds the largest integer in a list. The method should be called largest().
+The LinkedList class is shown below:
+class Node:
+    def __init__(self, item, next):
+        self.item = item
+        self.next = next
+class LinkedLList:
+    def __init__(self):
+        self.head = None
+    def add(self, item):
+        self.head = Node(item, self.head)
+    # Remove (and return) the element at the top of the list
+    def remove(self):
+        if self.is_empty():
+            return None
+        else:
+            item = self.head.item
+            self.head = self.head.next    # remove the item by moving the head pointer
+            return item
+    def is_empty(self):
+        return self.head == None
+Your method will be tested by the following program: 
+import sys
+from LinkedList import LinkedList
+def main():
+    # Create a list for the tests
+    tests = []    
+    # Read each set
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items] # Create an array of nums from the strings    
+    ll = LinkedList()
+    # Add each number to the list
+    for num in nums:
+        ll.add(num)    
+    # call the students function
+    tests.append(ll.largest() == max(nums)) # First test ... compare students function to max    
+    # Keep reducing the list, comparing the largest of the reduced list to the remiaining numbers.
+    count = 1
+    while count == len(nums):
+        ll.remove() # Remove one element from the list
+        # Compare the largest of this list with the remaining numbers
+        tests.append(ll.largest() == max(nums[count:]))
+        count += 1        
+    if all(tests):
+        print("All tests passed!")
+    else:
+        for i in range(len(tests)):
+            if not tests[i]:
+                print("test " + str(i) + " failed.")
+if __name__ == "__main__":
+    main()
+    
+Consecutive Duplicates
+Write a recursive method called duplicates() which returns true if two consecutive elements of the linked list are equal. Add the method to the LinkedList class from the previous question:
+Your method will be tested by the following program: 
+import sys
+from LinkedList import LinkedList
+def main():
+    # Read each set
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    ll = LinkedList()
+    bool = str(ll.duplicates())[0]
+    print(bool, end="")  # Only print the first letter of the result (F for false, T for true)
+    for item in items:
+        ll.add(item)
+        bool = str(ll.duplicates())[0] # Only print the first letter of the result
+        print(bool, end="")        
+    print()
+if __name__ == "__main__":
+    main()
+    
+Count the Elements of a Tree
+Write a method to count the number of elements in a binary search tree.
+Here is a simple implementation of a Binary Search Tree: 
+class Node:
+    """ A node in a BST. It may have left and right subtrees """
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    """ An implementation of a Binary Search Tree """
+    def __init__(self):
+        self.root = None
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        # This is a non recursive add method. A recursive method would be cleaner.
+        if self.root == None: # ... Empty tree ...
+            self.root = Node(item, None, None) # ... so, make this the root
+        else:
+            # Find where to put the item
+            child_tree = self.root
+            while child_tree != None:
+                parent = child_tree
+                if item < child_tree.item: # If smaller ... 
+                    child_tree = child_tree.left # ... move to the left
+                else:
+                    child_tree = child_tree.right
+            # child_tree should be pointing to the new node, but we've gone too far
+            # we need to modify the parent nodes
+            if item < parent.item:
+                parent.left = Node(item, None, None)
+            else:
+                parent.right = Node(item, None, None)
+Add a recursive method to this class which will count all the elements in a BST.
+
+Count a Range of Tree Elements
+Write a method count(lo, hi) which counts the elements in a binary search tree which are in a range from lo to hi inclusive.
+Add your method to the Binary Search Tree class below: 
+class Node:
+    """ A node in a BST. It may have left and right subtrees """
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    """ An implementation of a Binary Search Tree """
+    def __init__(self):
+        self.root = None
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        # This is a non recursive add method. A recursive method would be cleaner.
+        if self.root == None: # ... Empty tree ...
+            self.root = Node(item, None, None) # ... so, make this the root
+        else:
+            # Find where to put the item
+            child_tree = self.root
+            while child_tree != None:
+                parent = child_tree
+                if item < child_tree.item: # If smaller ... 
+                    child_tree = child_tree.left # ... move to the left
+                else:
+                    child_tree = child_tree.right
+            # child_tree should be pointing to the new node, but we've gone too far
+            # we need to modify the parent nodes
+            if item < parent.item:
+                parent.left = Node(item, None, None)
+            else:
+                parent.right = Node(item, None, None)
+So, for example, the following code:
+    bst = BST()
+    for ele in [2, 7, 4, 8, 5]:
+        bst.add(ele)
+    print(bst.count(3, 5))
+would print 2 as there are two elements in the tree in the range 3 to 5 inclusive, namely 4 and 5.
+Note that your code will be expected to work with an empty tree.
+
+Height of a Tree
+Write a method to get the height of a binary search tree.
+Here is a simple implementation of a Binary Search Tree: 
+class Node:
+    """ A node in a BST. It may have left and right subtrees """
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    """ An implementation of a Binary Search Tree """
+    def __init__(self):
+        self.root = None
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        # This is a non recursive add method. A recursive method would be cleaner.
+        if self.root == None: # ... Empty tree ...
+            self.root = Node(item, None, None) # ... so, make this the root
+        else:
+            # Find where to put the item
+            child_tree = self.root
+            while child_tree != None:
+                parent = child_tree
+                if item < child_tree.item: # If smaller ... 
+                    child_tree = child_tree.left # ... move to the left
+                else:
+                    child_tree = child_tree.right
+            # child_tree should be pointing to the new node, but we've gone too far
+            # we need to modify the parent nodes
+            if item < parent.item:
+                parent.left = Node(item, None, None)
+            else:
+                parent.right = Node(item, None, None)
+Add a recursive method to this class which will return the height of the elements in a BST.
+
+Sum the Elements of a Tree
+Write a method called total() which will return the sum of all the elements of a binary search tree.
+Here is a simple implementation of a Binary Search Tree: 
+class Node:
+    """ A node in a BST. It may have left and right subtrees """
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    """ An implementation of a Binary Search Tree """
+    def __init__(self):
+        self.root = None
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        # This is a non recursive add method. A recursive method would be cleaner.
+        if self.root == None: # ... Empty tree ...
+            self.root = Node(item, None, None) # ... so, make this the root
+        else:
+            # Find where to put the item
+            child_tree = self.root
+            while child_tree != None:
+                parent = child_tree
+                if item < child_tree.item: # If smaller ... 
+                    child_tree = child_tree.left # ... move to the left
+                else:
+                    child_tree = child_tree.right
+            # child_tree should be pointing to the new node, but we've gone too far
+            # we need to modify the parent nodes
+            if item < parent.item:
+                parent.left = Node(item, None, None)
+            else:
+                parent.right = Node(item, None, None)
+Add a recursive method to this class which will sum all the elements in a BST.
+
+Tree Presents
+Write a method called is_present() which takes a parameter and returns a boolean value which indicates whether the item is present or not.
+Here is a simple implementation of a Binary Search Tree: 
+class Node:
+    """ A node in a BST. It may have left and right subtrees """
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    """ An implementation of a Binary Search Tree """
+    def __init__(self):
+        self.root = None
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        # This is a non recursive add method. A recursive method would be cleaner.
+        if self.root == None: # ... Empty tree ...
+            self.root = Node(item, None, None) # ... so, make this the root
+        else:
+            # Find where to put the item
+            child_tree = self.root
+            while child_tree != None:
+                parent = child_tree
+                if item < child_tree.item: # If smaller ... 
+                    child_tree = child_tree.left # ... move to the left
+                else:
+                    child_tree = child_tree.right
+            # child_tree should be pointing to the new node, but we've gone too far
+            # we need to modify the parent nodes
+            if item < parent.item:
+                parent.left = Node(item, None, None)
+            else:
+                parent.right = Node(item, None, None)
+Add a recursive method to this class which will sum all the elements in a BST.
+
+The Leaf Count
+Write a method for a BST which produces a count of the number of leaves of the tree. The method should be called count_leaves().
+Add the method to the following implementation of a Binary Search Tree:
+class Node:
+    """ A node in a BST. It may have left and right subtrees """
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    """ An implementation of a Binary Search Tree """
+    def __init__(self):
+        self.root = None
+    def recurse_add(self, ptr, item):
+        if ptr == None:
+            return Node(item)
+        elif item < ptr.item:
+            ptr.left = self.recurse_add(ptr.left, item)
+        elif item > ptr.item:
+            ptr.right = self.recurse_add(ptr.right, item)
+        return ptr        
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        self.root = self.recurse_add(self.root, item)
+Note that a leaf is a node both of whose children are None.
+
+Make a Balanced Tree
+Consider the implementation of the Binary Tree class below:
+class Node:
+    """ A node in a BST. It may have left and right subtrees """
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    """ An implementation of a Binary Search Tree """
+    def __init__(self):
+        self.root = None
+    def recurse_add(self, ptr, item):
+        if ptr == None:
+            return Node(item)
+        elif item < ptr.item:
+            ptr.left = self.recurse_add(ptr.left, item)
+        elif item > ptr.item:
+            ptr.right = self.recurse_add(ptr.right, item)
+        return ptr        
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        self.root = self.recurse_add(self.root, item)
+When used with the following code: 
+tree = BST()
+for x in [10, 20, 30]:
+    tree.add(x)
+The shape of the resulting tree depends on the order of the elements in the list. Your task today is to write a function which takes a list as an argument and rearranges the list (or produce a new list with the same elements) so that when each item is added to the list, the tree will be perfectly balanced.
+Your program will be tested by code similar to the following:
+from BST import BST
+from student import make_list
+import random
+def main():
+    random.seed(0)    
+    for length in [1, 2, 3, 4, 7, 8, 15, 16, 31, 32, 50, 100]:
+        # Make a random lst
+        lst = random.sample(range(length), length)
+        # Use the students function to arramge the list
+        new_list = make_list(lst) # get the student's lst
+        # Make sure they have the same elements
+        if sorted(lst) != sorted(new_list):
+            print("You have somehow changed the elements of the list. You are only supposed to change the order.")
+        else:
+            # Create a BST
+            tree = BST()
+            # and add in the elements from the list
+            for element in new_list:
+                tree.add(element)
+            # Show the lst
+            print(lst)
+            # And some data ... the height, the count and whether or not balanced.
+            print(tree.max_height(), tree.count(), tree.is_balanced())
+if __name__ == "__main__":
+    main()
+So, to sum up, rearrange the elements in the list, so that when added to the tree, the tree will be balanced. Note that the output will show you the list and will then show you the height of the tree, a count of the elements in the tree and whether or not the tree is balanced. A tree is considered balanced when, for each node, the difference in height between the left and right children is less than 1.
+
+Test for Maximus
+We will define a Maximal Tree as one which for a given height as as many nodes as possible - that is, every row is full. You are to create a function which will have a BST as argument and will determine if the tree is maximal. Your function should be called is_maximal().
+The input will be generated programatically. Your function will be tested by code similar to the following:
+from student import is_maximal
+def test(lst):
+    bst = BST()
+    # Add each element in the lst to the tree
+    for n in lst:
+        bst.add(n)
+    # Print the list and whether or not the resulting tree is maximal
+    print("bst.is_maximal(" + str(lst) + ") is " + str(is_maximal(bst)))
+    
+In Order Traversal
+Consider the implementation of the Binary Tree class below:
+class Node:
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    def __init__(self):
+        self.root = None
+    def recurse_add(self, ptr, item):
+        if ptr == None:
+            return Node(item)
+        elif item < ptr.item:
+            ptr.left = self.recurse_add(ptr.left, item)
+        elif item > ptr.item:
+            ptr.right = self.recurse_add(ptr.right, item)
+        return ptr        
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        self.root = self.recurse_add(self.root, item)
+    def r_count(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + self.r_count(ptr.left) + self.r_count(ptr.right)            
+    def count(self): return self.r_count(self.root)
+    def r_height(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + max(self.r_height(ptr.left), self.r_height(ptr.right))
+    def height(self): return self.r_height(self.root)
+Add a method called in_order() which prints out the elements of a tree in order. That is, it would be an in_order traversal of the tree. Each element should be printed using a print statement such as
+print(ptr.item + " ", end="")
+or even 
+print(ptr.item, end=" ")
+and there should be a final print statement just to print a new line.
+Your method will be tested by the following:
+import sys
+from BST import BST
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]
+    tree = BST()
+    for num in nums:
+        tree.add(num)
+    print("Print the elements of the tree in order:")
+    tree.in_order()
+if __name__ == "__main__":
+    main()
+    
+Pre Order Traversal
+Consider the implementation of the Binary Tree class below:
+class Node:
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    def __init__(self):
+        self.root = None
+    def recurse_add(self, ptr, item):
+        if ptr == None:
+            return Node(item)
+        elif item < ptr.item:
+            ptr.left = self.recurse_add(ptr.left, item)
+        elif item > ptr.item:
+            ptr.right = self.recurse_add(ptr.right, item)
+        return ptr        
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        self.root = self.recurse_add(self.root, item)
+    def r_count(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + self.r_count(ptr.left) + self.r_count(ptr.right)            
+    def count(self): return self.r_count(self.root)
+    def r_height(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + max(self.r_height(ptr.left), self.r_height(ptr.right))
+    def height(self): return self.r_height(self.root)
+Add a method called pre_order() which prints out the elements of a tree using preorder. That is, it would be a preorder traversal of the tree. Each element should be printed using a print statement such as
+print(ptr.item, end=" ")
+and there should be a final print statement just to print a newline.
+Your method will be tested by the following:
+import sys
+from BST import BST
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]
+    tree = BST()
+    for num in nums:
+        tree.add(num)
+    print("Print the elements of the tree in order:")
+    tree.pre_order()
+if __name__ == "__main__":
+    main()
+    
+Post Order Traversal
+Consider the implementation of the Binary Tree class below:
+class Node:
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    def __init__(self):
+        self.root = None
+    def recurse_add(self, ptr, item):
+        if ptr == None:
+            return Node(item)
+        elif item < ptr.item:
+            ptr.left = self.recurse_add(ptr.left, item)
+        elif item > ptr.item:
+            ptr.right = self.recurse_add(ptr.right, item)
+        return ptr        
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        self.root = self.recurse_add(self.root, item)
+    def r_count(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + self.r_count(ptr.left) + self.r_count(ptr.right)            
+    def count(self): return self.r_count(self.root)
+    def r_height(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + max(self.r_height(ptr.left), self.r_height(ptr.right))
+    def height(self): return self.r_height(self.root)
+Add a method called post_order() which prints out the elements of a tree using postorder. That is, it would be a postorder traversal of the tree. Each element should be printed using a print statement such as
+print(ptr.item + " ", end="")
+and there should be a final print statement just to print a carriage return.
+Your method will be tested by the following:
+import sys
+from BST import BST
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]
+    tree = BST()
+    for num in nums:
+        tree.add(num)
+    print("Print the elements of the tree post order:")
+    tree.post_order()
+if __name__ == "__main__":
+    main()
+    
+Up the Garden Path
+Consider the implementation of the Binary Tree class below:
+class BST:
+    """ An implementation of a Binary Search Tree """
+    def __init__(self, lst = None):
+        self.root = None
+        if lst != None:
+            for item in lst:
+                self.add(item)
+    # Non recursive add method, easier to work out the path to the parent        
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        # This is a non recursive add method.
+        if self.root == None: # ... Empty tree ...
+            self.root = Node(item, None, None) # ... so, make this the root
+        else:
+            # Find where to put the item
+            child_tree = self.root
+            while child_tree != None:
+                parent = child_tree
+                if item < child_tree.item: # If smaller ... 
+                    child_tree = child_tree.left # ... move to the left
+                else:
+                    child_tree = child_tree.right
+            # child_tree should be pointing to the new node, but we've gone too far
+            # we need to modify the parent nodes
+            if item < parent.item:
+                parent.left = Node(item, None, None)
+            else:
+                parent.right = Node(item, None, None)
+Modify the add method so that it returns a list of the items in the path from the node which was just added to the root. For example, if a 1 was added to the following binary search tree:
+               8
+       5                 10
+  3       6          9
+then it would end up in the leftmost position and the path to the root would be 3, 5, 8 so you should return the list [3, 5, 8]
+Your method will be tested by the following:
+import sys
+from BST import BST
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]
+    tree = BST(nums[:-1])
+    lst = tree.add(nums[-1])
+    print(lst)
+if __name__ == "__main__":
+    main()
+    
+A Balanced Root
+Write a function which will take a binary search tree of height 3 or less and return a boolean value indicating whether the tree is AVL balanced or not.
+The function should be called is_avl(bst)
+Your function will be tested by the following:
+import sys
+from BST import BST
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]
+    tree = BST(nums)
+    if tree.height() > 2:
+         print("error ... your tree is too tall")
+    else
+         print(tree.is_avl())
+if __name__ == "__main__":
+    main()
+The tree itself will be defined as follows:
+class Node:
+    """ A node in a BST. It may have left and right subtrees """
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    """ An implementation of a Binary Search Tree
+     """
+    def __init__(self, lst = None):
+        self.root = None
+        if lst != None:
+            for x in lst:
+                self.add(x)
+    def recurse_add(self, ptr, item):
+        if ptr == None:
+            return Node(item)
+        elif item < ptr.item:
+            ptr.left = self.recurse_add(ptr.left, item)
+        elif item > ptr.item:
+            ptr.right = self.recurse_add(ptr.right, item)
+        return ptr        
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        self.root = self.recurse_add(self.root, item)
+    def r_height(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + max(self.r_height(ptr.left), self.r_height(ptr.right))
+    def height(self): return self.r_height(self.root)
+Hint: 
+You can use the r_height() method to get the height of a subtree. Given a node, n, on a tree called bst, then the height of n is bst.r_height(n).
+With this height limited tree, you only need to check the root node.
+
+Imbaanced How?
+An AVL tree has just had a third node added to it and the root node needs to be balanced. That is, the heights of its left and right children differ by more than one. In fact, differ by 2.
+Your job is to determine the type of rotation that will be required to fix it. Write a function which will take a Binary Search Tree as a parameter and return a string indicating what type of imbalance exists, i.e. left-left, right-right, left-right or right-left. The returned string should be "ll", "rr", "lr", "rl" indicating the type of imbalance.
+Your function will be tested by the following:
+import sys
+from BST import BST
+from student import rotation_type
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]
+    tree = BST(nums)
+    print(rotation_type(tree))
+if __name__ == "__main__":
+    main()
+The tree itself will be defined as follows (same as last problem):
+class Node:
+    """ A node in a BST. It may have left and right subtrees """
+    def __init__(self, item, left = None, right = None):
+        self.item = item
+        self.left = left
+        self.right = right
+class BST:
+    """ An implementation of a Binary Search Tree
+     """
+    def __init__(self, lst = None):
+        self.root = None
+        if lst != None:
+            for x in lst:
+                self.add(x)
+    def recurse_add(self, ptr, item):
+        if ptr == None:
+            return Node(item)
+        elif item < ptr.item:
+            ptr.left = self.recurse_add(ptr.left, item)
+        elif item > ptr.item:
+            ptr.right = self.recurse_add(ptr.right, item)
+        return ptr        
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        self.root = self.recurse_add(self.root, item)
+    def r_height(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + max(self.r_height(ptr.left), self.r_height(ptr.right))
+    def height(self): return self.r_height(self.root)
+    
+How Far Up the Path
+When an item has been added to an AVL tree, it is possible for a node on the path to become unbalanced. Remember that for an avl tree, an unbalanced node is one where the difference in heights of its children is 2.
+You are to modify the add method of a tree so that it returns the item at the node which becomes unbalanced, or None if no node has become unbalanced. You don't have to restructure the tree, just return one node - the unbalanced one.
+The AVLTree class is given below. The tree will be created and then your add item will be called. You can add the item to the tree using the standard BST code (provided) and then find out which (if any) node is unbalanced.
+Your method will be tested by the following:
+import sys
+from AVLTree import AVLTree
+from student import add
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]
+    tree = AVLTree(nums[:-1])
+    # Using the student's function, add the item to the tree
+    x = add(tree, nums[-1])
+    print(x)
+if __name__ == "__main__":
+    main()
+The AVLTree code is:
+#
+#   AVL tree. The add method contains an AVL fix section which restructures the tree
+#               if it is unbalanced.
+#           There is no delete method.
+#
+#           Also, you should note that this is an educational example. A real world implementation would
+#           not find the height as shown, instead each node would store balance information so that it
+#           could be looked up rather than discovered.
+#           Note that finding the height as done here is an O(n) operation.
+#           Maintaining and updating the balance is an O(1) operation.
+#
+#           For more details see
+#               https://en.wikipedia.org/wiki/AVL_tree#Balance_factor
+#
+from Node import Node
+class AVLTree:
+    """ An implementation of a Binary Search Tree """
+    def __init__(self):
+        self.root = None
+    def add(self, item):
+        """ Add this item to its correct position on the tree """
+        # This is a non recursive add method.
+        if self.root == None: # ... Empty tree ...
+            self.root = Node(item, None, None) # ... so, make this the root
+        else:
+            # Find where to put the item
+            parent_stack = [] # Use a list as a stack to hold parents
+            child_tree = self.root
+            while child_tree != None:
+                parent_stack.append(child_tree) # remember the parent for the path back (when checking for AVLness).
+                if item < child_tree.item: # If smaller ... 
+                    child_tree = child_tree.left # ... move to the left
+                else:
+                    child_tree = child_tree.right
+            # child_tree is pointing to the new node, but we've gone too far
+            # we need to get to the parent to change its pointer
+            parent = parent_stack[-1]       # The parent is the last item on the parent stack
+            node = Node(item, None, None)
+            if item < parent.item: # left?
+                parent.left = node
+            elif item > parent.item: # right?
+                parent.right = node
+            else:
+                # Else this item is already in the tree and so not added
+                return
+            # The item has been added, now see if we are AVL unbalanced - go back up the tree.
+            while node != None:
+                if abs(self.recurse_height(node.left) - self.recurse_height(node.right)) > 1:
+                    # Found an out of order node! Need to fix
+                    # First get the three nodes to restructure
+                    top = node
+                    mid = top.left if item < top.item else top.right
+                    bot = mid.left if item < mid.item else mid.right
+                    # Work out which rotation we need to do. (which one is in the middle)
+                    if top.item < mid.item < bot.item:
+                        # mid in the middle => put on top
+                        new_top = mid
+                        top.right = mid.left
+                        mid.left = top
+                    elif bot.item < mid.item < top.item:
+                        # Right rotation
+                        new_top = mid
+                        top.left = mid.right
+                        mid.right = top
+                    elif mid.item < bot.item < top.item:
+                        # double 1
+                        new_top = bot
+                        mid.right = bot.left
+                        top.left = bot.right
+                        bot.left = mid
+                        bot.right = top
+                    else:# top.item < bot.item < mid.item:
+                        # double 2
+                        new_top = bot
+                        mid.left = bot.right
+                        top.right = bot.left
+                        bot.left = top
+                        bot.right = mid
+                    # Make the parent of top point to the new top
+                    top_parent = None if len(parent_stack) == 0 else parent_stack.pop()
+                    if top_parent == None:
+                        self.root = new_top
+                    elif top.item < top_parent.item:
+                        top_parent.left = new_top
+                    else:
+                        top_parent.right = new_top
+                    break
+                # Carry on up the path be getting the parent from the stack (which was built on the way down)
+                node = None if len(parent_stack) == 0 else parent_stack.pop()
+    def recursive_contains(self, item, ptr):
+        """ returns a pointer to the node rather than a boolean, None if not present """
+        if ptr == None:
+            return None
+        else:
+            if item == ptr.item:
+                return ptr
+            elif item < ptr.item:
+                return self.recursive_contains(item, ptr.left)
+            else:
+                return self.recursive_contains(item, ptr.right)
+    def contains(self, item):
+        """ returns a pointer to the node rather than a boolean, None if not present """
+        return self.recursive_contains(item, self.root)
+    def recurse_height(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + max(self.recurse_height(ptr.left), self.recurse_height(ptr.right))
+    def height(self): return self.recurse_height(self.root)
+    def recurse_str(self, ptr):
+        if ptr == None:
+            return ""
+        else:
+            return self.recurse_str(ptr.left) + str(ptr.item) + "," + self.recurse_str(ptr.right)           
+    def __str__(self):
+        return self.recurse_str(self.root)
+Hint: The input to this problem is used to create a tree. Your code is only tested on the last item that was inserted into the tree. So, you start at that node and move up the tree until you find a node that is not balanced. That is the item that you need to return.
+
+AVL Tree Balance
+NB this is not a programming problem. Also NB this is not groupwork, though you are encouraged to discuss this problem with your classmates.
+When an item is added to an AVL tree it is possible that the tree will become AVL inbalanced.
+For example, when the following items are added to an AVL tree
+[20, 16, 8]
+The AVL tree becomes AVL unbalanced when the 8 is added. The tree is AVL unbalanced at the root node which is 20 and it will be rotated to fix it. Subsequently, the following items are added to the tree:
+[10, 5, 12]
+The tree again becomes AVL unbalanced as the 12 is added and it becomes unbalanced at the node with the value 16.
+Your task is to take a sequence of items that are added to an AVL tree and find out which items caused the tree to become unbalanced and which node is unbalanced.
+You should return a list containing the item added and the unbalanced node for each time that the tree becomes unbalanced. For example, in the previous case, the input would be:
+[20, 16, 8, 10, 5, 12]
+And the solution would be:
+[(8, 20), (12, 16)]
+Note that there were two occasions when the list became unbalanced, when the 8 and the 12 were added. In those cases, the unbalanced nodes were those with items 20 and 16 respectively. 
+Your list of items is:
+[1, 4, 11, 9, 5, 12, 13, 17] 
+
+Where is the Collision
+Given the code for a hash table, you are required to modify the add method so that it returns the information about any collision that may occur. The method should return None if there is no collision and otherwise it should return a tuple containing the index and the item that is being added. Your method should still properly update the Hash Table. (This means that the add method should still add the item to the hash table. Just that, instead of returning nothing, return information about the collision.)
+Your code will be called by the following program
+import sys
+from HashSet import HashSet
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]    
+    # First number is the capacity
+    numset = HashSet(nums[0])
+    for x in nums[1:]:
+        print(str(numset.add(x)) + " ", end="")
+    print()
+if __name__ == "__main__":
+    main()
+You will be provided with the following HashSet implementation:
+from LinkedList import LinkedList
+class HashSet:
+    def __init__(self, capacity=10):
+        # Create a list to use as the hash table
+        self.table = [None] * capacity
+    def add(self, item):
+        # Find the hash code
+        h = hash(item)
+        index = h % len(self.table)
+        # Check is it empty
+        if self.table[index] == None:
+            self.table[index] = LinkedList() # Need a new linked list for this entry
+        if item not in self.table[index]:
+            # Only add it if not already there (this is a set)
+            self.table[index].add(item)
+and the LinkedList code is:
+#
+#  This linked list use built-ins: str(), iter(), len(), in()
+#
+#   These functions are implemented using recursion (except iter)
+#
+class Node:
+    def __init__(self, item, next):
+        self.item = item
+        self.next = next
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    def add(self, item):
+        self.head = Node(item, self.head)
+    def remove(self):
+        if self.is_empty():
+            return None
+        else:
+            item = self.head.item
+            self.head = self.head.next    # remove the item by moving the head pointer
+            return item
+    def is_empty(self):
+        return self.head == None
+    def __iter__(self):
+        cursor = self.head
+        while cursor is not None:
+            yield cursor.item
+            cursor = cursor.next
+    def recursive_len(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + self.recursive_len(ptr.next)
+    def __len__(self):
+        return self.recursive_len(self.head)
+    def recursive_contains(self, ptr, item):
+        if ptr == None:
+            return False
+        else:
+            return item == ptr.item or self.recursive_contains(ptr.next)
+    def __in__(self, item):
+        return recursive_contains(self.head, item)
+    def recursive_str(self, ptr):
+        if ptr == None:
+            return ""
+        else:
+            return str(ptr.item) + "->" + self.recursive_str(ptr.next)
+    def __str__(self):
+        return self.recursive_str(self.head)
+
+How Long Are My Buckets
+Add a method to the HashSet class which will return the average length of the buckets. A bucket is the container which holds all the elements which hash to the same value, which in our case is a linked list. Ignore any entries in the hash table with zero elements. Your method should be called average_bucket_length().
+Your code will be called by the following program
+import sys
+from HashSet import HashSet
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]    
+    # First number is the capacity
+    numset = HashSet(nums[0])
+    for x in nums[1:]:
+        numset.add(x)
+    print(numset.average_bucket_length())
+if __name__ == "__main__":
+    main()
+You will be provided with a HashSet implementation:
+from LinkedList import LinkedList
+class HashSet:
+    def __init__(self, capacity=10):
+        # Create a list to use as the hash table
+        self.table = [None] * capacity
+    def add(self, item):
+        # Find the hash code
+        h = hash(item)
+        index = h % len(self.table)
+        # Check is it empty
+        if self.table[index] == None:
+            self.table[index] = LinkedList() # Need a new linked list for this entry
+        if item not in self.table[index]:
+            # Only add it if not already there (this is a set)
+            self.table[index].add(item)
+and the LinkedList code is:
+#
+#  This linked list use built-ins: str(), iter(), len(), in()
+#
+#   These functions are implemented using recursion (except iter)
+#
+class Node:
+    def __init__(self, item, next):
+        self.item = item
+        self.next = next
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    def add(self, item):
+        self.head = Node(item, self.head)
+    def remove(self):
+        if self.is_empty():
+            return None
+        else:
+            item = self.head.item
+            self.head = self.head.next    # remove the item by moving the head pointer
+            return item
+    def is_empty(self):
+        return self.head == None
+    def __iter__(self):
+        cursor = self.head
+        while cursor is not None:
+            yield cursor.item
+            cursor = cursor.next
+    def recursive_len(self, ptr):
+        if ptr == None:
+            return 0
+        else:
+            return 1 + self.recursive_len(ptr.next)
+    def __len__(self):
+        return self.recursive_len(self.head)
+    def recursive_contains(self, ptr, item):
+        if ptr == None:
+            return False
+        else:
+            return item == ptr.item or self.recursive_contains(ptr.next)
+    def __in__(self, item):
+        return recursive_contains(self.head, item)
+    def recursive_str(self, ptr):
+        if ptr == None:
+            return ""
+        else:
+            return str(ptr.item) + "->" + self.recursive_str(ptr.next)
+    def __str__(self):
+        return self.recursive_str(self.head)
+Note that the linked list implements a __len__() method and so you can use len to get the length.
+
+Bigly Buckets Littly Buckets
+Add a method to the HashSet class which will return the max and min lengths of the buckets. Ignore any hash table entries which have no linked lists. Your method should be called max_min_bucket_length() and it should return a tuple (min, max).
+Your code will be called by the following program:
+import sys
+from HashSet import HashSet
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]    
+    # First number is the capacity
+    numset = HashSet(nums[0])
+    for x in nums[1:]:
+        numset.add(x)
+    print(numset.min_max_bucket_length())
+if __name__ == "__main__":
+    main()
+You will be provided with a HashSet implementation:
+from LinkedList import LinkedList
+class HashSet:
+    def __init__(self, capacity=10):
+        # Create a list to use as the hash table
+        self.table = [None] * capacity
+    def add(self, item):
+        # Find the hash code
+        h = hash(item)
+        index = h % len(self.table)
+        # Check is it empty
+        if self.table[index] == None:
+            self.table[index] = LinkedList() # Need a new linked list for this entry
+        if item not in self.table[index]:
+            # Only add it if not already there (this is a set)
+            self.table[index].add(item)
+            
+Itterating the Hash Table
+Add an __iter__() method to the HashSet class so the Hash Set can be iterated. For an example, see the LinkedList code from a previous question. Note that you don't have to worry about the order of the elements. 
+Your iterator will be used by the following program:
+import sys
+from HashSet import HashSet
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()
+    nums = [int(item) for item in items]    
+    # First number is the capacity
+    numset = HashSet(nums[0])
+    for x in nums[1:]:
+        numset.add(x)        
+    numset_items = []
+    for x in numset:
+        numset_items.append(x)
+    print(sorted(numset_items))
+if __name__ == "__main__":
+    main()
+You will be provided with a HashSet implementation:
+from LinkedList import LinkedList
+class HashSet:
+    def __init__(self, capacity=10):
+        # Create a list to use as the hash table
+        self.table = [None] * capacity
+    def add(self, item):
+        # Find the hash code
+        h = hash(item)
+        index = h % len(self.table)
+        # Check is it empty
+        if self.table[index] == None:
+            self.table[index] = LinkedList() # Need a new linked list for this entry
+        if item not in self.table[index]:
+            # Only add it if not already there (this is a set)
+            self.table[index].add(item)
+            
+Hashing Functions Sum Them All
+Consider the following implementation of the HashSet class
+"""
+    This hash table uses a special method to calculate a hash of a string so that the effect of hashing strings may be analysed.
+"""
+from LinkedList import LinkedList
+def str_hash(s):
+    """ Return a normal hash, unless it is a string. """
+    if not isinstance(s, str):
+        return hash(s) # not a string => use the normal hash function
+    else:
+        # Just use the first character of the string. (Not a good hash!)
+        h = 0
+        if len(s) > 0:
+            h += ord(s[0])  # Get the ASCII value of the first char of the string as the hash
+        return h
+class HashSet:
+    def __init__(self, capacity=10):
+        # Create a list to use as the hash table
+        self.table = [None] * capacity        
+    def add(self, item):
+        # Find the hash code
+        h = str_hash(item)
+        index = h % len(self.table)
+        # Check is it empty
+        if self.table[index] == None:
+            self.table[index] = LinkedList() # Need a new linked list for this entry
+        if item not in self.table[index]:
+            # Only add it if not already there (this is a set)
+            self.table[index].add(item)
+It uses a str_hash function to calculate the hash of a string. In this case, it only considers the first character of the letter as the hash. This means that all strings that have the same first letter will hash to the same value which is not good.
+Modify this function so that it only forms the hash of a string by summing the individual characters. You may assume that you are dealing with ASCII characters only and you can get the ASCII value of a particular character with the ord() function. 
+For example, the hash code of the string "abc" would be ord("a") + ord("b") + ord("c")
+Your code will be called by the following program:
+import sys
+from HashSet import HashSet
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    # First number is the capacity
+    strset = HashSet(int(items[0]))
+    for word in items[1:]:
+        strset.add(word)
+    # Print the hash table (the layout will vary with the hashing function)
+    print(strset)
+if __name__ == "__main__":
+    main()
+You will be provided with a HashSet implementation and a str_hash function which you should modify.
+from LinkedList import LinkedList
+class HashSet:
+    def __init__(self, capacity=10):
+        # Create a list to use as the hash table
+        self.table = [None] * capacity
+    def add(self, item):
+        # Find the hash code
+        # Define your own hash function and use it instead of the built in hash()
+        h = hash(item)
+        index = h % len(self.table)
+        # Check is it empty
+        if self.table[index] == None:
+            self.table[index] = LinkedList() # Need a new linked list for this entry
+        if item not in self.table[index]:
+            # Only add it if not already there (this is a set)
+            self.table[index].add(item)
+    def __str__(self):
+        """ Print out the hash table """
+        s = ""
+        for i in range(len(self.table)):
+            s += "table[" + str(i) + "]"
+            if self.table[i] != None:
+                s += " Head " + str(self.table[i])
+            s += "\n"
+        return s
+        
+Hashing Functions Sum and Position Them
+This problem is a variation on the previous problem. You need to make a small modification to the str_hash() function. The programming language Java has a String hash function as discussed here: http://stackoverflow.com/questions/299304/why-does-javas-hashcode-in-string-use-31-as-a-multiplier
+You should use the same formula. You may also examine the Java source code. You are encouraged to search the web for the Java source code and use that to help develop a solution.
+The formula for the hash code of a string s of length n is:
+s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
+For example, the hash code of the string "abcd" would be
+ord("a") * 313 + ord("b") * 312 + ord("c") * 311 + ord("d") = 2987074
+Your code will be called by the following program:
+import sys
+from HashSet import HashSet
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    # First number is the capacity
+    strset = HashSet(int(items[0]))
+    for word in items[1:]:
+        strset.add(word)
+    # Print the hash table (the layout will vary with the hashing function)
+    print(strset)
+if __name__ == "__main__":
+    main()
+You will be provided with a HashSet implementation and a str_hash function which you should modify.
+
+Insertion Sort Arrangement
+Arranging
+You just need to arrange some numbers. You will have to submit a dummy program to get the list of numbers and then arrange the numbers and return the numbers as a list of lists.
+Specifics
+Given a list of integers show how insertion sort would rearrange the list one pass at a time. For instance, if the list was:
+[20, 16, 8, 11, 5, 14]
+Then the algorithm would start with the first two elements and place the second element in its sorted position to give
+[16, 20]
+Then it moves onto the 8 and places that in its sorted position, moving any elements as required:
+[8, 16, 20]
+next the 11
+[8, 11, 16, 20]
+next the 5
+[5, 8, 11, 16, 20]
+and finally the 14
+[5, 8, 11, 14, 16, 20]
+And you have your insertion sorted list of numbers.
+Your task is to do the same thing for a different list of numbers.
+There will be 6 numbers and you need to return 5 lists.
+So, if you were given the numbers
+[20, 16, 8, 11, 5, 14]
+Then your solution should be:
+def solution():
+    return [
+       [16, 20],
+       [8, 16, 20],
+       [8, 11, 16, 20],
+       [5, 8, 11, 16, 20],
+       [5, 8, 11, 14, 16, 20],
+    ]
+What is your number? Submit a solution that returns an empty list and you will get your list of 6 numbers. In other words, submit
+def solution():
+    return []
+and you will get a message similar to
+Your list is:
+[20, 16, 8, 11, 5, 14]
+Note however, your list will be different. Then work out the solution and submit the appropriate lists and get full marks.
+
+Selection Sort Repeats
+This problem is another non programming problem. Submit a dummy program to get a list of numbers. Answer the question and return it to get full marks.
+
+Given a list of integers selection sort would rearrange the list one pass at a time. For instance, if the list was:
+[20, 16, 8, 11, 5, 14]
+Then the algorithm would find the smallest element and swap it with the first position to give
+[5, 16, 8, 11, 20, 14]
+Then it swaps the the next smallest, 8 with the second position:
+[5, 8, 16, 11, 20, 14]
+and the next smallest,11
+[5, 8, 11, 16, 20, 14]
+Then the 14
+[5, 8, 11, 14, 20, 16]
+and finally the 16
+[5, 8, 11, 14, 16, 20]
+And you have your selection sorted list of numbers. But what we want to know is which element moved the most number of times and how many times did it move. If there is a tie, choose the smallest number.
+This is easier to see if we lay out all the numbers:
+[20, 16, 8, 11, 5, 14]
+[5, 16, 8, 11, 20, 14] # 5, 20 swapped
+[5, 8, 16, 11, 20, 14] # 8, 16
+[5, 8, 11, 16, 20, 14] # 11, 16
+[5, 8, 11, 14, 20, 16] # 14, 16
+[5, 8, 11, 14, 16, 20] # 16, 20
+You can see that the number which moved most was 16 and it moved 4 times. 
+
+Your task is to take a list of numbers and find out which number moves most and how many times it moves.
+There will be 6 numbers and you need to return a tuple of two integers, the element that moved most and the number of times it moved.
+So, if you were given the numbers
+[20, 16, 8, 11, 5, 14]
+Then your solution should be:
+def solution():
+    return 16, 4
+What is your number? Submit a solution that returns None and you will get your list of 6 numbers. In other words, submit
+def solution():
+    return None
+and you will get a message similar to
+Your list is:
+[20, 16, 8, 11, 5, 14]
+Note however, your list will be different to the above. Then work out the solution and submit the solution and get full marks.
+Remember also that in the event of a tie, the lowest number is to be selected.
+
+Insertion Sort Stats
+Consider the following implementation of insertion sort
+def insertion_sort(lst):
+    # At each pass ensure that that section is sorted.
+    for todo in range(1, len(lst)):
+        # Find correct position for lst[todo].
+        i = todo
+        while i > 0 and lst[i] < lst[i-1]:
+            lst[i], lst[i-1] = lst[i-1], lst[i] # Swap it down towards the correct position
+            i -= 1
+Note that there are more efficient implementations.
+Now, your job is to count how many comparisons will be made for various types of input. So, modify the code so that you count the number of times two elements are compared and the number of times two elements are swapped.
+That's not so difficult. Every time the inner while loop is executed, then two elements are being compared lst[i] < lst[i-1] and within the loop, two elements are being swapped. You should return the number of comparisons and the number of swaps as a tuple.
+Your code will be tested by the following program:
+import sys
+from insertion_sort import insertion_sort
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    orig = list(items)
+    result = insertion_sort(items)
+    if items != sorted(orig):
+        print("The list is not sorted.")
+    else:
+        print(result)
+if __name__ == "__main__":
+    main()
+Note that when there are 26 sorted letters, then no letters have to be swapped and 25 letters have to be compared. The second has to be compared to the first and the third to the second and so on til the last letter is compared to the second last. You should study the inner while loop and make sure that you understand it. It should be straightforward to modify the code so that it returns the number of compares and the number of moves. 
+
+Insertion Sort Stats V2
+The implementation of the sort is changed slightly. It is usually more efficient to remember the item being inserted and then keep moving elements back to make room for it before finally inserting. Since swapping two elements is equivalent to 3 moves, this is less work.
+This time, return a tuple with the number of compares and the number of moves.
+def insertion_sort(lst):
+    # No swap version
+    for todo in range(1, len(lst)):
+        tobeinserted = lst[todo]
+        i = todo
+        while i > 0 and tobeinserted < lst[i-1]:
+            lst[i] = lst[i-1] # Make space for the item
+            i -= 1
+        lst[i] = tobeinserted  # Found the place for this item, plonk it in
+Again, modify the code so that you count the number of times two elements are compared and the number of times an element is moved.
+The inner while loop has the following test: lst[i] < lst[i-1] which compares two elements. Within the inner loop, one element is moved. 
+You should return the number of comparisons and the number of moves as a tuple.
+Note that this function doesn't do as well if the array is sorted already because it always moves two elements in the loop even if that element doesn't have to change.
+Your code will be tested by the following program:
+import sys
+from insertion_sort import insertion_sort
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    orig = list(items)
+    result = insertion_sort(items)
+    if items != sorted(orig):
+        print("The list is not sorted.")
+    else:
+        print(result)
+if __name__ == "__main__":
+    main()
+Note that when there are 26 sorted letters, then no letters have to be swapped but the inner loop will execute 25 times and each time two moves will occur (note the two assignment statements in the outer loop) which explains the 50 moves.
+
+Inserion Sort Stats V3
+If you knew that the smallest element was the first element in the list, then the test in the inner loop 
+i > 0 and lst[i] < lst[i-1]
+  could become simply 
+lst[i] < lst[i-1]
+Since the smallest item is at the beginning of the list, this condition would never be true when i was 0 and therefore there would no need to explicitly test for i > 0. In this case, the smallest item acts as a "sentinel".
+We could deliberately find the smallest element and move it to the front of the list. Some more comparisons and one swap are required, but then the inner loop is faster and simpler. Timing tests show that this can make insertion sort about 10% faster on random input.
+For this exercise, return a tuple with the number of compares and the number of moves. Remember that a swap is equivalent to three moves. Also, this approach always takes more moves and compares but it can be faster because the inner loop is simplified.
+def insertion_sort(lst):
+    if len(lst) == 0:
+        return
+    # Find the smallest element
+    min_index = 0
+    for i in range(1, len(lst)):
+        if lst[i] < lst[min_index]:
+            min_index = i;
+    # Move smallest to the front (swap elements min_index and 0)
+    lst[0], lst[min_index] = lst[min_index], lst[0]
+    # Now, with the smallest in the front, we don't need to check i in the inner loop    
+    # At each pass ensure that that section is sorted (start at 2, cos smallest already in position).
+    for todo in range(2, len(lst)):
+        # Find correct position for lst[todo]
+        store = lst[todo]
+        i = todo
+        while store < lst[i-1]: # Don't need to check i > 0
+            lst[i] = lst[i-1] # Make space for the item
+            i -= 1
+        lst[i] = store  # Found the place for this item, plonk it in
+You will need to count the compares and tests to get the smallest element to the front. Also note that with the test i > 0 removed, then the while loop will always have an extra comparison and not only when i > 0.
+Your code will be tested by the following program:
+import sys
+from insertion_sort import insertion_sort
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    orig = list(items)
+    result = insertion_sort(items)
+    if items != sorted(orig):
+        print("The list is not sorted.")
+    else:
+        print(result)
+if __name__ == "__main__":
+    main()
+    
+Selection Sort Stats
+Here is a selection sort algorithm:
+""" Selection sort algorithm """
+def selection_sort(lst):
+    for i in range(len(lst) - 1):
+        # Find the smallest item in the lst starting at i
+        min_index = i
+        for j in range(min_index + 1, len(lst)):
+            if lst[j] < lst[min_index]:
+                min_index = j
+        # place smallest at the beginning (swap min index with i)
+        lst[i], lst[min_index] = lst[min_index], lst[i]
+Count the number of compares and the number of moves that this algorithm executes for the input lst.
+Note that each swap counts as three moves.
+Your code will be tested by the following program:
+import sys
+from selection_sort import selection_sort
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    orig = list(items)
+    result = selection_sort(items)
+    if items != sorted(orig):
+        print("The list is not sorted.")
+    else:
+        print(result)
+if __name__ == "__main__":
+    main()
+    
+Selection Sort Stats V2
+We make a small modification to the algorithm and don't swap if the element happens to already be in the correct position. See below:
+""" Selection sort algorithm """
+def selection_sort(lst):
+    for i in range(len(lst) - 1):
+        # Find the smallest item in the lst starting at i
+        min_index = i
+        for j in range(min_index + 1, len(lst)):
+            if lst[j] < lst[min_index]:
+                min_index = j
+        # place smallest at the beginning (swap min index with i)
+        if min_index != i:
+            lst[i], lst[min_index] = lst[min_index], lst[i]
+Again, report the number of compares and the number of moves that this algorithm executes for the input lst.
+Your code will be tested by the following program:
+import sys
+from selection_sort import selection_sort
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    orig = list(items)
+    result = selection_sort(items)
+    if items != sorted(orig):
+        print("The list is not sorted.")
+    else:
+        print(result)
+if __name__ == "__main__":
+    main()
+    
+Selection Sort Stats V3
+We can make another modification to selection sort. This algorithm will select the smallest and the largest in one pass and will swap the smallest to the beginning and the largest to the end.
+For arrays of size 10,000, timing tests showed that this approach yields a small improvement in time of about 7%. Is it worth it. Absolutely not. Using an NlogN algorithm instead would give a factor of 1000 improvement.
+However, it is worth checking and finding out how it performs in terms of number of compares and moves.
+def selection_sort(lst):
+    lo = 0
+    hi = len(lst) - 1
+    while lo < hi:
+        min_index = lo
+        max_index = lo
+        for j in range(lo + 1, hi + 1):
+            if lst[j] < lst[min_index]:
+                min_index = j
+            elif lst[j] > lst[max_index]: # maybe >= to get stable sort
+                max_index = j
+        if max_index == lo:
+            max_index = min_index   # We will be moving lst[lo] to min_index, so update max_index first
+        # swap min index with lo ... place smallest at the first
+        lst[lo], lst[min_index] = lst[min_index], lst[lo]
+        # swap max index with hi ... place largest at the end
+        lst[hi], lst[max_index] = lst[max_index], lst[hi]
+        lo += 1
+        hi -= 1
+modify the program so it returns the number of compares and the number of moves that this algorithm executes.
+Your code will be tested by the following program:
+import sys
+from selection_sort import selection_sort
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    orig = list(items)
+    result = selection_sort(items)
+    if items != sorted(orig):
+        print("The list is not sorted.")
+    else:
+        print(result)
+if __name__ == "__main__":
+    main()
+    
+Who was Partitioned
+This problem is a non programming problem. Submit a dummy program to get a list of numbers. Answer the question and return it to get full marks.
+You are given a list and it has just been partitioned using a standard partitioning algorithm. You are to say which element could have been the partitioning element. For example, given the numbers [7, 6, 8, 20, 11, 14], then only 8 could have been the partitioning element and the algorithm will continue sorting [7, 6] and [20, 11, 14].
+It is possible, indeed likely, that there will be more than one possible partitioning element in the array. You should return a list which includes all possible partitioning elements.
+What is your list of numbers? Submit a solution that returns an empty list and you will get your list of numbers. In other words, submit 
+def solution():
+    return []
+and you will get a message similar to
+Your list is:
+[7, 6, 8, 20, 11, 14]
+Note however, your list will be different to the above. Work out the solution and submit the solution and get full marks. You must submit a list even if there is only one element. In the above example, where the solution was 8, you should submit
+def solution():
+    return [8]
+Easy!
+
+Quick Sort Stats
+Here is a function to partition a list:
+def partition(lst, lo, hi):
+    part = lo
+    while lo < hi:
+        while lst[lo] <= lst[part] and lo < hi:
+            lo += 1
+        while lst[hi] > lst[part]: # Don't have to check for hi >= 0 cos part is there as a sentinel.
+            hi -= 1
+        if lo < hi:
+            # Swap the two entries
+            lst[hi], lst[lo] = lst[lo], lst[hi]
+    # Swap part into position
+    if lst[part] > lst[hi]: # (this may happen of the array is small (size 2))
+        lst[part], lst[hi] = lst[hi], lst[part]
+    return hi
+The function returns the pivot. The partition function can be combined with the qsort code to recursively sort a list:
+def rec_qsort(lst, lo, hi):
+    if lo < hi:
+        pivot = partition(lst, lo, hi)
+        rec_qsort(lst, lo, pivot - 1)
+        rec_qsort(lst, pivot + 1, hi)
+def qsort(lst):
+    rec_qsort(lst, 0, len(lst) - 1)
+Count the number of compares and the number of moves that this algorithm executes for the input lst. You should return the number of compares and the number of moves as a tuple.
+Remember that each swap counts as three moves.
+Your code will be tested by the following program:
+import sys
+from qsort import qsort
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    orig = list(items)
+    result = qsort(items)
+    if items != sorted(orig):
+        print("The list is not sorted.")
+    else:
+        print(result)
+if __name__ == "__main__":
+    main()
+    
+Quick Sort Stats V2
+The previous problem used a partition function which always decided that the first element of the list should be the partitioning element. Rewrite the partition function so that the middle element is chose to be partitioned. Report the same stats as before, that is, the number of compares and the number of moves.
+Your code will be tested by the following program:
+import sys
+from qsort import qsort
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    orig = list(items)
+    result = qsort(items)
+    if items != sorted(orig):
+        print("The list is not sorted.")
+    else:
+        print(result)
+if __name__ == "__main__":
+    main()
+    
+Quick Sort Recursive Depth
+This time we want to see how far the recursive function descends, i.e. what is the deepest level of recursion. The code is quite easy. We simply modify the qsort function to return the recursive height and note that the code corresponds exactly to the tree height method.
+def rec_qsort(lst, lo, hi):
+    if lo < hi:
+        pivot = partition(lst, lo, hi)
+        rec_qsort(lst, lo, pivot - 1)
+        rec_qsort(lst, pivot + 1, hi)
+def qsort(lst):
+    rec_qsort(lst, 0, len(lst) - 1)
+Remember that the base case will have to change. The code will look quite like the recursive tree height when you have it working. That is to be expected because it is doing a very similar thing.
+Your code will be tested by the following program:
+import sys
+from qsort import qsort
+def main():
+    # Read each test case
+    line = sys.stdin.readline()
+    items = line.strip().split()    
+    orig = list(items)
+    recursive_depth = qsort(items)
+    if items != sorted(orig):
+        print("The list is not sorted.")
+    else:
+        print(recursive_depth)
+if __name__ == "__main__":
+    main()
+    
+What are the Pivots
+This problem is a non programming problem. Submit a dummy program to get a list of numbers. Answer the question and return it to get full marks.
+You are given a list and it is to be sorted using quicksort. Return a list of the pivot elements in the order that they are chosen.
+What is your list of numbers? Submit a solution that returns an empty list and you will get your list of numbers. In other words, submit 
+def solution():
+    return []
+and you will get a message similar to
+Your list is:
+[20, 16, 8, 11, 5, 14]
+Note however, your list will be different to the above. Work out the solution and submit the solution and get full marks.
+How do I know which elements were the pivots?
+Well, the code will use the following partition function:
+def partition(lst, lo, hi):
+    if len(lst) == 0:
+        return 0
+    part = lo
+    while lo < hi:
+        while lst[lo] <= lst[part] and lo < hi:
+            lo += 1
+        while lst[hi] > lst[part]: # Don't have to check for hi >= 0 cos part is there as a sentinel.
+            hi -= 1
+        if lo < hi:
+            # Swap the two entries
+            lst[hi], lst[lo] = lst[lo], lst[hi]
+    # Swap part into position
+    if lst[part] > lst[hi]: # (this may happen of the array is small (size 2))
+        lst[part], lst[hi] = lst[hi], lst[part]
+    return hi
+This code always chooses the leftmost element to be the pivot and finds where it belongs in the list while simultaneously ensuring that all elements smaller than the pivot are to the left and all elements larger are to the right. Once the list has been partitioned, quicksort can now create new smaller partitions to the left and to the right and recursively sort those:
+def qsort(lst, lo, hi):
+    if lo < hi:
+        pivot = partition(lst, lo, hi)
+        qsort(lst, lo, pivot - 1) # do the left
+        qsort(lst, pivot + 1, hi) # do the right
+In the case of the above numbers, the first partition element will be 20 (the leftmost element). In this case, it's also the largest number and so the partition function will swap the 14 and 20 which means 14 will be the new leftmost number and that will be the next pivot. If the sub array has only one element, then you should not process that. In other words, don't add it to the list of pivots.
+
+Merging Which Lists
+This problem is a non programming problem. Submit a program which returns an empty list and be given two sorted lists. Using these lists, answer the question and return the answer as a list to get full marks.
+You are given two sorted lists and they are to be merged into one list by the following code: 
+def merge(lst1, lst2):
+    """ This merges two sorted lists into one larger sorted list. """
+    merged_list = []
+    index1 = 0
+    index2 = 0
+    while index1 < len(lst1) and index2 < len(lst2):
+        if lst1[index1] < lst2[index2]:
+            # The element of lst1 is smaller
+            merged_list.append(lst1[index1]) # Add that element of lst1 to the merged list
+            index1 += 1
+            if index1 == len(lst1):
+                break       # Reached the end of lst1, so exit the loop
+        else: # Else, add the element from lst2 to the merged list
+            merged_list.append(lst2[index2])
+            index2 += 1
+            if index2 == len(lst2):
+                break
+    # One of the lists is empty, need to copy remaining items from the other into our merged
+    # list
+    while index1 < len(lst1):
+         lst.append(lst1[index1])
+         index1 += 1
+    while index2 < len(lst2):
+         lst.append(lst1[index2])
+         index2 += 1
+    return merged_list
+As the merge progresses, each of the smaller lists is examined to see which will supply the next element to the main list. You job is to say which list supplied each element.
+For example, let's say the two lists are [2, 3, 7] and [4, 5, 6]. So, let's call the first list L1 and the second list L2. The front element of each list is compared, that is 2 is compared with 4. The 2 is smaller and goes to the beginning of the new merged list. The process is repeated, and the next element chosen is also from L1, the 3. Next element chosen will be the 4 from L2, as is the 5 and the 6 and the final element 7 is from L1.
+You should return the names of the lists that supply the corresponding elements. For this example, this would be:
+['L1', 'L1', 'L2', 'L2', 'L2', 'L1']
+Which sorted lists? Submit the following program to see your two lists.
+def solution():
+    return []
+    
+Queue Based Merge Sort Split
+Merge sort can be implemented with queues. Here is how the recursive part would work:
+from Queue import Queue
+def mergesort(q):
+    if len(s) < 2:
+        return # Base case. No work to do for one element.
+    # Split q into two smaller queues
+    q1, q2 = split(q) # You will supply the split function
+    # recursively sort these as well
+    mergesort(q1)
+    mergesort(q2)
+    # Now, merge these together back into q
+    merge(q1, q2, q)
+Your task today is to write the split function. This will take a queue parameter, and it will split the queue into two smaller queues and return these two queues as a tuple. The two queues should be of approximately equal size.
+The Queue code uses a linked list and is as follows:
+import LinkedList
+class Queue:
+    """ A linked list based queue """
+    def __init__(self):
+        self.length = 0
+        self.linkedlist = LinkedList.LinkedList()
+    def enqueue(self, item):
+        self.linkedlist.addlast(item)
+        self.length += 1
+    def dequeue(self):
+        if self.linkedlist.isempty():
+            return None
+        else:
+            self.length -= 1
+            return self.linkedlist.remove()
+    # Examine the front of the queue without removing anything.
+    def first(self):
+        return self.linkedlist.peek()
+    def isempty(self):
+        return self.linkedlist.isempty()
+    def __len__(self):
+        return self.length
+In addition to the normal enqueue, dequeue and isempty operations, there is a first() method so that you can see the element at the front of the queue and a len method.
+Your code will be tested with with code similar to the following
+from Queue import Queue
+from student import split
+#
+#   Make a queue from a lst
+#
+def make_q(lst):
+    q = Queue()
+    for x in lst:
+        q.enqueue(x)
+    return q
+def main():
+    lst = [10 * x for x in range(10)]
+    q = make_q(lst)
+    # Call the student's split function
+    q1, q2 = split(q)
+    if abs(len(q1) - len(q2)) > 1:
+        print("The lengths of your two queues should not differ by more than 1.")
+    elif len(q1) + len(q2) > len(lst):
+        print("There are too many elements in your queues")
+    elif len(q1) + len(q2) < len(lst):
+        #print(len(q1), len(q2), len(lst))
+        print("There are too few elements in your queues")
+    else:
+        # There are the right number of elements, check if the elements themselves are correct
+        qlist = []
+        # First add everything from q1
+        while not q1.isempty():
+            qlist.append(q1.dequeue())
+        # Now add everything from q2
+        while not q2.isempty():
+            qlist.append(q2.dequeue())
+        # Check the elements match
+        if sorted(qlist) == sorted(lst): # Easiest way to compare two lists for contents is to sort them both.
+            print("All tests passed")
+        else:
+            print("Your queues do not contain the right elements")
+if __name__ == "__main__":
+    main()
+Although, you probably don't need it, for completeness, here is the LinkedList code:
+class Node:
+    def __init__(self, item, next):
+        self.item = item
+        self.next = next
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+    def peek(self):
+        return self.head.item
+    def add(self, item):
+        self.head = Node(item, self.head)
+        if self.tail == None:
+            self.tail = self.head
+    def addlast(self, item):
+        # Add onto the tail
+        if self.isempty():
+            # If the queue is empty ...
+            # Create a new node. Both head and tail will point to it.
+            self.tail = Node(item, None)
+            self.head = self.tail
+        else:
+            # Create a new node at the tail
+            self.tail.next = Node(item, None)
+            # But the tail should be moved on to the end of the list.
+            self.tail = self.tail.next
+    def remove(self):
+        if self.isempty():
+            return None
+        else:
+            item = self.head.item
+            self.head = self.head.next    # remove the item by moving the head pointer
+            if self.head == None:
+                self.tail = None
+            return item
+    def isempty(self):
+        return self.head == None
+        
+Queue Based Merge Sort Merging
+Mergesort involves two phases: the first is to split up the queue and the second is to merge two sorted queues into a combined sorted queue. All the hard work happens in the merging. You are to write a function called merge, which takes three parameters, the first two are sorted queues and the last parameter is a queue where the combined sorted elements will be stored. The merge function will be used along with your split function from the previous exercise, this will complete the mergesort using queues.
+from Queue import Queue
+def mergesort(q):
+    if len(q) < 2:
+        return # Base case. No work to do for one element.
+    # Split q into two smaller queues
+    q1, q2 = split(q) # You write the split function
+    # Note that you should have emptied the original q
+    # recursively split these as well
+    mergesort(q1)
+    mergesort(q2)
+    # Now, merge these together back into q
+    merge(q1, q2, q)
+The Queue code uses a linked list and is as follows:
+import LinkedList
+class Queue:
+    """ A linked list based queue """
+    def __init__(self):
+        self.length = 0
+        self.linkedlist = LinkedList.LinkedList()
+    def enqueue(self, item):
+        self.linkedlist.addlast(item)
+        self.length += 1
+    def dequeue(self):
+        if self.linkedlist.isempty():
+            return None
+        else:
+            self.length -= 1
+            return self.linkedlist.remove()
+    # Examine the front of the queue without removing anything.
+    def first(self):
+        return self.linkedlist.peek()
+    def isempty(self):
+        return self.linkedlist.isempty()
+    def __len__(self):
+        return self.length
+In addition to the normal enqueue, dequeue and isempty operations, there is a first() method so that you can see the element at the front of the queue and a len method.
+Your code will be tested using code similar to the following
+from Queue import Queue
+import student
+def mergesort(q):
+    if len(q) < 2:
+        return
+    # Split q into two smaller queues
+    q1, q2 = student.split(q) # Actually, this time, the spilt function will be supplied by Charlie
+    # Note that the original queue should now be empty
+    # recursively sort these smaller queues
+    mergesort(q1)
+    mergesort(q2)
+    # Now, merge these together back into the original q
+    student.merge(q1, q2, q) # student supplies merge function.
+import random
+#
+#   Make a queue from a lst
+#
+def make_q(lst):
+    q = Queue()
+    for x in lst:
+        q.enqueue(x)
+    return q
+def issorted(q):
+    last = q.dequeue()
+    while not q.isempty():
+        if last > q.first():
+            return False # Two elements out of order
+        lst = q.dequeue()
+    return True # We got here and so all elemets must have been in order.
+def main():
+    lst = [10 * x for x in range(101)]
+    random.shuffle(lst)
+    q = make_q(lst)
+    mergesort(q) # This uses the student's merge function to sort q
+    if issorted(q):
+        print("Test passed")
+    else:
+        print("Your merge function didn't work.")
+if __name__ == "__main__":
+    main()
+In fact, we will supply our own split() function, so you need only supply the merge() function.
+
+Radix Pass 1
+Given a list of numbers, the LSB (least significant bit) radix sort will sort the numbers starting at the least significant bit. Assuming that we are using binary, show what the order will be after the first pass of radix sort.
+You should submit a list of strings representing binary numbers. In order to see your actual list, submit an empty list.
+
+Radix Pass 3
+Again submit a list of binary strings, but this time, you should work out what will be the arrangement of strings after 3 passes of radix sort and submit that.
+Submit and empty list to get the initial list of numbers.
+
+Radix Decimal Pass 1
+This time we will use radix sort using decimal digits. (wikipedia article)
+Submit and empty list to get the initial list of numbers. Then using that list of numbers, submit ten lists representing the buckets after one pass.
+
+Radix Decimal Pass 2
+This time we will use radix sort using decimal digits but with two passes. (wikipedia article)
+Submit and empty list to get the initial list of numbers. Then using that list of numbers, submit ten lists representing the buckets after two passes.
+
+Radix Sort Program
+This problem requires you to write a radix sort function which takes two parameters: a list and a pass number. You are to sort the list using the least significant bit radix sort up to that pass number. That is, if the pass number is 1, just sort on the least significant bit. If the pass number is 2, then sort on the two least significant bits.
+The standard radix sort code looks like:
+def radix_sort(lst):
+   # for each power of two (starting at lowest) sort based on that power
+   for p in range(6):  # Assume 6 bits
+      # Split list in two
+      lo = [x for x in lst if x & (1 << p) == 0] # lo where the bit is zero
+      hi = [x for x in lst if x & (1 << p) != 0] # hi where the bit is one
+      lst = lo + hi # combine the two into one list.
+   return lst
+Your task is to stop after the appropriate number of passes.
+
+Sorting Detective
+You will be using a program called Sort Detective to investigate some sorting algorithms. Four sorting algorithms are going to be investigated: Selection Sort, Insertion Sort, Quick Sort and Merge Sort. Sort Detective will allow you to generate an array of integers and to test the characteristics of each of four algorithms and based on these characteristics, you must identify the sorting algorithm which was used.
+You will submit your solution by returning a list of four strings. Each string will have two letters representing a sorting algorithm. The strings will be: 
+"ss" Selection Sort
+"is" Insertion Sort
+"qs" Quick Sort
+"ms" Merge Sort
+So, if you thought that the order was: Quick Sort, Insertion Sort, Merge Sort and Selection Sort, then you would return the list ["qs", "is", "ms", "ss"]
+To run the program
+You will need to download the Sort Detective jar file and then get a seed (actually just a number). Each student will have their own seed which will enable Sort Detective to generate a unique order for that student. To get the seed, you need to submit a program which returns an empty list. You will then be shown your seed.
+Once you have the seed, run the program with the seed as a parameter.
+The command line will be 
+ java -jar sd.jar seed
+where seed will be a number specific to you.
+You then use Sort Detective and work out which buttons correspond to insertion sort, selection sort, quick sort and merge sort and return an appropriate list.
+Note that the Sort Detective program is a little quirky. After you select the type of data you want to use, you must remember to press the Create List button. Then press A, B, C or D to find out how the corresponding algorithm fairs with that data.
+Note that you must get all four algorithms correct in order to get any marks.
+Sort Detective was developed by David Levine of St. Bonaventure University, New York.
+[If you don't like the idea of running an untrusted jar file on your computer (and you shouldn't), you can run it with a security manager which stops it doing most things: java -jar -Djava.security.manager sd.jar seed]
+
+
+Comment from me: Where you are going to find Sorting Detective if you arent in this class I dont Know. Good Luck Lol
+Additional things to look at include: Adjacency Matrix, Edge Lists, Depth First Search, Breadth First Search, Dijkstra's Shortest Path, Prims Algorith: Minimum Spanning Tree
