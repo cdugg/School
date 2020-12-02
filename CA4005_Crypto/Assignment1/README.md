@@ -1,0 +1,1 @@
+Using preset values for a diffie-hellman exchange calculate the secret key s and use a sha256 hash as the key encrypt the contents of the class file for this encryption and output them to Encryption.txt.
