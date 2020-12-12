@@ -1,0 +1,29 @@
+variable i:integer;
+variable c:integer;
+variable d:integer;
+variable z:integer;
+
+integer test_fn (x:integer, y:integer) is
+   variable i:integer;
+begin
+   i := 1;
+   c := 1;
+   if ((i + c) < c)
+   begin
+   end
+   else
+   begin
+   end
+   return (x);
+end
+
+main
+begin
+   variable i:integer;
+   variable b:integer;
+   i := (1 + 2) + (1 + (1 + 2));
+   i := test_fn (i, b);
+   test_fn (i, b);
+   d := 2;
+   z := d + 2;
+end
